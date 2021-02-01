@@ -22,10 +22,9 @@ body {
 
 .buttonPage {
   width: 80vw;
-  height: 30px;
   background-color: rgb(26, 25, 25);
   color: white;
-  border-radius: 10px;
+  border-radius: 5px;
   border-style: solid;
   border-color: white;
   font-size: 1rem;
@@ -54,6 +53,53 @@ body {
 .sizeText{
   margin: 10vh 0 5vh;
   font-size: 0.7rem;
+}
+.input-login{
+  width: 80vw;
+  height: 30px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  font-size: 1rem;
+  font-family: Krona One;
+  text-transform: uppercase;
+  margin: 10px;
+
+}
+.infoText{
+  color: rgb(143, 140, 140);
+  font-size: 0.7rem;
+  width: 90vw;
+  margin: 0 0 0 0;
+}
+.container-login{
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center; 
+  
+}
+.box-login img{
+  margin: 5vh 10vh;
+  
+}
+.box-login{
+  width: 100%;
+}
+.box-login form{
+  text-align: center;
+  margin: 10px;
+  font-size: 1rem;
+}
+.box-login form img{
+  width: 16px;
+  height: 16px;
+}
+.marginText{
+  margin-top: 10vh;
+}
+.colorSpan{
+  color: #000000;
 }
 
 ul {
