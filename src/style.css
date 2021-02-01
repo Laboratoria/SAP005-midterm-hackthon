@@ -1,0 +1,7 @@
+.container-films {
+    display: flex;
+}
+.movie-box{
+    width: 40%;
+    margin: 10px;
+}
