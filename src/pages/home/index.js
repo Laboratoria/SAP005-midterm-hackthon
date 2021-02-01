@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { films } from './mock.js';
 import { createMenu } from '../../components/menu/index.js'
 
@@ -13,7 +14,7 @@ export const Home = () => {
 `;
   
 const getAllFilms = () => {
-  for (let i of films) {
+  for (const i of films) {
     getFilms(i);
   }
 }
