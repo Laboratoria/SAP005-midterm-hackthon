@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="./style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
+<<<<<<< HEAD
   <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
@@ -26,10 +27,38 @@
   <div id="root"></div>
   <div id="poster"></div>
   <footer class='footer'>
+=======
+<link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+  <link rel="icon" type="imagem/png" href="/images/movie.png" />
+  <title>Cinelist</title>
+</head>
 
-  </footer>
+  <body>
+    <nav>
+      <ul>
+        <li id='mainPage'>Pagina Inicial</li>
+        <li id='login'>Login</li>
+        <li id='register'>Registro</li>
+        <li id='mainList'>Lista Principal</li>
+        <li id='menuList'>Menu Listas</li>
+        <li id='watchList'>Lista Assistidos</li>
+        <li id='toWatchList'>Lista para Assistir</li>
+      </ul>
+    </nav>
+    <div id="root"></div>
+  
+    <footer class='footer'>
+>>>>>>> 107fdf91cb9432c12f0c1070f1b23489b6a92e86
 
-  <script type='module' src='router.js'></script>
-</body>
+    </footer>
+   
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+    <script src="./services/firebaseConfig.js"></script>
+    <script type="module" src="./services/index.js"></script>
+    <script type='module' src='router.js'></script>
+
+  </body>
 
 </html>
