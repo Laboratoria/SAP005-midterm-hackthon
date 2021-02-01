@@ -39,19 +39,11 @@ const getFilms = (i) => {
 
 const printFilms = (json) => {
   const filmsContainer = document.createElement('section');
+  filmsContainer.classList.add('films-container')
   filmsContainer.innerHTML += `
     <section class="movie-box">
+      <p class="title">${json.Title}</p>
         <img class="image" src="${json.Poster}">
-        <p>${json.Title}</p>
-        <section class="details">
-            <p>Awards: ${json.Awards}</p>
-            <p>Plot: ${json.Plot}</p>
-            <p>Genre: ${json.Genre}</p>
-            <p>Director: ${json.Director}</p>
-            <p>Year: ${json.Year}</p>
-            <p>IMDb Rating: ${json.imdbRating}</p>
-            <p>Runtime: ${json.Runtime}</p>
-        </section>
     </section>
    `
    return filmsContainer;
