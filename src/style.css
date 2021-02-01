@@ -1,3 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Krona One;
+}
+.slider {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+.slider figure {
+  position: relative;
+  margin: 1px;
+}
+.slider figure img {
+  width: 100vw;
+  height: 100vh;
+  float: left;
+  opacity: 0.3;
+  object-fit: cover;
+}
+
+.buttonPage {
+  width: 80vw;
+  height: 30px;
+  background-color: rgb(26, 25, 25);
+  color: white;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: white;
+  font-size: 1rem;
+  font-family: Krona One;
+  text-transform: uppercase;
+}
+.banner {
+  width: 100vw;
+  position: absolute;
+  top: 5%;
+  text-align: center;
+}
+.banner img{
+  margin: 5vh 10vh;
+}
+.textbanner {
+  margin-left: 2px;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.colorText{
+  text-align: center;
+  color: white;
+}
+.sizeText{
+  margin: 10vh 0 5vh;
+  font-size: 0.7rem;
+}
+
 ul {
   list-style: none;
   background-color: #000000;
