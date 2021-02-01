@@ -4,4 +4,13 @@
 .movie-box{
     width: 40%;
     margin: 10px;
+    border: 1px solid darkgray;
+    padding: 15px;
+}
+.movie-box img {
+    width: 300px;
+    height: 385px;
+}
+.details {
+    display: none;
 }
