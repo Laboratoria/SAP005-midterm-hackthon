@@ -1,4 +1,5 @@
-import { signUp } from '../../services/index.js';
+import { signUp, saveUser } from '../../services/index.js';
+import { onNavigate } from '../../utils/history.js';
 
 export const Register = () => {
   const rootElement = document.createElement('div');
@@ -23,6 +24,11 @@ export const Register = () => {
     const password = rootElement.querySelector('#password').value;
     e.preventDefault();
     signUp(email, password)
+      .then((userUpdate) => {
+        saveUser(userUpdate.user, email);
+        alert('Conta criada com sucesso');
+        onNavigate('/mainList');
+      })
       .catch(() => {
         alert('Falha ao realizar o cadastro');
       });
