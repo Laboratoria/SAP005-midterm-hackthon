@@ -1,4 +1,4 @@
-import { signIn, signInGoogle, checkLogin } from '../../services/index.js';
+import { signIn, signInGoogle } from '../../services/index.js';
 import { onNavigate } from '../../utils/history.js';
 
 export const Login = () => {
@@ -10,9 +10,9 @@ export const Login = () => {
       <form>          
         <input type='email' class='input-login' id='e-mail' placeholder ='E-mail'/>
         <input type='password' class='input-login' id='my-password' placeholder='Senha'/>    
-        <button type='submit' class='buttonPage' id='button-login'>Entrar</button>
+        <button type='submit' class='button' id='button-login'>Entrar</button>
         <p>ou</p>
-        <button class='buttonPage' id='button-google'>Entrar com o Google</button>
+        <button class='button' id='button-google'>Entrar com o Google</button>
         <p class='infoText marginText'>Não tem uma conta? <b><span id='button-create-account' class='colorSpan'>Cadastre-se</span></p>
         <script type='module' src='./register/index.js'></script>
       </form>
@@ -23,13 +23,7 @@ export const Login = () => {
     const email = rootElement.querySelector('#e-mail').value;
     const password = rootElement.querySelector('#my-password').value;
     e.preventDefault();
-    return signIn(email, password)
-      .then(() => {
-        const user = firebase.auth().currentUser;
-        checkLogin(user);
-        onNavigate('/mainList');
-        alert('Login realizado com sucesso');
-      })
+    signIn(email, password)
       .catch(() => {
         alert('Email e/ou senha incorretos');
         onNavigate('/');
@@ -38,13 +32,7 @@ export const Login = () => {
 
   rootElement.querySelector('#button-google').addEventListener('click', (e) => {
     e.preventDefault();
-    return signInGoogle()
-      .then(() => {
-        const user = firebase.auth().currentUser;
-        checkLogin(user);
-        onNavigate('/mainList');
-        alert('Login realizado com sucesso');
-      })
+    signInGoogle()
       .catch(() => {
         alert('Você não conectou com o Google, tente novamente');
         onNavigate('/');
