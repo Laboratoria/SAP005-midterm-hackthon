@@ -6,13 +6,18 @@ let imgSrc = "";
 const getPoster = () => {
   return fetch(movieGenres.actionNfx)
     .then(response => response.json())
-    .then(json => json.results[0].poster_path);
+    .then(json => json.results);
 }
 
-getPoster().then(posterPath => {
-  imgSrc = imgBaseUrl + posterPath;
-  document.getElementById("root").innerHTML = `
-  <img src="${imgSrc}">
-  `;
-  console.log(imgSrc);
+getPoster().then(moviesList => {
+  console.log(moviesList)
+
+  for (let movie of moviesList) {
+    console.log(movie.poster_path)
+  }
+  // imgSrc = imgBaseUrl + posterPath;
+  // document.getElementById("root").innerHTML = `
+  // <img src="${imgSrc}">
+  // `;
+  // console.log(imgSrc);
 })
