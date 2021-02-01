@@ -1,4 +1,4 @@
-import { signIn, signInGoogle, checkLogin } from '../../services/index.js';
+import { signIn, signInGoogle } from '../../services/index.js';
 import { onNavigate } from '../../utils/history.js';
 
 export const Login = () => {
@@ -23,13 +23,7 @@ export const Login = () => {
     const email = rootElement.querySelector('#e-mail').value;
     const password = rootElement.querySelector('#my-password').value;
     e.preventDefault();
-    return signIn(email, password)
-      .then(() => {
-        const user = firebase.auth().currentUser;
-        checkLogin(user);
-        onNavigate('/mainList');
-        alert('Login realizado com sucesso');
-      })
+    signIn(email, password)
       .catch(() => {
         alert('Email e/ou senha incorretos');
         onNavigate('/');
@@ -38,13 +32,7 @@ export const Login = () => {
 
   rootElement.querySelector('#button-google').addEventListener('click', (e) => {
     e.preventDefault();
-    return signInGoogle()
-      .then(() => {
-        const user = firebase.auth().currentUser;
-        checkLogin(user);
-        onNavigate('/mainList');
-        alert('Login realizado com sucesso');
-      })
+    signInGoogle()
       .catch(() => {
         alert('Você não conectou com o Google, tente novamente');
         onNavigate('/');
