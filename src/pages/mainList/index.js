@@ -1,6 +1,5 @@
 let db = firebase.firestore();
 let movie = "";
-// const userId = firebase.auth().currentUser.uid
 
 export const allMovies = async () => {
   let fetchMovies = await fetch(
@@ -26,18 +25,14 @@ export const allMovies = async () => {
   let toWatch = document.querySelectorAll("#toWatch")
   toWatch.forEach((button) => {
     button.addEventListener("click", async (e) => {
-      e.preventDefault()   
+      e.preventDefault()
+      const userId = firebase.auth().currentUser.uid
       const containerFeed = e.target.parentNode.parentNode
       console.log(containerFeed.id)
-      document.get
-      db.collection("movie").add({
-        listToWatch:[]
-     })
-    .then(function(docRef) {
-      db.collection("movie").doc(docRef.id).update({
+      db.collection("users").doc(userId).update({
         likeToWatch: firebase.firestore.FieldValue.arrayUnion(containerFeed.id)
     })
-    })     
+       
     })        
 
   })  

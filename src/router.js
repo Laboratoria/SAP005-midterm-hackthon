@@ -13,7 +13,7 @@ const routeRender = () => {
     '/': MainPage,
     '/login': Login,
     '/register': Register,
-    '/allMovies':allMovies,
+    '/allmovies':allMovies,
     '/menuList': MenuList,
     '/watchList': WatchList,
     '/toWatchList': ToWatchList,

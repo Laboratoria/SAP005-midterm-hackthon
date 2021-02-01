@@ -27,6 +27,7 @@ export const Login = () => {
       .then(() => {
         const user = firebase.auth().currentUser;
         checkLogin(user);
+        
         onNavigate('/allMovies');
         alert('Login realizado com sucesso');
       })
