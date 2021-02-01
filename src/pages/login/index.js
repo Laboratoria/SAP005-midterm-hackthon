@@ -4,19 +4,19 @@ import { onNavigate } from '../../utils/history.js';
 export const Login = () => {
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
-    <h>Hello Word!</h>
-    <div class='container'>
-      <div>
-        <form class='container-login'>          
-          <input type='email' class='input-login' id='e-mail' placeholder ='E-mail'/>
-          <input type='password' class='input-login' id='my-password' placeholder='Senha'/>    
-          <button type='submit' class='button-login' id='button-login'>Entrar</button>
-          <button type='submit' class='button-create-account' id='button-create-account'>Criar Conta</button>
-          <button class='button-google' id='button-google'><img id='img-google' src='images/google.png' alt='img-google'></button>
-          <label class='google' >Entrar com o Google</label>
-          <script type='module' src='./register/index.js'></script>
-        </form>
-      </div>
+  <div class="container-login">
+    <div class="box-login">
+        <img src="images/Cinelist.png">
+      <form>          
+        <input type='email' class='input-login' id='e-mail' placeholder ='E-mail'/>
+        <input type='password' class='input-login' id='my-password' placeholder='Senha'/>    
+        <button type='submit' class='buttonPage' id='button-login'>Entrar</button>
+        <p>ou</p>
+        <button class='buttonPage' id='button-google'>Entrar com o Google</button>
+        <p class="infoText marginText">Não tem uma conta? <b><span id="button-create-account" class="colorSpan">Cadastre-se</span></p>
+        <script type='module' src='./register/index.js'></script>
+      </form>
+    </div>
     </div>
   `;
   rootElement.querySelector('#button-login').addEventListener('click', (e) => {
