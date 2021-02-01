@@ -170,6 +170,7 @@ img.logo-header {
   justify-content: center;
   font-size: 12px;
 }
+
 #root{
   display: flex;  
   flex-wrap: wrap;
@@ -186,7 +187,6 @@ img.logo-header {
   align-items:  center; 
   flex-direction: column;
   background-color: #C4C4C4 ;    
-
 }
 
 .poster{
@@ -198,7 +198,6 @@ img.logo-header {
 .btnAdd{
   display: flex;
   margin-top: 5px;
-
 }
 
 .btnAdd button{
@@ -213,4 +212,3 @@ img.logo-header {
   border:none;
 
 }
-
