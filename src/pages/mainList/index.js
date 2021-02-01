@@ -1,7 +1,6 @@
 let db = firebase.firestore();
 let movie = "";
-// const userId = firebase.auth().currentUser.uid
-// console.log(userId)
+const userId = firebase.auth().currentUser.uid
 
 export const allMovies = async () => {
   let fetchMovies = await fetch(
