@@ -24,4 +24,3 @@ export const signInGoogle = () => {
 export const signOut = () => firebase.auth().signOut();
 
 export const checkLogin = () => firebase.auth().onAuthStateChanged((user) => user);
-

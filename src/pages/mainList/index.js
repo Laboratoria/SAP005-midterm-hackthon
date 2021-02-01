@@ -45,5 +45,3 @@ export const allMovies = async () => {
   })  
  
 };
-allMovies();
-
