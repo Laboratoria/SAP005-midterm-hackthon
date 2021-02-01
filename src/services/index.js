@@ -13,3 +13,4 @@ export const signInGoogle = () => {
 };
 
 export const signOut = () => firebase.auth().signOut();
+

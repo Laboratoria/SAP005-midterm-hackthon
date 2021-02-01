@@ -13,12 +13,24 @@ export const allMovies = async () => {
         <img class = "poster" src = "https://image.tmdb.org/t/p/original/${img.poster_path}">
         <div class = "btnAdd">
           <button>+ASSISTIDO</button>
-          <button>+ASSISTIR</button>
+          <button id ="toWatch">+ASSISTIR</button>
         </div>
       </div>
     </div>`
   });  
-  
+
+  let toWatch = document.querySelectorAll("#toWatch")
+  toWatch.forEach((button) => {
+    button.addEventListener("click", async (e) => {
+      e.preventDefault()
+      const containerFeed = e.target.parentNode.parentNode
+      let movies = {
+        listToWatch:[]
+      }
+     
+  });
+
+  })  
 };
 allMovies();
 
