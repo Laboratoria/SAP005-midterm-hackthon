@@ -2,7 +2,10 @@ import { Main } from './pages/main/index.js';
 import { Home } from './pages/home/index.js';
 import { Login } from './pages/login/index.js';
 import { Register } from './pages/register/index.js';
+import { Favorites } from './pages/likes/index.js'
+import { WatchList } from './pages/watchlist/index.js'
 import { onNavigate } from './utils/history.js';
+import { DiscardedList } from './pages/discarded/index.js';
 //import { verifyUserLogged } from './services/index.js';
 
 const routeRender = () => {
@@ -12,6 +15,9 @@ const routeRender = () => {
     '/login': Login,
     '/register': Register,
     '/home': Home,
+    '/favorites': Favorites,
+    '/watchlist': WatchList, 
+    '/discardedlist': DiscardedList
   };
 
   rootDiv.innerHTML = '';
@@ -44,6 +50,24 @@ window.addEventListener('load', () => {
       e.preventDefault();
       onNavigate('/home')
     });    
+  document
+    .getElementById('favorites')
+    .addEventListener('click', (e) => {
+      e.preventDefault();
+      onNavigate('/favorites')
+    });
+  document
+    .getElementById('watch')
+    .addEventListener('click', (e) => {
+      e.preventDefault();
+      onNavigate('/watchlist')
+    });
+  document
+    .getElementById('deleted')
+    .addEventListener('click', (e) => {
+      e.preventDefault();
+      onNavigate('/discardedlist')
+    });    
 
   routeRender();
 });
@@ -55,9 +79,12 @@ const routeRender = () => {
   const rootDiv = document.getElementById('root');
   const routes = {
     '/': Main,
-    '/home': Home,
     '/login': Login,
     '/register': Register,
+    '/home': Home,
+    '/favorites': Favorites,
+    '/watchlist': WatchList, 
+    '/discardedlist': DiscardedList
   };
   rootDiv.innerHTML = '';
   rootDiv.appendChild(routes[window.location.pathname]());
