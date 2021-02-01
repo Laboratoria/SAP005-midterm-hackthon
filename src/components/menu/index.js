@@ -47,19 +47,19 @@ export const createMenu = () => {
 };
 
 const sendHome = () => {
-    onNavigate('/');
+    onNavigate('/home');
 };
 
 const sendFavorites = () => {
-  console.log("criar página de favoritos")
+  onNavigate('/favorites');
 };
 
 const sendWatchList = () => {
-  console.log("criar lista de filmes pra ver")
+  onNavigate('/watchlist');
 };
 
 const sendDiscarded = () => {
-  console.log("criar página de filmes que não quero ver")
+  onNavigate('/discardedlist');
 };
 
 const sendLogOut = () => {
@@ -70,6 +70,3 @@ const sendLogOut = () => {
     });
 */    
 };
-
-
-
