@@ -1,28 +1,16 @@
-#menu ul {
-    list-style: none;
-    background-color: #2e68ac;
-    border-radius: 20px;
-    width: 20%;
-    margin: -2% 0% 0% 20%;
-    padding-left: 60%;
-  }
-  
-  #menu li {
-    display: inline-block;
-    transition: background-color 1s;
-    border-radius: 5%;
-    padding: 0% 7%;
-  }
-  
-  #menu li:hover {
-    background-color: #1f417b;
-  }
-  
-  #menu a {
-    color: #ffca06;
-    text-decoration: none;
-    font-family: 'FontePokemon', sans-serif;
-    font-size: 25px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #1f417b;
-  }
+ul {
+  list-style: none;
+  background-color: #000000;
+}
+
+li {
+  display: inline-block;
+  transition: background-color 1s;
+  color: #fcfcfc;
+  text-decoration: none;
+  padding: 2%;
+}
+
+li:hover {
+  background-color: #222324;
+}
