@@ -1,5 +1,5 @@
 import { films } from './mock.js';
-import { createMenu } from '../../components/footerhome.js'
+import { createMenu } from '../../components/menu/index.js'
 
 export const Home = () => {
 
