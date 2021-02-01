@@ -1,3 +1,12 @@
+export const saveUser = (user, userEmail) => {
+  firebase.firestore().collection('users').doc(userEmail).add({
+    userId: user.uid,
+    email: userEmail,
+  })
+    .then(() => true)
+    .catch((error) => error);
+};
+
 export const signUp = (email, password) => firebase.auth()
   .createUserWithEmailAndPassword(email, password);
 
@@ -13,3 +22,5 @@ export const signInGoogle = () => {
 };
 
 export const signOut = () => firebase.auth().signOut();
+
+export const checkLogin = () => firebase.auth().onAuthStateChanged((user) => user);
