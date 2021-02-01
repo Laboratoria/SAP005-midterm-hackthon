@@ -1,3 +1,10 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif, normal, normal;
+} 
+
 .container-films {
     display: flex;
 }
@@ -13,4 +20,28 @@
 }
 .details {
     display: none;
+}
+
+/** FOOTER MENU **/
+.menu{
+    background-color: #64312F;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    padding: 0% 25%;
+}
+.button-menu span {
+    color: #D9D2B0;
+    font-size: 35px;
+}
+button {
+    background-color: transparent;
+    border: none;
+}
+
+@media (max-width: 375px) {
+    .menu{
+        padding: 0% 5%;
+    }
 }
