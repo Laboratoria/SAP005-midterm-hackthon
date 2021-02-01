@@ -14,3 +14,57 @@ li {
 li:hover {
   background-color: #222324;
 }
+#root{
+  width: 100%;
+  height: 100%;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+#root{
+  display: flex;  
+  flex-wrap: wrap;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+ 
+  
+}
+
+.backgroundPoster{
+  width: 170px;
+  height: 270px;
+  background-color: #C4C4C4 ;
+  display: flex;
+  align-items:  center;
+  margin-top: 15px;
+  margin-left: 5px;
+ flex-direction: column;
+  
+    
+}
+
+.poster{
+  width: 150px;
+  height: 220px;
+  margin-top: 10px;
+}
+
+.btnAdd{
+  display: flex;
+  margin-top: 5px;
+    
+}
+
+.btnAdd button{
+  width: 75px;
+  height: 20px;
+  font-size: 8px;
+  color: #FFFFFF;
+  background-color: #000000;
+  font-family: 'Krona One', sans-serif;
+  border-radius: 3px;
+  border:none;
+  margin-left: 3px;
+}
