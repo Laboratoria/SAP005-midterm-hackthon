@@ -1,3 +1,5 @@
+import { onNavigate } from '../utils/history.js';
+
 export const saveUser = (user, userEmail) => {
   firebase.firestore().collection('users').doc(userEmail).add({
     userId: user.uid,
@@ -21,6 +23,6 @@ export const signInGoogle = () => {
   return firebase.auth().signInWithPopup(provider);
 };
 
-export const signOut = () => firebase.auth().signOut();
+export const signOut = () => firebase.auth().signOut().then(onNavigate('/'));
 
 export const checkLogin = () => firebase.auth().onAuthStateChanged((user) => user);
