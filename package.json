@@ -1,0 +1,23 @@
+{
+  "name": "SAP005-midterm-hackthon",
+  "version": "1.0.0",
+  "description": "* [Prefácio](#prefácio)\r * [Resumo do projeto](#resumo-do-projeto)\r * [Considerações gerais](#considerações-gerais)\r * [Objetivos de aprendizagem](#objetivos-de-aprendizagem)\r * [Exemplo de projetos](#examplo-de-projetos)\r * [APIs](#apis)\r * [Entrega](#entrega)\r * [Dicas](#dicas)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lu-Pereira/SAP005-midterm-hackthon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lu-Pereira/SAP005-midterm-hackthon/issues"
+  },
+  "homepage": "https://github.com/Lu-Pereira/SAP005-midterm-hackthon#readme",
+  "dependencies": {
+    "bootstrap": "^4.6.0"
+  }
+}
