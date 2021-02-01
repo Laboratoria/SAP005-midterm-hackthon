@@ -1,4 +1,3 @@
-
 import { onNavigate } from '../../utils/history.js';
 
 export const MenuList = () => {
@@ -36,4 +35,5 @@ export const MenuList = () => {
     onNavigate('/toWatchList');
   });
 
- 
+  return rootElement;
+};
