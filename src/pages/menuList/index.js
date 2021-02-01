@@ -26,7 +26,6 @@ export const allMovies = async () => {
       const containerFeed = e.target.parentNode.parentNode
       let movies = {
         listToWatch:[],
-        sybiabib
       }
      
   });
