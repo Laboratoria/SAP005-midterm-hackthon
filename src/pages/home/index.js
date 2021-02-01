@@ -13,7 +13,7 @@ export const Home = () => {
   
                  rootElement.innerHTML += ` 
                  <div class="movie-box">
-                  <img src="${json.Poster}">
+                  <img class="image" src="${json.Poster}">
                   <p>${json.Title}</p>
                   <p>Awards: ${json.Awards}</p>
                   <p>Plot: ${json.Plot}</p>
