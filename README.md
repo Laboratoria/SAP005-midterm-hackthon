@@ -48,7 +48,7 @@ deve ser feito duranto os dois dias de Hackathon.
 ## Exemplo de projetos
 
 - Um grupo de fãs de Star Wars que querem ver os dados de todos os filmes da série
-- Um vídeo Pinterest youtube, onde os usuários "pinean" vídeos
+- Um vídeo Pinterest youtube, onde os usuários 'pinean' vídeos
 - Um mapa com os eventos que estão acontecendo perto de você
 
 ## APIs

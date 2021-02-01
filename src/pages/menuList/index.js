@@ -3,23 +3,23 @@ import { onNavigate } from '../../utils/history.js';
 export const MenuList = () => {
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
-    <div class="menuListas"> 
-      <div class="lista slider">
+    <div class='menuListas'> 
+      <div class='lista slider'>
         <figure>
-          <img src="images/Cinelist.bg.png">
+          <img src='images/Cinelist.bg.png'>
         </figure>
         <div class='position'>
-          <p class="textbanner colorText">FAÇA LISTAS COMENTADAS DE FILMES QUE JÁ ASSISTIU E SAIBA SEMPRE QUAIS FILMES MAIS TE AGRADAM.</p>
-          <button id="btnWatchList" class="button">VER FILMES ASSISTIDOS</button>
+          <p class='textbanner colorText'>FAÇA LISTAS COMENTADAS DE FILMES QUE JÁ ASSISTIU E SAIBA SEMPRE QUAIS FILMES MAIS TE AGRADAM.</p>
+          <button id='btnWatchList' class='button'>VER FILMES ASSISTIDOS</button>
         </div>
       </div>
-      <div class="lista slider">
+      <div class='lista slider'>
         <figure>
-          <img src="images/Cinelist.bg.png">
+          <img src='images/Cinelist.bg.png'>
         </figure>
         <div class='position'> 
-          <p class="textbanner colorText">FAÇA LISTAS COMENTADAS DE FILMES QUE JÁ ASSISTIU E SAIBA SEMPRE QUAIS FILMES MAIS TE AGRADAM.</p>
-          <button id="btnToWatchList" class="button">VER FILMES PARA ASSISTIR</button>
+          <p class='textbanner colorText'>FAÇA LISTAS COMENTADAS DE FILMES QUE JÁ ASSISTIU E SAIBA SEMPRE QUAIS FILMES MAIS TE AGRADAM.</p>
+          <button id='btnToWatchList' class='button'>VER FILMES PARA ASSISTIR</button>
         </div>
       </div>
     </div> 
