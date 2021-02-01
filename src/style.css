@@ -72,3 +72,59 @@ li {
 li:hover {
   background-color: #222324;
 }
+
+#root{
+  width: 100%;
+  height: 100%;
+
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+
+  #root{
+    display: flex;  
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;   
+    
+  }
+  
+  .backgroundPoster{
+    width: 170px;
+    height: 270px;
+    margin: 15px 2px 0 2px;  
+    display: flex;
+    align-items:  center; 
+    flex-direction: column;
+    background-color: #C4C4C4 ;    
+      
+  }
+  
+  .poster{
+    width: 150px;
+    height: 220px;
+    margin-top: 10px;
+  }
+  
+  .btnAdd{
+    display: flex;
+    margin-top: 5px;
+      
+  }
+  
+  .btnAdd button{
+    width: 75px;
+    height: 20px;
+    margin: 0 1px 0 1px;
+    font-size: 8px;
+    color: #FFFFFF;
+    background-color: #000000;
+    font-family: 'Krona One', sans-serif;
+    border-radius: 3px;
+    border:none;
+    
+  }
