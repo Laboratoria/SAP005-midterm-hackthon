@@ -1,17 +1,21 @@
-import { signUp, saveUser } from '../../services/index.js';
-import { onNavigate } from '../../utils/history.js';
+import { signUp } from '../../services/index.js';
 
 export const Register = () => {
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
-    <form class='container-register'>
-      <h1 class='paragrafe'>Crie sua conta</h1>
-      <input type='email' class='input-register' id ='email' placeholder ='E-mail'/>
-      <input type='password' class='input-register' id='password' placeholder='Senha'/>
-      <input type='password' class='input-register' id='password-confirm' placeholder='Confirmar senha'/>
-      <p class='instruction'>A senha deve ter no mínimo 6 dígitos</p>
-      <button type='submit' class='button-register' id='button-register'>Registrar-se</button>
-    </form>
+  <div class='container-login'>
+    <div class='box-login'>
+     <img src='images/Cinelist.png' class='login-icon'>
+      <form class='login'>
+        <input type='email' class='input-login' id ='email' placeholder ='E-mail'/>
+        <p class='infoText'>Senha de no mínimo 6 caracteres</p>
+        <input type='password' class='input-login' id='password' placeholder='Senha'/>
+        <input type='password' class='input-login' id='password-confirm' placeholder='Confirmar senha'/>
+        <button type='submit' class='buttonPage' id='button-register'>Registrar-se</button>
+        <p class='infoText marginText'>Ao cadastre-se você concorda com nossos termos de uso.</p>
+      </form>
+    </div>
+  </div>
   `;
 
   rootElement.querySelector('#button-register').addEventListener('click', (e) => {
@@ -19,11 +23,6 @@ export const Register = () => {
     const password = rootElement.querySelector('#password').value;
     e.preventDefault();
     signUp(email, password)
-      .then((userUpdate) => {
-        saveUser(userUpdate.user, email);
-        alert('Conta criada com sucesso');
-        onNavigate('/mainList');
-      })
       .catch(() => {
         alert('Falha ao realizar o cadastro');
       });

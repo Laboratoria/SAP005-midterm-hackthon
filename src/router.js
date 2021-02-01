@@ -26,8 +26,17 @@ const routeRender = () => {
 
 window.addEventListener('popstate', routeRender);
 
-window.addEventListener('popstate', routeRender);
 window.addEventListener('load', () => {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      onNavigate('/mainList');
+    } else {
+      onNavigate('/');
+    }
+  });
+});
+
+/* window.addEventListener('load', () => {
   document
     .getElementById('mainPage')
     .addEventListener('click', (e) => {
@@ -71,4 +80,4 @@ window.addEventListener('load', () => {
       onNavigate('/toWatchList');
     });
   routeRender();
-});
+}); */

@@ -1,35 +1,29 @@
-import { signIn, signInGoogle, checkLogin } from '../../services/index.js';
+import { signIn, signInGoogle } from '../../services/index.js';
 import { onNavigate } from '../../utils/history.js';
 
 export const Login = () => {
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
-    <h>Hello Word!</h>
-    <div class='container'>
-      <div>
-        <form class='container-login'>          
-          <input type='email' class='input-login' id='e-mail' placeholder ='E-mail'/>
-          <input type='password' class='input-login' id='my-password' placeholder='Senha'/>    
-          <button type='submit' class='button-login' id='button-login'>Entrar</button>
-          <button type='submit' class='button-create-account' id='button-create-account'>Criar Conta</button>
-          <button class='button-google' id='button-google'><img id='img-google' src='images/google.png' alt='img-google'></button>
-          <label class='google' >Entrar com o Google</label>
-          <script type='module' src='./register/index.js'></script>
-        </form>
-      </div>
+  <div class='container-login'>
+    <div class='box-login'>
+        <img src='images/Cinelist.png'>
+      <form>          
+        <input type='email' class='input-login' id='e-mail' placeholder ='E-mail'/>
+        <input type='password' class='input-login' id='my-password' placeholder='Senha'/>    
+        <button type='submit' class='button' id='button-login'>Entrar</button>
+        <p>ou</p>
+        <button class='button' id='button-google'>Entrar com o Google</button>
+        <p class='infoText marginText'>Não tem uma conta? <b><span id='button-create-account' class='colorSpan'>Cadastre-se</span></p>
+        <script type='module' src='./register/index.js'></script>
+      </form>
     </div>
+  </div>
   `;
   rootElement.querySelector('#button-login').addEventListener('click', (e) => {
     const email = rootElement.querySelector('#e-mail').value;
     const password = rootElement.querySelector('#my-password').value;
     e.preventDefault();
-    return signIn(email, password)
-      .then(() => {
-        const user = firebase.auth().currentUser;
-        checkLogin(user);
-        onNavigate('/mainList');
-        alert('Login realizado com sucesso');
-      })
+    signIn(email, password)
       .catch(() => {
         alert('Email e/ou senha incorretos');
         onNavigate('/');
@@ -38,13 +32,7 @@ export const Login = () => {
 
   rootElement.querySelector('#button-google').addEventListener('click', (e) => {
     e.preventDefault();
-    return signInGoogle()
-      .then(() => {
-        const user = firebase.auth().currentUser;
-        checkLogin(user);
-        onNavigate('/mainList');
-        alert('Login realizado com sucesso');
-      })
+    signInGoogle()
       .catch(() => {
         alert('Você não conectou com o Google, tente novamente');
         onNavigate('/');
