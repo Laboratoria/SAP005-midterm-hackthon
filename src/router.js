@@ -1,8 +1,8 @@
 import { Login } from './pages/login/index.js';
 import { Register } from './pages/register/index.js';
 import { MainPage } from './pages/mainPage/index.js';
-import { MainList } from './pages/mainList/index.js';
-import { MenuList } from './pages/menuList/index.js';
+import { allMovies } from './pages/mainList/index.js';
+import { } from './pages/menuList/index.js';
 import { ToWatchList } from './pages/toWatchList/index.js';
 import { WatchList } from './pages/watchList/index.js';
 import { onNavigate } from './utils/history.js';
@@ -13,13 +13,14 @@ const routeRender = () => {
     '/': MainPage,
     '/login': Login,
     '/register': Register,
-    '/mainList': MainList,
-    '/menuList': MenuList,
+    '/allMovies': allMovies,
+    '/allMovies': allMovies,
     '/watchList': WatchList,
     '/toWatchList': ToWatchList,
   };
 
   rootDiv.innerHTML = '';
+
   rootDiv.appendChild(routes[window.location.pathname]());
 };
 
@@ -55,16 +56,16 @@ window.addEventListener('load', () => {
       onNavigate('/register');
     });
   document
-    .getElementById('mainList')
+    .getElementById('allMovies')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/mainList');
+      onNavigate('/allMovies');
     });
   document
-    .getElementById('menuList')
+    .getElementById('allMovies')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/menuList');
+      onNavigate('/allMovies');
     });
   document
     .getElementById('watchList')
