@@ -2,8 +2,6 @@ let db = firebase.firestore();
 let movie = "";
 // const userId = firebase.auth().currentUser.uid
 
-
-
 export const allMovies = async () => {
   let fetchMovies = await fetch(
     "https://api.themoviedb.org/3/movie/upcoming?api_key=5050539d52522a0616ff555db4437bd6&language=pt-BR"
