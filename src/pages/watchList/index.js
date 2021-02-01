@@ -12,7 +12,7 @@ export const WatchList = () => {
   const logoutButton = rootElement.querySelector("#sign-out");
   logoutButton.addEventListener('click', (e) => {
     e.preventDefault();
-    signOut();
+    signOut(); 
   })
  return rootElement;
 };
