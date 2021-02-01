@@ -4,7 +4,7 @@ export const WatchList = () => {
   const rootElement = document.createElement('header');
   rootElement.innerHTML = `
       <nav>
-        <img class="logo-header" src="../images/logo-cinelist.png" alt="Logo CineList"/>
+        <img class="logo-header" src="images/Cinelist.png" alt="Logo CineList"/>
         <a href="/menuList" id="menu-list">Listas</a>
         <button type="submit" id="sign-out">SAIR</button>
       </nav>
