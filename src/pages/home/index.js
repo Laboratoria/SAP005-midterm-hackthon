@@ -13,15 +13,17 @@ export const Home = () => {
   
                  rootElement.innerHTML += ` 
                  <div class="movie-box">
-                  <img class="image" src="${json.Poster}">
-                  <p>${json.Title}</p>
-                  <p>Awards: ${json.Awards}</p>
-                  <p>Plot: ${json.Plot}</p>
-                  <p>Genre: ${json.Genre}</p>
-                  <p>Director: ${json.Director}</p>
-                  <p>Year: ${json.Year}</p>
-                  <p>IMDb Rating: ${json.imdbRating}</p>
-                  <p>Runtime: ${json.Runtime}</p>
+                   <img class="image" src="${json.Poster}">
+                    <p>${json.Title}</p>
+                  <div class="details"> 
+                    <p>Awards: ${json.Awards}</p>
+                    <p>Plot: ${json.Plot}</p>
+                    <p>Genre: ${json.Genre}</p>
+                    <p>Director: ${json.Director}</p>
+                    <p>Year: ${json.Year}</p>
+                    <p>IMDb Rating: ${json.imdbRating}</p>
+                    <p>Runtime: ${json.Runtime}</p>
+                  </div>
                  </div>
                   `  
            })     
@@ -31,6 +33,5 @@ export const Home = () => {
       getFilms(i)
     }
     
-  
   return rootElement;
 };
