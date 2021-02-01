@@ -1,80 +1,112 @@
-# Midterm Hackathon
+# CURTA CURTAS
+Uma aplicação Web para te ajudar a achar os melhores curtas. Para acessar clique aqui! :clapper: 🎬 
 
 ## Índice
+Desafio
+Introdução
+Processo
+Produto
+Ferramentas
+Créditos
+Autoras
 
-* [Prefácio](#prefácio)
-* [Resumo do projeto](#resumo-do-projeto)
-* [Considerações gerais](#considerações-gerais)
-* [Objetivos de aprendizagem](#objetivos-de-aprendizagem)
-* [Exemplo de projetos](#examplo-de-projetos)
-* [APIs](#apis)
-* [Entrega](#entrega)
-* [Dicas](#dicas)
+***
 
----
+## 1. Desafio
+Esse projeto foi desenvolvido em grupo durante o Midterm Hackathon do bootcamp da Laboratoria que trouxe como proposta desenvolver um produto relacionado à entreterimento, utilizando a metodologia de Design Sprint durante uma semana e implementando-o em dois dias, sendo um requisito obrigatório o consumo de API.
 
-## Prefácio
+## 2. Introdução
+Em tempos pandêmicos, as plataformas de streaming invadiram de vez as nossas casas. Se antes a possibilidade de assistir filmes de onde estiver, quando, como e com quem quiser já era atrativa, com o isolamento social essas plataformas se tornaram a principal fonte de entretenimento para milhares de pessoas em nível global. Somente em março de 2020, quando foi declarada uma pandemia mundial, houve um crescimento de 20% dos serviços de streaming, segundo a pesquisa da [Conviva](https://www.forbes.com.br/principal/2020/08/streaming-ganha-ainda-mais-relevancia-com-o-isolamento-social/).
 
-Com o surgimento de plataformas entreterimento por streaming como Netflix, 
-Amazon Prime Video e Disney +, assistir filmes de onde estiver, comendo o que quiser
-(sem ter que pagar o preço exorbitante da pipoca), parando o filme se for preciso, tendo acesso a
-uma quantidade gigante de files, etc. Mudou a experiêcia de usuário e modificou o mercado de filmes
-a um nível global.
+No entanto, diversos serviços com catálogos que parecem não ter fim e interfaces não intuitivas, acabam gerando uma difícil jornada para o usuário encontrar títulos de seu interesse. Isso se agrava quando procuramos por conteúdos de áudio-visual menos populares, como os curta-metragens. Diante disso, desenvolvemos a aplicação Curta Curtas a partir da metodologia [Desing Sprint](https://www.youtube.com/watch?v=aWQUSiOZ0x8&feature=emb_title).  
 
-![Pelis](https://i.giphy.com/media/3o6Ztl7RvfwCp9mqhW/source.gif)
+## 3. Processo
+:mag_right: Descobrimento e investigação
+No primeiro momento, fizemos um brainstorm de ideias, em um [mural](https://miro.com/app/board/o9J_lXU9JBU=/) virtual, focando em possíveis recortes de tema e partindo das nossas dores como pessoas que buscam entretenimento na Web. Em grupo decidimos que iríamos focar nos usuários de plataformas de streaming, fizemos buscas em diferentes locais, como o site Reclame Aqui e nas avaliações feitas em lojas de aplicativos, assim criamos as protopersonas para direcionarmos o nosso processo de investigação e mapearmos o problema a ser solucionado com nosso produto. Finalizamos essa etapa com a elaboração de um formulário para validar as nossas protopersonas e entender melhor quais são as necessidades e os comportamentos dos nossos usuários.
 
-## Resumo do projeto
+ ![personas](./src/img/personas.jpg)
 
-Esse projeto terá um forma de Hackathon, no qual vocês terão que criar
-um produto sobre entreterimento utilizando APIs. Esse produto será criado 
-pelo squad durante os dias de Design Sprint e o desenvolvimento do dele
-deve ser feito duranto os dois dias de Hackathon.
+:memo: Síntese e definição
+Com o resultado do formulário em mãos conseguimos validar as protopersonas e identificar que os nossos usuários principais são mulheres e homens, com faixa etária entre 26 e 33 anos, estudantes e residentes em São Paulo e região. São clientes das plataformas de streaming Netflix, Prime Video e Spotify e acessam esses serviços pelo smartphone. Além disso, mapeamos as dificuldades encontradas ao navegar nessas aplicações e quais melhorias gostariam que esses sites oferecessem. 
 
-## Considerações gerais
+![brainstorm(./src/img/brainstorm.png)
 
-- Esse projeto deve ser feito em squad
-- Utilizar uma API
-- Tempo para terminar o produto: 2 dias
+Em síntese, essas usuárias têm experiências de usuário ruins nessas plataformas o que dificulta muito a busca por conteúdos que sejam do seu real interesse. Diante disso, usamos a técnica de Design Thinking How Might We (HMW), ou Como Poderíamos, para nos ajudar a entender melhor os problemas e levantar possíveis soluções para o mesmo:
 
-## Objetivos de aprendizagem
+Como poderíamos redesenhar a jornada de pesquisa por títulos em catálogos de streaming para torná-la mais personalizada para cada usuário?
 
-- Enfrentar um desafio de curta duração que coloque em prático tudo 
-  o foi aprendido até agora
-- Continuar desenvolvendo as suas habilidades de trabalho em equipe. Quanto
-  mais pessoas em uma equipe de trabalho, mais complexidade para: chegar
-  em um consenso, separar as tarefas, seguir um fluxo de trabalho, etc
-- [Requisições assíncronas - Fetch API](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API)
+:pushpin: Criar mais filtros para busca de títulos e permitir que eles se cruzem.
+:pushpin: Indicar em quais streamings o usuário pode encontrar aquele título.
+:pushpin: Criar coleções de títulos customizadas por cada usuário. 
+:pushpin: Criar um sistema de avaliação de filmes personalizada pelo próprio usuário.
 
-## Exemplo de projetos
+:bulb: Ideação
+Com as funcionalidades necessárias levantadas para o MPV, partimos para fazer um novo benchmark, dessa vez com um foco mais preciso para as soluções levantadas para o problema dos nossos usuários. Entretanto, descobrimos nessa etapa da pesquisa que havia um produto que atendia a todas as soluções propostas de maneira eficiente. 
 
-- Um grupo de fãs de Star Wars que querem ver os dados de todos os filmes da série
-- Um vídeo Pinterest youtube, onde os usuários "pinean" vídeos
-- Um mapa com os eventos que estão acontecendo perto de você
+Como grupo, decidimos voltar alguns passos e redirecionar, portanto, a nossa solução para um grupo de usuários mais específicos dentro do que já havíamos levantado. Desse modo, focamos nos usuários que assistem curta-metragens que, além de compartilharem das mesmas dores dos nossos usuários iniciais, também têm dificuldade em encontrar esses títulos nas plataformas de streaming de vídeo mais populares.
 
-## APIs
+:date: Planejamento 
+Com a definição do Mínimo Produto Viável (MPV), desenvolvemos as histórias de usuários, estabelecendo os critérios de aceitação e a definição de pronto. A partir delas, fizemos o [planejamento](https://trello.com/b/7wlIHXY5/midterm-hackton) para a implementação do produto utilizando o modelo de Kanban. Para o desenvolvimento do código trabalhamos com o code review.
 
-- [Open Movies Database](http://www.omdbapi.com/)
-- [Spotify](https://developer.spotify.com/documentation/web-api/)
-- [Here Maps](https://developer.here.com/)
-- [Star Wars](https://swapi.dev/)
-- [You Tube](https://developers.google.com/youtube/v3)
-- [ESPN](http://www.espn.com/apis/devcenter/docs/)
-- [Mercado Livre](https://developers.mercadolivre.com.br/pt_br/api-docs-pt-br)
+## 4. Produto
+bulb: Identidade visual
 
-Essas APIs são apenas exemplos, você pode utilizar qualquer outra que fizer sentido
-para o projeto. 
-[Aqui (lista 1)](https://apilist.fun/) e [aqui (lista 2)](https://github.com/public-apis/public-apis) você irá encontrar várias APIs públicas.
+A paleta de cores foi inspirada no cartaz da primeira exibição de um filme, um curta chamado [L’arrivée d’un Train à La Ciotat](https://pt.wikipedia.org/wiki/Ficheiro:Cinematograph_Lumiere_advertisement_1895.jpg) (A chegada do trem em La Ciotat) lançado em 1895 no Salão Grand Café, em Paris. 
+
+![color-palette(./src/img/color-palette.png)
+
+bulb: Logo
+Criamos o logo a partir da imagem de uma câmera de filme antiga, e o nome da nossa aplicação utilizamos a fonte Metropolis 1920 (Picmonkey) para criar uma referência de nostalgia e saudosismo ao início das exibições dos filmes.
+
+A proposta é remeter ao usuário a grandiosidade que é o universo cinematográfico, e proporcionar a 
 
 
-## Entrega
+bulb: Funcionalidades
+Com o redirecionamento do problema e da solução do produto, as funcionalidades implementadas no MPV foram:
 
-- Repositório no Github
-- URL pública com o deploy do projeto
+:pushpin: Catalogar títulos de curta-metragens consumindo uma API.
+:pushpin: Permitir que o usuário busque o título pelo nome em uma barra de pesquisa.
+:pushpin: Criar filtros (gênero, ano, diretor, nota do IMDB e duração) para busca de títulos e permitir que eles se cruzem.
+:pushpin: Ordenar o resultado da lista por ordem alfabética.
+:pushpin: Criar uma conta de usuário na aplicação com e-mail e senha ou com o Google.
+:pushpin: Permitir que o usuário crie coleções de títulos que ele curtiu ou descurtiu. 
 
-## Dicas
+:iphone: Para acessar nosso protótipo mobile clique [aqui](https://www.figma.com/file/6e75XnGe5FGT27XcxTkMPP/Curta-Curtas-WebApp?node-id=42%3A0).
+:computer: E para acessar nosso protótipo desktop clique [aqui](https://www.figma.com/file/aOQYSDV26XXsg5IkdPzvKF/Curta-Curtas---Desktop?node-id=0%3A1).
 
-- Organizem o tempo e prestem atenção no timebox
-- Priorizem as tarefas por feature e se organizem, pensem no MVP
-- Testem os deploys com antecedência
-- Implementem coisas pequenas
+bulb: Canvas
 
+bulb: Futuras implementações
+:pushpin: Expandir o catálogo de curtas.
+:pushpin: Indicar em qual streaming ou plataforma o usuário consegue assistir o curta.
+:pushpin: Criar um sistema de avaliações em nota feitas pelos usuários.
+:pushpin: Permitir que o usuário deixe comentários sobre os curtas.
+:pushpin: Permitir que o usuário adicione amigos.
+
+## 5. FERRAMENTAS
+:wrench: Desenvolvimento Front-End 
+* JavaScript(ES6+)
+* HTML5
+* CSS3
+* Bootstrap
+* Firebase
+
+:wrench: Desenvolvimento do Produto
+* Miro
+* Trello
+* Picmonkey
+* Marvel
+* Figma
+
+## 6. CRÉDITOS
+* [Laboratoria](https://www.laboratoria.la/) :yellow_heart:
+* [Open Movies Database API](http://www.omdbapi.com/)
+
+## 7. DESENVOLVEDORAS
+:princess: [Beatriz Penalva](https://github.com/beatrizpenalva)
+:princess: [Cris Mantovani](https://github.com/crismantovani)
+:princess: [Giovana Madeira](https://github.com/giomadeira)
+:princess: [Jessica Cavalcante](https://github.com/JessicaCavalcante)
+:princess: [Juliane Cristina](https://github.com/Juliane-C)
+:princess: [Nicaely Joane](https://github.com/Nijoane)
+:princess: [Talita Silva](https://github.com/Talita-8)
