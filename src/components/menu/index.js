@@ -1,5 +1,5 @@
 //import { logOut, getCurrentUser } from '../services/index.js';
-//import { onNavigate } from '../../utils/history.js';
+import { onNavigate } from '../../utils/history.js';
 
 export const createMenu = () => {
   //const user = getCurrentUser();
