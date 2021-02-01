@@ -1,16 +1,21 @@
-.container-films {
+#catalogue {
+    display: flex;
+}
+.films-container {
     display: flex;
 }
 .movie-box{
-    width: 40%;
-    margin: 10px;
+    width: 100%;
     border: 1px solid darkgray;
-    padding: 15px;
+    padding: 10px;
+    margin: 10px;
 }
+
 .movie-box img {
     width: 300px;
     height: 385px;
 }
-.details {
-    display: none;
+
+.title {
+    text-align: center;
 }
