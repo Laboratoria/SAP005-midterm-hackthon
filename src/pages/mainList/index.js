@@ -21,7 +21,7 @@ export const allMovies = async () => {
       </div>
     </div>`
    
-  });    
+  });   
 
   let toWatch = document.querySelectorAll("#toWatch")
   toWatch.forEach((button) => {
