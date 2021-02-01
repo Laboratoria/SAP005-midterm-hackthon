@@ -4,20 +4,20 @@ import { onNavigate } from '../../utils/history.js';
 export const Login = () => {
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
-  <div class="container-login">
-    <div class="box-login">
-        <img src="images/Cinelist.png">
+  <div class='container-login'>
+    <div class='box-login'>
+        <img src='images/Cinelist.png'>
       <form>          
         <input type='email' class='input-login' id='e-mail' placeholder ='E-mail'/>
         <input type='password' class='input-login' id='my-password' placeholder='Senha'/>    
-        <button type='submit' class='buttonPage' id='button-login'>Entrar</button>
+        <button type='submit' class='button' id='button-login'>Entrar</button>
         <p>ou</p>
-        <button class='buttonPage' id='button-google'>Entrar com o Google</button>
-        <p class="infoText marginText">Não tem uma conta? <b><span id="button-create-account" class="colorSpan">Cadastre-se</span></p>
+        <button class='button' id='button-google'>Entrar com o Google</button>
+        <p class='infoText marginText'>Não tem uma conta? <b><span id='button-create-account' class='colorSpan'>Cadastre-se</span></p>
         <script type='module' src='./register/index.js'></script>
       </form>
     </div>
-    </div>
+  </div>
   `;
   rootElement.querySelector('#button-login').addEventListener('click', (e) => {
     const email = rootElement.querySelector('#e-mail').value;

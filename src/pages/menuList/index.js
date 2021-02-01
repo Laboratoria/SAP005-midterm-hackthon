@@ -1,37 +1,39 @@
-let movie = "";
+import { onNavigate } from '../../utils/history.js';
 
-export const allMovies = async () => {
-  let fetchMovies = await fetch(
-    "https://api.themoviedb.org/3/movie/upcoming?api_key=5050539d52522a0616ff555db4437bd6&language=pt-BR"
-  );
-  let list= await fetchMovies.json();
-  let showList = list.results;
-  
-    await showList.forEach(img=> {
-    document.getElementById("root").innerHTML = movie += `
-      <div class = "backgroundPoster">
-        <img class = "poster" src = "https://image.tmdb.org/t/p/original/${img.poster_path}">
-        <div class = "btnAdd">
-          <button>+ASSISTIDO</button>
-          <button id ="toWatch">+ASSISTIR</button>
+export const MenuList = () => {
+  const rootElement = document.createElement('div');
+  rootElement.innerHTML = `
+    <div class='menuListas'> 
+      <div class='lista slider'>
+        <figure>
+          <img src='images/Cinelist.bg.png'>
+        </figure>
+        <div class='position'>
+          <p class='textbanner colorText'>FAÇA LISTAS COMENTADAS DE FILMES QUE JÁ ASSISTIU E SAIBA SEMPRE QUAIS FILMES MAIS TE AGRADAM.</p>
+          <button id='btnWatchList' class='button'>VER FILMES ASSISTIDOS</button>
         </div>
       </div>
-    </div>`
-  });  
+      <div class='lista slider'>
+        <figure>
+          <img src='images/Cinelist.bg.png'>
+        </figure>
+        <div class='position'> 
+          <p class='textbanner colorText'>FAÇA LISTAS COMENTADAS DE FILMES QUE JÁ ASSISTIU E SAIBA SEMPRE QUAIS FILMES MAIS TE AGRADAM.</p>
+          <button id='btnToWatchList' class='button'>VER FILMES PARA ASSISTIR</button>
+        </div>
+      </div>
+    </div> 
+  `;
+  const btnWatchList = rootElement.querySelector('#btnWatchList');
+  const btnToWatchList = rootElement.querySelector('#btnToWatchList');
 
-  let toWatch = document.querySelectorAll("#toWatch")
-  toWatch.forEach((button) => {
-    button.addEventListener("click", async (e) => {
-      e.preventDefault()
-      const containerFeed = e.target.parentNode.parentNode
-      let movies = {
-        listToWatch:[],
-      }
-     
+  btnWatchList.addEventListener('click', () => {
+    onNavigate('/watchList');
   });
 
-  })  
-};
-allMovies();
+  btnToWatchList.addEventListener('click', () => {
+    onNavigate('/toWatchList');
+  });
 
- 
+  return rootElement;
+};
