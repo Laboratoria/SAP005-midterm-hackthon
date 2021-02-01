@@ -1,6 +1,7 @@
 let db = firebase.firestore();
 let movie = "";
-const userId = firebase.auth().currentUser.uid
+// const userId = firebase.auth().currentUser.uid
+
 
 
 export const allMovies = async () => {
@@ -10,10 +11,10 @@ export const allMovies = async () => {
   let list= await fetchMovies.json();
   let showList = list.results;
   
-    await showList.forEach(img=> {
+    await showList.forEach(img => {
     document.getElementById("root").innerHTML = 
       movie += `
-      <div class = "backgroundPoster id ="${img.poster_path}">
+      <div class = "backgroundPoster" id = "${img.poster_path}">
         <img class = "poster"  src = "https://image.tmdb.org/t/p/original/${img.poster_path}">
         <div class = "btnAdd">
           <button>+ASSISTIDO</button>
@@ -29,16 +30,16 @@ export const allMovies = async () => {
     button.addEventListener("click", async (e) => {
       e.preventDefault()   
       const containerFeed = e.target.parentNode.parentNode
-      console.log(containerFeed)
+      console.log(containerFeed.id)
       document.get
       db.collection("movie").add({
         listToWatch:[]
      })
     .then(function(docRef) {
-      db.collection("movie").doc(docRef.id).set({
-        ID: docRef.id,
-    }, { merge: true })
-    })              
+      db.collection("movie").doc(docRef.id).update({
+        likeToWatch: firebase.firestore.FieldValue.arrayUnion(containerFeed.id)
+    })
+    })     
     })        
 
   })  
