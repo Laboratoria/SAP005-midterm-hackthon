@@ -27,7 +27,7 @@ export const Register = () => {
       .then((userUpdate) => {
         saveUser(userUpdate.user, email);
         alert('Conta criada com sucesso');
-        onNavigate('/mainList');
+        onNavigate('/allmovies');
       })
       .catch(() => {
         alert('Falha ao realizar o cadastro');

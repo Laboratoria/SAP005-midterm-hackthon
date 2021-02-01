@@ -27,7 +27,7 @@ export const Login = () => {
       .then(() => {
         const user = firebase.auth().currentUser;
         checkLogin(user);
-        onNavigate('/mainList');
+        onNavigate('/allMovies');
         alert('Login realizado com sucesso');
       })
       .catch(() => {
@@ -42,7 +42,7 @@ export const Login = () => {
       .then(() => {
         const user = firebase.auth().currentUser;
         checkLogin(user);
-        onNavigate('/mainList');
+        onNavigate('/allMovies');
         alert('Login realizado com sucesso');
       })
       .catch(() => {
