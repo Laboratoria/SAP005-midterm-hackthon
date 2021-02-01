@@ -1,28 +1,27 @@
-//import { logOut, getCurrentUser } from '../services/index.js';
+//import { logOut } from '../services/index.js';
 import { onNavigate } from '../../utils/history.js';
 
 export const createMenu = () => {
-  //const user = getCurrentUser();
   const footerContainer = document.createElement('footer');
   footerContainer.innerHTML = `
     <nav class="menu">
-        <button id="home" class="button-icon-feed">
+        <button id="home" class="button-menu">
             <span class="material-icons">home</span>
         </button>
 
-        <button id="favorites" class="button-icon-feed">
+        <button id="favorites" class="button-menu">
             <span class="material-icons">favorite</span>
         </button>
 
-        <button id="watchlist" class="button-icon-feed">
+        <button id="watchlist" class="button-menu">
             <span class="material-icons">bookmark</span>
         </button>
         
-        <button id="discarded" class="button-icon-feed">
+        <button id="discarded" class="button-menu">
             <span class="material-icons">delete</span>
         </button>
 
-        <button id="logout" class="button-icon-feed">
+        <button id="logout" class="button-menu">
             <span class="material-icons">logout</span>
         </button>
     </nav>
@@ -59,7 +58,7 @@ const sendWatchList = () => {
 };
 
 const sendDiscarded = () => {
-  onNavigate('/discardedlist');
+  onNavigate('/watchlist');
 };
 
 const sendLogOut = () => {
