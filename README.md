@@ -2,20 +2,20 @@
 
 ## Índice
 
-* [Prefácio](#prefácio)
-* [Resumo do projeto](#resumo-do-projeto)
-* [Considerações gerais](#considerações-gerais)
-* [Objetivos de aprendizagem](#objetivos-de-aprendizagem)
-* [Exemplo de projetos](#examplo-de-projetos)
-* [APIs](#apis)
-* [Entrega](#entrega)
-* [Dicas](#dicas)
+- [Prefácio](#prefácio)
+- [Resumo do projeto](#resumo-do-projeto)
+- [Considerações gerais](#considerações-gerais)
+- [Objetivos de aprendizagem](#objetivos-de-aprendizagem)
+- [Exemplo de projetos](#examplo-de-projetos)
+- [APIs](#apis)
+- [Entrega](#entrega)
+- [Dicas](#dicas)
 
 ---
 
 ## Prefácio
 
-Com o surgimento de plataformas entreterimento por streaming como Netflix, 
+Com o surgimento de plataformas entreterimento por streaming como Netflix,
 Amazon Prime Video e Disney +, assistir filmes de onde estiver, comendo o que quiser
 (sem ter que pagar o preço exorbitante da pipoca), parando o filme se for preciso, tendo acesso a
 uma quantidade gigante de files, etc. Mudou a experiêcia de usuário e modificou o mercado de filmes
@@ -26,7 +26,7 @@ a um nível global.
 ## Resumo do projeto
 
 Esse projeto terá um forma de Hackathon, no qual vocês terão que criar
-um produto sobre entreterimento utilizando APIs. Esse produto será criado 
+um produto sobre entreterimento utilizando APIs. Esse produto será criado
 pelo squad durante os dias de Design Sprint e o desenvolvimento do dele
 deve ser feito duranto os dois dias de Hackathon.
 
@@ -38,7 +38,7 @@ deve ser feito duranto os dois dias de Hackathon.
 
 ## Objetivos de aprendizagem
 
-- Enfrentar um desafio de curta duração que coloque em prático tudo 
+- Enfrentar um desafio de curta duração que coloque em prático tudo
   o foi aprendido até agora
 - Continuar desenvolvendo as suas habilidades de trabalho em equipe. Quanto
   mais pessoas em uma equipe de trabalho, mais complexidade para: chegar
@@ -62,9 +62,8 @@ deve ser feito duranto os dois dias de Hackathon.
 - [Mercado Livre](https://developers.mercadolivre.com.br/pt_br/api-docs-pt-br)
 
 Essas APIs são apenas exemplos, você pode utilizar qualquer outra que fizer sentido
-para o projeto. 
+para o projeto.
 [Aqui (lista 1)](https://apilist.fun/) e [aqui (lista 2)](https://github.com/public-apis/public-apis) você irá encontrar várias APIs públicas.
-
 
 ## Entrega
 
@@ -77,4 +76,3 @@ para o projeto.
 - Priorizem as tarefas por feature e se organizem, pensem no MVP
 - Testem os deploys com antecedência
 - Implementem coisas pequenas
-

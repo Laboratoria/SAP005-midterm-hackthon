@@ -31,43 +31,43 @@ window.addEventListener('load', () => {
     .getElementById('mainPage')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/')
+      onNavigate('/');
     });
   document
     .getElementById('login')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/login')
+      onNavigate('/login');
     });
   document
     .getElementById('register')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/register')
+      onNavigate('/register');
     });
   document
     .getElementById('mainList')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/mainList')
+      onNavigate('/mainList');
     });
   document
     .getElementById('menuList')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/menuList')
+      onNavigate('/menuList');
     });
   document
     .getElementById('watchList')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/watchList')
+      onNavigate('/watchList');
     });
   document
     .getElementById('toWatchList')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/toWatchList')
+      onNavigate('/toWatchList');
     });
   routeRender();
 });
