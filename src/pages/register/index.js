@@ -4,9 +4,9 @@ import { onNavigate } from '../../utils/history.js';
 export const Register = () => {
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
-  <div class="container-login">
-    <div class="box-login">
-     <img src="images/Cinelist.png" class="login-icon">
+  <div class='container-login'>
+    <div class='box-login'>
+     <img src='images/Cinelist.png' class='login-icon'>
       <form class='login'>
         <input type='email' class='input-login' id ='email' placeholder ='E-mail'/>
         <p class='infoText'>Senha de no mínimo 6 caracteres</p>

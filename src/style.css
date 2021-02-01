@@ -20,8 +20,7 @@ body {
   object-fit: cover;
 }
 
-.buttonPage {
-  width: 80vw;
+.button{
   background-color: rgb(26, 25, 25);
   color: white;
   border-radius: 5px;
@@ -30,7 +29,11 @@ body {
   font-size: 1rem;
   font-family: Krona One;
   text-transform: uppercase;
+  width: 80vw;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color:#000000;
 }
+
 .banner {
   width: 100vw;
   position: absolute;
@@ -118,3 +121,22 @@ li {
 li:hover {
   background-color: #222324;
 }
+
+.lista {
+  text-align: center;
+  margin: 2vh;
+  border: 2px rgba(0, 0, 0, 0.8) solid;
+  border-radius: 5px;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color:#000000;
+}
+
+.lista figure img {
+  height: 50vh;
+}
+
+.position{
+  position: absolute;
+  padding: 10vh 1vh;
+}
+
