@@ -10,9 +10,9 @@ export const Login = () => {
       <form>          
         <input type='email' class='input-login' id='e-mail' placeholder ='E-mail'/>
         <input type='password' class='input-login' id='my-password' placeholder='Senha'/>    
-        <button type='submit' class='buttonPage' id='button-login'>Entrar</button>
+        <button type='submit' class='button' id='button-login'>Entrar</button>
         <p>ou</p>
-        <button class='buttonPage' id='button-google'>Entrar com o Google</button>
+        <button class='button' id='button-google'>Entrar com o Google</button>
         <p class='infoText marginText'>Não tem uma conta? <b><span id='button-create-account' class='colorSpan'>Cadastre-se</span></p>
         <script type='module' src='./register/index.js'></script>
       </form>
