@@ -20,10 +20,10 @@ firebase.initializeApp(firebaseConfig);
 // const firebase.auth = firebase.firebase.auth()
 
 export const signIn = (email, senha) => {
-  firebase.auth.signInWithEmailAndPassword(email, senha)
+  firebase.auth().signInWithEmailAndPassword(email, senha)
     .then(() => {
       onNavigate('/home');
-      const user = firebase.auth.currentUser;
+      const user = firebase.auth().currentUser;
       alert(`Welcome to Curta Curtas, ${user.displayName}!`);
     })
     .catch((error) => {
@@ -38,7 +38,7 @@ export const loginGoogle = () => {
   firebase.auth().signInWithPopup(provider)
     .then(() => {
       onNavigate('/home');
-      alert(`Welcome to Curta Curtas, ${firebase.auth.currentUser.displayName}!`);
+      alert(`Welcome to Curta Curtas, ${firebase.auth().currentUser.displayName}!`);
       const user = firebase.auth.currentUser;
       const uid = user.uid;
       firebase.firestore().doc(`/users/${uid}`).set({
@@ -51,3 +51,20 @@ export const loginGoogle = () => {
       alert(`${errorMessage}`);
     });
 };
+export const logOut = () => firebase.auth().signOut();
+
+export const creatingAccountWithEmail = (username, email, password) => {
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((user) => {
+      console.log('Sucesso', user);
+      firebase.auth().currentUser.updateProfile({ displayName: username })
+        .then(() => {
+          onNavigate('/home');
+        });
+    })
+    .catch((error) => {
+      // const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+  };

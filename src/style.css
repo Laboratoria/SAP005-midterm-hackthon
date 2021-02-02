@@ -4,6 +4,11 @@
     padding: 0;
     font-family: 'Roboto', sans-serif, normal, normal;
 } 
+.lista-que-vamos-apagar {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
 #catalogue {
     display: flex;
 }
@@ -17,14 +22,16 @@
     margin: 10px;
 }
 .movie-box img {
-  width: 300px;
-  height: 385px;
+  width: 270px;
+  height: 355px;
 }
 .details {
-    display: none;
+    width: 40%;
+    padding: 40px 10px 0 0;
 }
 .title {
     text-align: center;
+    padding: 3px;
 }
 
 #info {
@@ -71,6 +78,76 @@ button {
     border: none;
 }
 
+#filters-area {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 0 20px 0;
+}
+
+#imdb-btn, #runtime-btn, #news-btn {
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    padding: 10px;
+}
+/** FOOTER ABOUT US **/
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+footer{
+    background-color: #64312F;
+    width: 100%;
+}
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 30px;
+}
+.left-footer-side{
+    flex: 1;
+    margin-right: 30px;
+    max-width: 600px;
+}
+.right-footer-side{
+    display: flex;
+    flex-wrap: wrap;
+    width: 345px;
+}
+.right-footer-side img {
+    display: block; 
+    margin: auto;
+}
+.devas-list{
+    line-height: 21px;
+}
+.devas{
+    color: #D9D2B0;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: lighter;
+    padding: 0px 8px;
+}
+.devas:hover {
+    text-decoration: line-through;
+}
+.title-footer{
+    color: #D9D2B0;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: bolder;
+    margin-bottom: 8px;
+}
+.text-footer{
+    color: #D9D2B0;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: lighter;
+}       
 
 /*HEADER*/
 
@@ -110,22 +187,12 @@ button {
     margin-right: 8rem;
   }
   
-  .btn-login {
+  .btn-login, .btn-register {
     margin-right: 1rem;
     margin-top: 1.8rem;
     height: 4vh;
     width: 8vw;
-    border-radius: 6px;
-    border-color: #BF2604;
-    color: #BF2604;
-    background-color: #D9D2B0;
-  }
-  
-  .btn-register {
-    margin-right: 1rem;
-    margin-top: 1.8rem;
-    height: 4vh;
-    width: 8vw;
+    border: 2px solid #BF2604;
     border-radius: 6px;
     border-color: #BF2604;
     color: #BF2604;
@@ -161,9 +228,17 @@ button {
     display: none;
   }
 
+
 @media (max-width: 375px) {
     .menu{
         padding: 0% 5%;
+    }
+    .right-footer-side img {
+        display: none;
+    }
+    .title-wrapper{
+        width: 100%;
+        margin-top: 30px;
     }
 }
 
