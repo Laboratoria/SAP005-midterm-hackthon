@@ -2,6 +2,7 @@
 import { films } from './mock.js';
 import { createMenu } from '../../components/menu/index.js';
 import { header } from '../../components/header/index.js';
+import { createMenuFilter} from '../../components/filter/index.js'
 
 const getFilms = (i) => {
   fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
@@ -55,6 +56,10 @@ export const Home = () => {
 
   const getHeaderSection = rootElement.querySelector('#header');
   getHeaderSection.appendChild(header());
+
+  const getMenuFilterSection = rootElement.querySelector('#filters-area');
+  getMenuFilterSection.appendChild(createMenuFilter());
+
   return rootElement;
 };
 
