@@ -186,5 +186,5 @@ const sortByHighestScoreImdb = async () => {
     return 0;
   })
 }
-sortByHighestScoreImdb(); 
+sortByHighestScoreImdb();
 
