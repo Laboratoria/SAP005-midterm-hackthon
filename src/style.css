@@ -1,31 +1,30 @@
-body{
+body {
   height: 100%;
   width: 100%;
   background-color: rgb(3, 3, 51);
 }
 
-
-header{
+header {
   display: flex;
   justify-content: center;
 }
 
-#logo{
+#logo {
   height: 40%;
   width: 40%;
-  
 }
 
-#generos{
+#generos {
   height: 5vh;
   width: 17vw;
-  border-radius:10px;
+  border-radius: 10px;
   margin-left: 3%;
 }
 
-p{
+p {
   color: aliceblue;
 }
+
 #footer {
   text-align: center;
   font-weight: 600;
@@ -37,4 +36,16 @@ p{
   font-weight: bold;
   transition: 0.3s ease-in-out;
   text-align: center;
+}
+
+#root {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+#root img {
+  width: 30%;
+  height: 40%;
+  padding: 3%;
 }
