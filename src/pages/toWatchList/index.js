@@ -1,4 +1,5 @@
 import { Navigation } from '../../components/navigation.js';
+import { movieDeletToWatch } from '../../components/movieDeletToWatch.js';
 
 export const ToWatchList = () => {
   const auth = firebase.auth().currentUser;
@@ -16,16 +17,13 @@ export const ToWatchList = () => {
 
     docRef.get().then((doc) => {
       if (doc.exists) {
-
-        const listwatched = doc.data().listwatched;
         const listToWatch = doc.data().listToWatch;
 
-        let movie = ''
-  
+        let movie = '';
+
         listToWatch.forEach((listToWatch) => {
-          boxElement.classList.add('bgList')
-          boxElement.innerHTML =
-            movie += `
+          boxElement.classList.add('bgList');
+          boxElement.innerHTML = movie += `
           <div class = "backgroundPoster" id = "${listToWatch}">
             <img class = "poster"  src = "https://image.tmdb.org/t/p/original/${listToWatch}">
             <div class = "btnAdd">
@@ -34,17 +32,43 @@ export const ToWatchList = () => {
             </div>
           </div>
         </div>`;
+
+          const watched = document.querySelectorAll('#watched');
+          watched.forEach((button) => {
+            button.addEventListener('click', async (e) => {
+              e.preventDefault();
+              const db = firebase.firestore();
+              const userId = firebase.auth().currentUser.uid;
+              const containerFeed = e.target.parentNode.parentNode;
+              db.collection('users').doc(userId).update({
+                listToWatch: firebase.firestore.FieldValue.arrayRemove(containerFeed.id),
+                listwatched: firebase.firestore.FieldValue.arrayUnion(containerFeed.id),
+              });
+              button.classList.add('none');
+              containerFeed.classList.add('none');
+            });
+          });
+
+          const buttonDelet = boxElement.querySelectorAll('#delet');
+          buttonDelet.forEach((button) => {
+            button.addEventListener('click', (e) => {
+              const box = e.target.parentNode.parentNode;
+              const idMove = box.id;
+              const towatch = doc.data().listToWatch;
+              movieDeletToWatch(idMove, towatch);
+              button.classList.add('none');
+              box.classList.add('none');
+            });
+          });
         });
-      } else {
-        console.log('No such document!');
       }
     }).catch((error) => {
-      console.log('Error getting document:', error);
+      alert('Error getting document:', error);
     });
 
-    return boxElement
-  }
-  rootElement.appendChild(contentElement())
+    return boxElement;
+  };
+  rootElement.appendChild(contentElement());
 
   return rootElement;
 };

@@ -1,6 +1,5 @@
-/* eslint-disable no-param-reassign */
 import { Navigation } from '../../components/navigation.js';
-import { SaveComment } from '../../services/index.js';
+import { saveMovieToWatch, saveMovieWatched } from '../../services/index.js';
 
 export const MainList = () => {
   const nav = Navigation();
@@ -12,7 +11,6 @@ export const MainList = () => {
     const boxElement = document.createElement('div');
     boxElement.classList.add('bgList');
 
-    const db = firebase.firestore();
     let movie = '';
 
     const allMovies = async () => {
@@ -30,8 +28,6 @@ export const MainList = () => {
             <button id ="watched">+ASSISTIDO</button>
             <button id ="toWatch">+ASSISTIR</button>
           </div>
-          <div id='modal' class="open-comments">
-          </div>
         </div>`;
       });
 
@@ -39,52 +35,23 @@ export const MainList = () => {
       toWatch.forEach((button) => {
         button.addEventListener('click', async (e) => {
           e.preventDefault();
-          const userId = firebase.auth().currentUser.uid;
-          const containerFeed = e.target.parentNode.parentNode;
-          db.collection('users').doc(userId).update({
-            listToWatch: firebase.firestore.FieldValue.arrayUnion(containerFeed.id),
-          });
+          const btnWatched = e.target.parentNode.parentNode.querySelector('#watched');
+          const containerFeed = String(e.target.parentNode.parentNode.id);
+          saveMovieToWatch(containerFeed);
+          button.classList.add('none');
+          btnWatched.classList.add('none');
         });
       });
 
-      const modal = document.querySelector('#modal');
       const watched = document.querySelectorAll('#watched');
       watched.forEach((button) => {
         button.addEventListener('click', async (e) => {
           e.preventDefault();
-          modal.classList.remove('none');
-          const WriteComment = () => {
-            const modalTemplate = `
-            <button class="" id="btnClose">&#10006;</button>
-            <button class="" id="btnConfirm">Enviar</button>
-            <textarea type="text" id="commentText" placeholder="Escreva um comentario sobre "></textarea>
-            `;
-            modal.innerHTML = modalTemplate;
-
-            const btnConfirm = modal.querySelector('#btnConfirm');
-            const comment = modal.querySelector('#commentText');
-            const btnClose = modal.querySelector('#btnClose');
-
-            btnClose.addEventListener('click', () => {
-              modal.classList.add('none');
-            });
-
-            btnConfirm.addEventListener('click', () => {
-              SaveComment(comment.value)
-                .then(() => {
-                  comment.value = '';
-                  modal.classList.add('none');
-                  const userId = firebase.auth().currentUser.uid;
-                  const containerFeed = e.target.parentNode.parentNode;
-                  db.collection('users').doc(userId).update({
-                    listwatched: firebase.firestore.FieldValue.arrayUnion(containerFeed.id),
-                  });
-                  button.classList.add('none');
-                });
-            });
-            return modal;
-          };
-          WriteComment();
+          const btnToWatch = e.target.parentNode.parentNode.querySelector('#toWatch');
+          const containerFeed = String(e.target.parentNode.parentNode.id);
+          saveMovieWatched(containerFeed);
+          button.classList.add('none');
+          btnToWatch.classList.add('none');
         });
       });
     };

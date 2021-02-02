@@ -18,7 +18,6 @@ export const Navigation = () => {
     `;
   const lista = navigation.querySelector('#lista');
   const menuLista = navigation.querySelector('#menulista');
-  const btnCineList = navigation.querySelector('#btnCineList');
 
   lista.addEventListener('click', () => {
     onNavigate('/mainList');
@@ -26,10 +25,6 @@ export const Navigation = () => {
 
   menuLista.addEventListener('click', () => {
     onNavigate('/menuList');
-  });
-
-  btnCineList.addEventListener('click', () => {
-    onNavigate('/mainList');
   });
 
   const logoutButton = navigation.querySelector('#sign-out');
