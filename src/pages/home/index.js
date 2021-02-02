@@ -8,7 +8,6 @@ const getFilms = (i) => {
   fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
     .then((response) => response.json())
     .then((json) => {
-      // console.log(json);
       const getCatalogueSection = document.querySelector('#catalogue');
       getCatalogueSection.appendChild(printFilms(json));
 
@@ -41,7 +40,6 @@ export const Home = () => {
   </section>
 `;
 
-
   const getAllFilms = () => {
     // eslint-disable-next-line no-restricted-syntax
     for (const i of films) {
@@ -52,7 +50,6 @@ export const Home = () => {
 
   const getMenuSection = rootElement.querySelector('#menu');
   getMenuSection.appendChild(createMenu());
-
 
   const getHeaderSection = rootElement.querySelector('#header');
   getHeaderSection.appendChild(header());
@@ -72,34 +69,28 @@ const printFilms = (json) => {
         <img class="image" src="${json.Poster}">
         <button id="info-${json.imdbID}" class="info">info</button>
     </section>
-    <section id="info-details${json.imdbID}"></section>`;
 
-  const allInfo = document.querySelectorAll('.info');
-  allInfo.forEach((button) => {
-    button.addEventListener('click', (e) => {
-      getMoviesInfos(e);
-    });
-  });
-  return filmsContainer;
-};
+    <section id="info-details${json.imdbID}" class="showing">
 
-function getMoviesInfos(e) {
-  const idFilm = e.target.parentNode.parentNode.parentNode
+    <section class"buttons-details">
+    <button class="like" id="like-${json.imdbID}">
+      <span class="material-icons">thumb_up_alt</span>
+    </button>
 
-  fetch(`http://www.omdbapi.com/?i=${idFilm.dataset.id}&apikey=ce12da02`)
-    .then((response) => response.json())
-    .then((json) => {
-      const movieContainer = document.querySelector('#info');
-      movieContainer.appendChild(showFilmsDetails(json));
-    });
-}
+    <button class="dislike" id="dislike-${json.imdbID}">
+      <span class="material-icons">thumb_down_alt</span>
+    </button>
 
-const createDetailsBox = document.createElement('div');
+    <button class="save" id="save-${json.imdbID}">
+      <span class="material-icons">bookmark</span>
+    </button>
+
+    <button id="close-container-${json.imdbID}">
+      <span class="material-icons">close</span>
+    </button>
+  </section>
 
 
-function showFilmsDetails(json) {
-  createDetailsBox.innerHTML = `
-  <section class="info-container">
     <div class="poster-info"><img src="${json.Poster}"> 
     <p><b>${json.Title}</b> <br><br><br>
     IMDb Rating: ${json.imdbRating} <br><br>
@@ -113,11 +104,56 @@ function showFilmsDetails(json) {
         <p>Runtime: ${json.Runtime}</p> <br>
         <p>Awards: ${json.Awards}</p>
       </div>
+
     </section>
-  `;
-  return createDetailsBox;
+    `;
+
+  const allInfo = filmsContainer.querySelectorAll('.info');
+  allInfo.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      showDetailsContainer(e);
+    });
+  });
+  return filmsContainer;
+};
+
+function showDetailsContainer(e) {
+  const idFilmCard = e.target.parentNode;
+  toggleDetailsContainer(idFilmCard, true);
+
+  const likeButton = document.getElementById(`like-${idFilmCard.dataset.id}`);
+  likeButton.addEventListener('click', () => {
+    console.log("Pegou o click do like")
+  })
+
+  const dislikeButton = document.getElementById(`dislike-${idFilmCard.dataset.id}`);
+  dislikeButton.addEventListener('click', () => {
+    console.log("Pegou o click do dislike")
+  })
+
+  const saveMovieButton = document.getElementById(`save-${idFilmCard.dataset.id}`);
+  saveMovieButton.addEventListener('click', () => {
+    console.log("Pegou o click de salvar")
+  })
+
+  const closeDetailsButton = document.getElementById(`close-container-${idFilmCard.dataset.id}`);
+  closeDetailsButton.addEventListener('click', () => {
+    toggleDetailsContainer(idFilmCard, false);
+  })
 }
 
+function toggleDetailsContainer(card, show) {
+  const cardFilm = card;
+  const holderDetailsContainer = document.querySelector(`#info-details${cardFilm.dataset.id}`)
+  if (show) { 
+    document.querySelector('.showing').classList.remove('display')
+    holderDetailsContainer.classList.add('display');
+  } else {
+    holderDetailsContainer.classList.remove('display');
+  }
+}
+
+/*
 //  FUNÇÃO MAIS RECENTES:
 
 function imdbFilms(i) {
@@ -159,8 +195,6 @@ function shorterFilms(i) {
     });
 }
 
-// FUNÇÃO MAIS RECENTES:
-
 function newFilms(i) {
   fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
     .then((response) => response.json())
@@ -181,3 +215,4 @@ function newFilms(i) {
       }
     });
 }
+*/

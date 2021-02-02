@@ -228,6 +228,13 @@ footer{
     display: none;
   }
 
+.showing {
+    display: none;
+}
+.showing.display {
+    display: block;
+}  
+
 
 @media (max-width: 375px) {
     .menu{
