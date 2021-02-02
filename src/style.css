@@ -73,6 +73,65 @@ button {
     border: none;
 }
 
+/** FOOTER ABOUT US **/
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+footer{
+    background-color: #64312F;
+    width: 100%;
+}
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 30px;
+}
+.left-footer-side{
+    flex: 1;
+    margin-right: 30px;
+    max-width: 600px;
+}
+.right-footer-side{
+    display: flex;
+    flex-wrap: wrap;
+    width: 345px;
+}
+.right-footer-side img {
+    display: block; 
+    margin: auto;
+}
+.devas-list{
+    line-height: 21px;
+}
+.devas{
+    color: #D9D2B0;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: lighter;
+    padding: 0px 8px;
+}
+.devas:hover {
+    text-decoration: line-through;
+}
+.title-footer{
+    color: #D9D2B0;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: bolder;
+    margin-bottom: 8px;
+}
+.text-footer{
+    color: #D9D2B0;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: lighter;
+}       
 
 /*HEADER*/
 
@@ -156,6 +215,13 @@ button {
 @media (max-width: 375px) {
     .menu{
         padding: 0% 5%;
+    }
+    .right-footer-side img {
+        display: none;
+    }
+    .title-wrapper{
+        width: 100%;
+        margin-top: 30px;
     }
 }
 

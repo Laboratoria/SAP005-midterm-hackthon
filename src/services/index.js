@@ -51,3 +51,4 @@ export const loginGoogle = () => {
       alert(`${errorMessage}`);
     });
 };
+export const logOut = () => firebase.auth().signOut();
