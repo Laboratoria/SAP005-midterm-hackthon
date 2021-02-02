@@ -20,7 +20,16 @@ export const Home = () => {
   rootElement.innerHTML = `
   <section class="main-page">
     <section id="header"></section>
-    <section id="catalogue"></section>
+    <section id="catalogue" id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </section>
     <section id="info"></section>
     <section id="menu"></section>
   </section>
@@ -44,9 +53,9 @@ export const Home = () => {
 
 const printFilms = (json) => {
   const filmsContainer = document.createElement('section');
-  filmsContainer.classList.add('films-container')
+  filmsContainer.classList.add('films-container');
   filmsContainer.innerHTML += `
-    <section data-id="${json.imdbID}" class="movie-box">
+    <section class="carousel-inner" data-id="${json.imdbID}" class="movie-box">
       <p class="title">${json.Title}</p>
         <img class="image" src="${json.Poster}">
         <button id="info-${json.imdbID}" class="info">info</button>
