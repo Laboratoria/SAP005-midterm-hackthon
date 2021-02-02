@@ -1,16 +1,19 @@
-# CURTA CURTAS
+<img src = "./src/img/logo.cc.branco.png" height='250' widht='250'>
+
+---
+
 Uma aplicação Web para te ajudar a achar os melhores curtas. Para acessar clique aqui! :clapper: 🎬 
 
 ## Índice
-Desafio
-Introdução
-Processo
-Produto
-Ferramentas
-Créditos
-Autoras
+- [1. Desafio](#1-desafio)
+- [2. Introdução](#2-introdução)
+- [3. Processo](#3.processo)
+- [4. Produto](#4.produto)
+- [5. Ferramentas](#5.ferramentas)
+- [6. Créditos](#6.créditos)
+- [7. Autoras](#7.autoras)
 
-***
+---
 
 ## 1. Desafio
 Esse projeto foi desenvolvido em grupo durante o Midterm Hackathon do bootcamp da Laboratoria que trouxe como proposta desenvolver um produto relacionado à entreterimento, utilizando a metodologia de Design Sprint durante uma semana e implementando-o em dois dias, sendo um requisito obrigatório o consumo de API.
@@ -56,10 +59,9 @@ A paleta de cores foi inspirada no cartaz da primeira exibição de um filme, um
 ![color-palette(./src/img/color-palette.png)
 
 bulb: Logo
-Criamos o logo a partir da imagem de uma câmera de filme antiga, e o nome da nossa aplicação utilizamos a fonte Metropolis 1920 (Picmonkey) para criar uma referência de nostalgia e saudosismo ao início das exibições dos filmes.
+Criamos o logo a partir da imagem de uma câmera de filme antiga, e para o nome da nossa aplicação utilizamos a fonte Metropolis 1920 (Picmonkey) para criar uma referência de nostalgia e de saudosismo ao início das exibições dos filmes.
 
-A proposta é remeter ao usuário a grandiosidade que é o universo cinematográfico, e proporcionar a 
-
+A proposta é remeter ao usuário a grandiosidade que é o universo cinematográfico, e proporcionar a experiencia de oferecer uma vasta lista curtas dos mais diversos gêneros, países, transformando a experiência com este tipo de mídia.
 
 bulb: Funcionalidades
 Com o redirecionamento do problema e da solução do produto, as funcionalidades implementadas no MPV foram:
@@ -83,7 +85,7 @@ bulb: Futuras implementações
 :pushpin: Permitir que o usuário deixe comentários sobre os curtas.
 :pushpin: Permitir que o usuário adicione amigos.
 
-## 5. FERRAMENTAS
+## 5. Ferramentas
 :wrench: Desenvolvimento Front-End 
 * JavaScript(ES6+)
 * HTML5
@@ -98,15 +100,27 @@ bulb: Futuras implementações
 * Marvel
 * Figma
 
-## 6. CRÉDITOS
+## 6. Créditos
 * [Laboratoria](https://www.laboratoria.la/) :yellow_heart:
 * [Open Movies Database API](http://www.omdbapi.com/)
 
-## 7. DESENVOLVEDORAS
-:princess: [Beatriz Penalva](https://github.com/beatrizpenalva)
-:princess: [Cris Mantovani](https://github.com/crismantovani)
-:princess: [Giovana Madeira](https://github.com/giomadeira)
-:princess: [Jessica Cavalcante](https://github.com/JessicaCavalcante)
-:princess: [Juliane Cristina](https://github.com/Juliane-C)
-:princess: [Nicaely Joane](https://github.com/Nijoane)
-:princess: [Talita Silva](https://github.com/Talita-8)
+## 7. Desenvolvedoras
+:princess: [Beatriz Penalva](https://github.com/beatrizpenalva);
+
+&nbsp;
+:princess: [Cris Mantovani](https://github.com/crismantovani);
+
+&nbsp;
+:princess: [Giovana Madeira](https://github.com/giomadeira);
+
+&nbsp;
+:princess: [Jessica Cavalcante](https://github.com/JessicaCavalcante);
+
+&nbsp;
+:princess: [Juliane Cristina](https://github.com/Juliane-C);
+
+&nbsp;
+:princess: [Nicaely Joane](https://github.com/Nijoane);
+
+&nbsp;
+:princess: [Talita Silva](https://github.com/Talita-8).
