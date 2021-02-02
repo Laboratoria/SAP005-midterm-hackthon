@@ -7,14 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="description" content="******Escrever algo sobre nossa aplicaçao">
   <link rel="stylesheet" href="style.css" />
-  <link rel="shortcut icon" href="imagens/favicon.ico" />
+  <link rel="shortcut icon" href="img/favicon.ico" />
 
   <title>SortCine</title>
 </head>
 
 <body>
   <header>
-    <img id="logo" src="imagens/logo.png">
+    <img id="logo" src="img/logo.png">
   </header>
 
   <main>
@@ -24,12 +24,95 @@
     </select>
   </main>
 
+
+  <div class="peliculas-recomendadas contenedor">
+    <div class="contenedor-titulo-controles">
+      <h3>Gênero de Filmes</h3>
+      <div class="indicadores"></div>
+    </div>
+
+    <div class="contenedor-principal">
+      <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
+
+      <div class="contenedor-carousel">
+        <div class="carousel">
+          <div class="pelicula">
+            <a href="#"><img src="img/1.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/2.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/3.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/4.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/5.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/6.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/7.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/1.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/2.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/3.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/1.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/2.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/3.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/4.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/5.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/6.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/7.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/1.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/2.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/3.png" alt=""></a>
+          </div>
+          <div class="pelicula">
+            <a href="#"><img src="img/4.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+
+      <button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
+    </div>
+  </div>
   <div id="root"></div>
 
   <footer id="footer">
     <p>Projeto feito na <a target="_blank" href="https://www.laboratoria.la/br">Laboratoria</a>
   </footer>
+  <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
   <script src="index.js" type="module"></script>
+  <script src="carrossel.js" type="module"></script>
 </body>
 
 </html>
