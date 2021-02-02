@@ -1,17 +1,20 @@
+import carrossel from "./carrossel.js";
 import movieGenres from "./genres.js"
 
 let imgBaseUrl = "https://image.tmdb.org/t/p/w200";
 let imgSrc = "";
 let posters = "";
+let btn_sorteio = document.querySelector("#btnSorteio");
 
-const getPoster = (array) => {
-  return fetch(array)
+
+const getPoster = (url) => {
+  return fetch(url)
     .then(response => response.json())
     .then(json => json.results)
 }
 
-function showMovieInfo(array) {
-  getPoster(array).then(moviesList => {
+function showMovieInfo(url) {
+  getPoster(url).then(moviesList => {
     console.log(moviesList);
     for (let movie of moviesList) {
       console.log(movie.poster_path);
@@ -106,3 +109,5 @@ filterMystery.addEventListener("click", () => {
   showMovieInfo(movieGenres.mysteryNfx);
   showMovieInfo(movieGenres.mysteryAmz);
 })
+
+btn_sorteio.addEventListener('click', carrossel.sorteio)

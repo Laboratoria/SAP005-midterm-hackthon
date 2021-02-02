@@ -1,6 +1,5 @@
 const fila = document.querySelector('.contenedor-carousel');
 const peliculas = document.querySelectorAll('.pelicula');
-
 const flechaIzquierda = document.getElementById('flecha-izquierda');
 const flechaDerecha = document.getElementById('flecha-derecha');
 
@@ -58,3 +57,15 @@ peliculas.forEach((pelicula) => {
 fila.addEventListener('mouseleave', () => {
 	peliculas.forEach(pelicula => pelicula.classList.remove('hover'));
 });
+
+const carrossel = {
+	
+	/*Sorteio*/
+	sorteio: function () {
+	return document.getElementById("resultado").innerHTML
+		= Math.floor(Math.random() * (25 - 1 + 1)) + 1;
+   }
+};
+
+  
+  export default carrossel;
