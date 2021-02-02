@@ -14,7 +14,7 @@ export const createMenuFilter = () => {
           <option class="select-genre" value="animation">Animation</option>
           <option class="select-genre" value="documentary">Documentary</option>
         </select>
-        </select>
+        
       </div>
       <div class="country-list">
       <select class="select-country" id="country">
@@ -49,23 +49,24 @@ export const createMenuFilter = () => {
 
       <div class="score">
         <input type="range" min= "0" max= "10" step="0.1" id="imdbRating">
-        <label for = "imdb"> Imdb Score </label>
+        <label for="imdb"> Imdb Score </label>
         <p id="value-area"></p>
-
+      </div>
 
       
       <div class="year-movie">
-        <input type="range" min= "1900" max="2021" id="Year">
-        <label for = "year"> Year: <span class="filter-subtitle"> 1900 - 2021 </span></label>
+        <input type="range" min="1900" max="2021"  step="1" id="Year">
+        <label for="year"> Year: <span class="filter-subtitle"> 1900 - 2021 </span></label>
+        <p id="year-area"></p>
       </div>
           
       <div class="time">
         <input type="range" min= "0" max="40 min" id="Runtime">
-        <label for= "runtime"> Runtime: <span class="filter-subtitle">0 - 40 minutes </span> </label>
+        <label for="runtime"> Runtime: <span class="filter-subtitle">0 - 40 minutes </span> </label>
       </div>
       
-      <button class="clear" type="button" id ="btn-clear" value="Clear">Clear</button>
-      <button class="filter-btn" type="button" id ="btn-filter" value="Filter">Filter</button>
+      <button class="clear" type="button" id="btn-clear" value="Clear">Clear</button>
+      <button class="filter-btn" type="button" id="btn-filter" value="Filter">Filter</button>
      `;
 
     return filterContent;
