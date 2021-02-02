@@ -10,28 +10,53 @@
     justify-content: space-between;
 }
 #catalogue {
-    display: flex;
+  margin-top: 20%;
+  display: flex;
+  background-color: #D9D2B0;
 }
+
+/* CAROUSEL */
 .films-container {
+    margin-top: 0;
+    padding-bottom: 10%;
+    max-width: 100%;
+    height: 50%;
+    
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.movie-box{
-    width: 100%;
-    border: 1px solid darkgray;
-    padding: 10px;
-    margin: 10px;
+.carousel-inner{
+  width: 100%;
+  padding: 15px;
+  margin: 20px;
+  background-color: #EFEBD5;
 }
-.movie-box img {
-  width: 270px;
-  height: 355px;
+.title{
+  text-align: center;
+  font-size: 20px;
+  color: #64312F;
 }
-.details {
-    width: 40%;
-    padding: 40px 10px 0 0;
+.image{
+  width: 200px;
+  height: 300px;
+  padding-bottom: 10px;
+  border-radius: 10px;
 }
-.title {
-    text-align: center;
-    padding: 3px;
+.info{
+  width: 49px;
+  height: 49px;
+  margin-left: 35%;
+  border-radius: 30px;
+  border: #64312F solid 2px;
+
+  display: flex;
+  align-items: center;
+}
+
+.info span{
+  color: #64312F;
+  font-size: 46px;
 }
 
 #info {
@@ -55,7 +80,6 @@
     width: 40%;
     padding: 30px;
 }
-
 
 /** FOOTER MENU **/
 .menu{
@@ -152,9 +176,10 @@ footer{
 /*HEADER*/
 
 .header-container {
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
+    height: 40%;
     padding: 0.5rem 2rem;
     background-color: #D9D2B0;
     box-shadow: 0 2px 15px 4px rgba(0, 0, 0, 0.15);
@@ -167,7 +192,7 @@ footer{
   }
   
   .logo-header {
-    height: 5rem;
+    height: 6rem;
     width: auto;
     margin-right: 2rem;
   }
@@ -176,15 +201,17 @@ footer{
     outline: 0;
     border-width: 0 0 2px;
     border-color: black;
-    width: 40vw;
-    height: 8vh;
+    width: 40%;
+    height: 10%;
+    padding: 8px;
+    margin-top: 42px;
     background-color: #D9D2B0;
-    text-align: center;
+    font-size: 16px;
   }
   
   .icon-search {
-    margin-top: 2rem;
-    margin-right: 8rem;
+    margin-top: 46px;
+    margin-left: -20px;
   }
   
   .btn-login, .btn-register {
@@ -212,14 +239,17 @@ footer{
   }
   
   .header-user {
-    margin-right: 0.5rem;
-    margin-top: 2rem;
+    margin-left: 100px;
+    margin-top: 54px;
+
+    font-size: 20px;
+    font-weight: 400;
     color: #BF2604;
   }
   
   .icon-heart {
-    margin-top: 1.6rem;
-    margin-right: 1rem;
+    margin-left: 5px;
+    margin-top: 54px;
     border-color: #BF2604;
     color: #BF2604;
   }
@@ -241,4 +271,3 @@ footer{
         margin-top: 30px;
     }
 }
-
