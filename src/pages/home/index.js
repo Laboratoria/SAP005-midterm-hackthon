@@ -30,9 +30,12 @@ export const Home = () => {
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" databs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
+      </a>
+    </section>
+  </section>
 `;
 
   const getAllFilms = () => {
@@ -59,10 +62,12 @@ const printFilms = (json) => {
   const filmsContainer = document.createElement('section');
   filmsContainer.classList.add('films-container');
   filmsContainer.innerHTML += `
-    <section class="carousel-inner" data-id="${json.imdbID}" class="movie-box">
+    <section class="carousel-inner" data-id="${json.imdbID}">
       <p class="title">${json.Title}</p>
-        <img class="image" src="${json.Poster}">
-        <button id="info-${json.imdbID}" class="info">info</button>
+      <img class="image" class="d-block w-100" src="${json.Poster}">
+      <button id="info-${json.imdbID}" class="info">
+        <span #info-icon class="material-icons">info</span>
+      </button>
     </section>
 
     <section id="info-details${json.imdbID}" class="showing">
@@ -85,7 +90,9 @@ const printFilms = (json) => {
     </button>
   </section>
 
-
+function showFilmsDetails(json) {
+  createDetailsBox.innerHTML = `
+  <section class="info-container">
     <div class="poster-info"><img src="${json.Poster}"> 
     <p><b>${json.Title}</b> <br><br><br>
     IMDb Rating: ${json.imdbRating} <br><br>
@@ -103,10 +110,24 @@ const printFilms = (json) => {
     </section>
     `;
 
+function imdbFilms(i) {
+  fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
+    .then((response) => response.json())
+    .then((json) => {
+      if (json.imdbRating > 7.5) {
+        document.querySelector('.films-container').innerHTML += ` 
+          <section data-id="${json.imdbID}" class="movie-box">
+            <p class="title">${json.Title}</p>
+            <img class="image" src="${json.Poster}">
+            <button id="info-${json.imdbID}" class="info">info</button>
+          </section>
+        <section id="info-details${json.imdbID}"></section>`;
+      }
   const allInfo = filmsContainer.querySelectorAll('.info');
   allInfo.forEach((button) => {
     button.addEventListener('click', (e) => {
       showDetailsContainer(e);
+
     });
   });
   return filmsContainer;
