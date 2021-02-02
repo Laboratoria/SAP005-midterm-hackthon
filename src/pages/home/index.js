@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { films } from './mock.js';
 import { createMenu } from '../../components/menu/index.js';
+import { header } from '../../components/header/index.js';
 
 
 const getFilms = (i) => {
@@ -36,6 +37,10 @@ getAllFilms();
 const getMenuSection = rootElement.querySelector('#menu');
 
   getMenuSection.appendChild(createMenu());
+
+const getHeaderSection = rootElement.querySelector('#header');
+
+  getHeaderSection.appendChild(header());
 
   return rootElement;
 };

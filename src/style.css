@@ -71,6 +71,96 @@ button {
     border: none;
 }
 
+
+/*HEADER*/
+
+.header-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    background-color: #D9D2B0;
+    box-shadow: 0 2px 15px 4px rgba(0, 0, 0, 0.15);
+  }
+  
+  .header-body {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 90vw;
+  }
+  
+  .logo-header {
+    height: 5rem;
+    width: auto;
+    margin-right: 2rem;
+  }
+  
+  .search-title-director {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: black;
+    width: 40vw;
+    height: 8vh;
+    background-color: #D9D2B0;
+    text-align: center;
+  }
+  
+  .icon-search {
+    margin-top: 2rem;
+    margin-right: 8rem;
+  }
+  
+  .btn-login {
+    margin-right: 1rem;
+    margin-top: 1.8rem;
+    height: 4vh;
+    width: 8vw;
+    border-radius: 6px;
+    border-color: #BF2604;
+    color: #BF2604;
+    background-color: #D9D2B0;
+  }
+  
+  .btn-register {
+    margin-right: 1rem;
+    margin-top: 1.8rem;
+    height: 4vh;
+    width: 8vw;
+    border-radius: 6px;
+    border-color: #BF2604;
+    color: #BF2604;
+    background-color: #D9D2B0;
+  }
+  
+  .btn-login:hover {
+    border-color: #BF2604;
+    background-color: #BF2604;
+    color: #fff;
+  }
+  
+  .btn-register:hover {
+    border-color: #BF2604;
+    background-color: #BF2604;
+    color: #fff;
+  }
+  
+  .header-user {
+    margin-right: 0.5rem;
+    margin-top: 2rem;
+    color: #BF2604;
+  }
+  
+  .icon-heart {
+    margin-top: 1.6rem;
+    margin-right: 1rem;
+    border-color: #BF2604;
+    color: #BF2604;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
 @media (max-width: 375px) {
     .menu{
         padding: 0% 5%;
