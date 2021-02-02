@@ -146,6 +146,7 @@ function toggleDetailsContainer(card, show) {
   const cardFilm = card;
   const holderDetailsContainer = document.querySelector(`#info-details${cardFilm.dataset.id}`)
   if (show) { 
+    document.querySelector('.showing').classList.remove('display')
     holderDetailsContainer.classList.add('display');
   } else {
     holderDetailsContainer.classList.remove('display');
