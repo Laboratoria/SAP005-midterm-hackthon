@@ -61,8 +61,9 @@ export const createMenuFilter = () => {
       </div>
           
       <div class="time">
-        <input type="range" min= "0" max="40 min" id="Runtime">
+        <input type="range" min="1" max="40" id="Runtime">
         <label for="runtime"> Runtime: <span class="filter-subtitle">0 - 40 minutes </span> </label>
+        <p id="time-area"></p>
       </div>
       
       <button class="clear" type="button" id="btn-clear" value="Clear">Clear</button>
