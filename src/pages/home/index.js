@@ -104,54 +104,9 @@ function showFilmsDetails(json) {
   return createDetailsBox;
 }
 
-function imdbFilms(i) {
-  fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
-    .then((response) => response.json())
-    .then((json) => {
-      console.log(json);
-      if (json.imdbRating > 7.5) {
-        listArea.innerHTML += ` 
-        <div class="movie-box">
-          <img src="${json.Poster}">
-          <p>${json.Title}</p>
-          <p>Awards: ${json.Awards}</p>
-          <p>Plot: ${json.Plot}</p>
-          <p>Genre: ${json.Genre}</p>
-          <p>Director: ${json.Director}</p>
-          <p>Year: ${json.Year}</p>
-          <p>IMDb Rating: ${json.imdbRating}</p>
-          <p>Runtime: ${json.Runtime}</p>
-        </div>`;
-      }
-    });
-}
 
-// FUNÇÃO FILMES MAIS CURTOS:
 
-function shorterFilms(i) {
-  fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
-    .then((response) => response.json())
-    .then((json) => {
-      console.log(json);
 
-      for (let x = 0; x < 11; x++) {
-        if (json.Runtime == `${x} min`) {
-          listArea.innerHTML += ` 
-            <div class="movie-box">
-              <img src="${json.Poster}">
-              <p>${json.Title}</p>
-              <p>Awards: ${json.Awards}</p>
-              <p>Plot: ${json.Plot}</p>
-              <p>Genre: ${json.Genre}</p>
-              <p>Director: ${json.Director}</p>
-              <p>Year: ${json.Year}</p>
-              <p>IMDb Rating: ${json.imdbRating}</p>
-              <p>Runtime: ${json.Runtime}</p>
-            </div>`;
-        }
-      }
-    });
-}
 
 //  FUNÇÃO MAIS RECENTES:
 
