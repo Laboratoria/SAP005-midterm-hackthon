@@ -61,8 +61,8 @@ p {
 }
 
 .contenedor-titulo-controles h3 {
-  color: #fff;
-  font-size: 20px;
+  color: rgba(255, 255, 255, 0.726);
+  font-size: 15px;
   margin-top: 35px;
 }
 
@@ -146,50 +146,50 @@ p {
 }
 
 .peliculas-recomendadas .contenedor-carousel .carousel .pelicula img {
-	width: 100%;
-	vertical-align: top;
+  width: 100%;
+  vertical-align: top;
 }
 
 #root {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-    margin-left: 1%;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 1%;
+  width: 100%;
 }
 
 .poster {
-	height: 350px;
-	width: 200px;
-	perspective: 1000px;
+  height: 350px;
+  width: 200px;
+  perspective: 1000px;
 }
 
 .poster-container {
-	position: relative;
-	height: 100%;
-	transition: transform .4s;
-  	transform-style: preserve-3d;
+  position: relative;
+  height: 100%;
+  transition: transform .4s;
+  transform-style: preserve-3d;
 }
 
 .poster:hover .poster-container {
-	transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .poster-front, .poster-back {
-	position: absolute;
-	width: 100%;
-	backface-visibility: hidden;
-	z-index: 1;
+  position: absolute;
+  max-width: 100%;
+  height: auto;
+  backface-visibility: hidden;
+  z-index: 1;
 }
 
 .poster-front {
-	background: white;
-	height: 300px;
+  background: white;
 }
-  
+
 .poster-back {
-	transform: rotateY(180deg);
-	background: blueviolet;
-	height: 300px;
-	overflow-y: auto;
+  transform: rotateY(180deg);
+  background: blueviolet;
+  height: 300px;
+  overflow-y: auto;
 }
