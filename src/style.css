@@ -110,22 +110,12 @@ button {
     margin-right: 8rem;
   }
   
-  .btn-login {
+  .btn-login, .btn-register {
     margin-right: 1rem;
     margin-top: 1.8rem;
     height: 4vh;
     width: 8vw;
-    border-radius: 6px;
-    border-color: #BF2604;
-    color: #BF2604;
-    background-color: #D9D2B0;
-  }
-  
-  .btn-register {
-    margin-right: 1rem;
-    margin-top: 1.8rem;
-    height: 4vh;
-    width: 8vw;
+    border: 2px solid #BF2604;
     border-radius: 6px;
     border-color: #BF2604;
     color: #BF2604;
