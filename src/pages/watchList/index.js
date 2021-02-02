@@ -41,7 +41,7 @@ export const WatchList = () => {
               const watched = doc.data().listwatched;
               console.log(idMove, watched)
 
-              movieWatched(idMove, watched);
+              movieDelet(idMove, watched);
 
             })
           })
@@ -61,7 +61,7 @@ export const WatchList = () => {
   return rootElement;
 };
 
-export const movieWatched = (idMove, watched) => {
+const movieDelet = (idMove, watched) => {
   const auth = firebase.auth().currentUser;
   const user = auth.uid;
 
