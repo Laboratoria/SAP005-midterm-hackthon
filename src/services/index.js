@@ -1,5 +1,9 @@
 export const verifyUserLogged = (callback) => firebase.auth().onAuthStateChanged(callback);
 
+export const logOut = () => firebase.auth().signOut();
+
+
+
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
