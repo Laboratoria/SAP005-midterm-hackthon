@@ -25,21 +25,15 @@ export const Home = () => {
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" databs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </a>
-    </section>
-    <section id="filters-area">
-      <button id="imdb-btn">Melhores Notas no IMDb</button>
-      <button id="runtime-btn">Menor tempo de duração</button>
-      <button id="news-btn">Mais recentes</button>
     </section>
     <section id="info"></section>
     <section id="menu"></section>
   </section>
 `;
-
 
   const getAllFilms = () => {
     // eslint-disable-next-line no-restricted-syntax
@@ -62,10 +56,12 @@ const printFilms = (json) => {
   const filmsContainer = document.createElement('section');
   filmsContainer.classList.add('films-container');
   filmsContainer.innerHTML += `
-    <section class="carousel-inner" data-id="${json.imdbID}" class="movie-box">
+    <section class="carousel-inner" data-id="${json.imdbID}">
       <p class="title">${json.Title}</p>
-        <img class="image" src="${json.Poster}">
-        <button id="info-${json.imdbID}" class="info">info</button>
+      <img class="image" class="d-block w-100" src="${json.Poster}">
+      <button id="info-${json.imdbID}" class="info">
+        <span #info-icon class="material-icons">info</span>
+      </button>
     </section>
     <section id="info-details${json.imdbID}"></section>`;
 
@@ -90,7 +86,6 @@ function getMoviesInfos(e) {
 }
 
 const createDetailsBox = document.createElement('div');
-
 
 function showFilmsDetails(json) {
   createDetailsBox.innerHTML = `
@@ -126,7 +121,7 @@ function imdbFilms(i) {
             <img class="image" src="${json.Poster}">
             <button id="info-${json.imdbID}" class="info">info</button>
           </section>
-        <section id="info-details${json.imdbID}"></section>`;  
+        <section id="info-details${json.imdbID}"></section>`;
       }
     });
 }
