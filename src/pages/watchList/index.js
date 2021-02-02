@@ -14,21 +14,28 @@ export const WatchList = () => {
 
   const contentElement = () => {
     const boxElement = document.createElement('div');
-    boxElement.innerHTML = `
-    <div class = "backgroundPoster" id = "/vRTScutueW9gLF3dSo2Za7o0v7n.jpg">
-    <img class = "poster"  src = "https://image.tmdb.org/t/p/original//vRTScutueW9gLF3dSo2Za7o0v7n.jpg">
-    <div class = "btnAdd">
-      <button id ="">Aapagar</button>
-    </div>
-  </div>
-</div>`;
 
     const docRef = firebase.firestore().collection("users").doc(user);
 
     docRef.get().then(function (doc) {
       if (doc.exists) {
-        console.log(doc.data().listwatched);
-        console.log(doc.data().listToWatch);
+        const listwatched = doc.data().listwatched;
+        const listToWatch = doc.data().listToWatch;
+
+        let movie = ''
+  
+        listwatched.forEach((listwatched) => {
+          boxElement.classList.add('bgList')
+          boxElement.innerHTML =
+            movie += `
+          <div class = "backgroundPoster" id = "${listwatched}">
+            <img class = "poster"  src = "https://image.tmdb.org/t/p/original/${listwatched}">
+            <div class = "btnAdd">
+              <button id ="delet">Apagar</button>
+            </div>
+          </div>
+        </div>`;
+        });
 
       } else {
         console.log("No such document!");
@@ -36,6 +43,14 @@ export const WatchList = () => {
     }).catch(function (error) {
       console.log("Error getting document:", error);
     });
+
+    const buttonDelet = boxElement.querySelectorAll("#delet")
+    buttonDelet.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        e.target.parentNode;
+        console.log('oi')
+      })
+    })
 
 
     return boxElement
