@@ -106,23 +106,6 @@ body {
   color: #000000;
 }
 
-ul {
-  list-style: none;
-  background-color: #000000;
-}
-
-li {
-  display: inline-block;
-  transition: background-color 1s;
-  color: #fcfcfc;
-  text-decoration: none;
-  padding: 2%;
-}
-
-li:hover {
-  background-color: #222324;
-}
-
 .lista {
   text-align: center;
   margin: 2vh;
@@ -141,7 +124,7 @@ li:hover {
   padding: 10vh 1vh;
 }
 
-#root{
+div{
   display: flex;  
   flex-wrap: wrap;
   align-items: center;
