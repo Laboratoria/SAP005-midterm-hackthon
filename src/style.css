@@ -19,3 +19,25 @@
 .title {
     text-align: center;
 }
+
+#info {
+    display: flex;
+}
+.info-container {
+    display: flex;
+    justify-content: space-between;
+}
+.poster-info {
+    display: flex;
+    width: 60%;
+    padding: 20px;
+
+}
+.poster-info p {
+    padding: 20px;
+}
+
+.details {
+    width: 40%;
+    padding: 30px;
+}
