@@ -5,6 +5,7 @@ export const saveUser = () => {
     email: user.email,
     listToWatch: [],
     listwatched: [],
+    listComments: [],
   });
 };
 
@@ -23,3 +24,10 @@ export const signInGoogle = () => {
 };
 
 export const signOut = () => firebase.auth().signOut();
+
+export const SaveComment = (comment) => {
+  const user = firebase.auth().currentUser;
+  return firebase.firestore().collection('users').doc(user.uid).update({
+    listComments: firebase.firestore.FieldValue.arrayUnion(comment),
+  });
+};

@@ -1,4 +1,4 @@
-import { Navigation } from '../../components/navigation/navigation.js';
+import { Navigation } from '../../components/navigation.js';
 
 export const WatchList = () => {
   const auth = firebase.auth().currentUser;
