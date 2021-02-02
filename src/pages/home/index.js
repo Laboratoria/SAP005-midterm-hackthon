@@ -55,32 +55,8 @@ const printFilms = (json) => {
         <img class="image" src="${json.Poster}">
         <button id="info-${json.imdbID}" class="info">info</button>
     </section>
-    <section id="info-details${json.imdbID}"></section>
-    `;
 
-  const allInfo = filmsContainer.querySelectorAll('.info');
-  allInfo.forEach((button) => {
-    button.addEventListener('click', (e) => {
-      getMoviesInfos(e);
-    });
-  });
-  return filmsContainer;
-};
-
-function getMoviesInfos(e) {
-  const idFilm = e.target.parentNode
-  fetch(`http://www.omdbapi.com/?i=${idFilm.dataset.id}&apikey=ce12da02`)
-    .then((response) => response.json())
-    .then((json) => {
-      const movieContainer = document.querySelector('#info');
-      movieContainer.appendChild(showFilmsDetails(json));
-    });
-}
-
-function showFilmsDetails(json) {
-  const createDetailsBox = document.createElement('div');
-  createDetailsBox.innerHTML = `
-  <section class="info-container">
+    <section id="info-details${json.imdbID}" class="showing">
     <div class="poster-info"><img src="${json.Poster}"> 
     <p><b>${json.Title}</b> <br><br><br>
     IMDb Rating: ${json.imdbRating} <br><br>
@@ -94,14 +70,41 @@ function showFilmsDetails(json) {
         <p>Runtime: ${json.Runtime}</p> <br>
         <p>Awards: ${json.Awards}</p>
       </div>
+
+      <button id="close-container-${json.imdbID}">FECHAR</button>
     </section>
-  `;
-  return createDetailsBox;
+    `;
+
+  const allInfo = filmsContainer.querySelectorAll('.info');
+  allInfo.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      showDetailsContainer(e);
+    });
+  });
+  return filmsContainer;
+};
+
+function showDetailsContainer(e) {
+  const idFilmCard = e.target.parentNode;
+  //const filmCard = document.getElementById(idFilmCard);
+  toggleDetailsContainer(idFilmCard, true);
+  const closeDetailsButton = `#close-container-${idFilmCard}`;
+  closeDetailsButton.addEventListener('click', () => {
+    toggleDetailsContainer(idFilmCard, false);
+  })
 }
 
-
-
-
+function toggleDetailsContainer(post, show) {
+  const filmCard = post;
+  console.log(filmCard)
+  
+  const holderDetailsContainer = filmCard.querySelector('.showing'); 
+  if (show) {
+    holderDetailsContainer.classList.add('display');
+  } else {
+    holderDetailsContainer.classList.remove('display');
+  }
+}
 
 //  FUNÇÃO MAIS RECENTES:
 /*
