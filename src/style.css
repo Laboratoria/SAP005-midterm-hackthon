@@ -142,6 +142,51 @@ p{
 	vertical-align: top;
 }
 
+#root {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+    margin-left: 1%;
+    width: 100%;
+}
+
+.poster {
+	height: 350px;
+	width: 200px;
+	perspective: 1000px;
+}
+
+.poster-container {
+	position: relative;
+	height: 100%;
+	transition: transform .4s;
+  	transform-style: preserve-3d;
+}
+
+.poster:hover .poster-container {
+	transform: rotateY(180deg);
+}
+
+.poster-front, .poster-back {
+	position: absolute;
+	width: 100%;
+	backface-visibility: hidden;
+	z-index: 1;
+}
+
+.poster-front {
+	background: white;
+	height: 300px;
+}
+  
+.poster-back {
+	transform: rotateY(180deg);
+	background: blueviolet;
+	height: 300px;
+	overflow-y: auto;
+}
+
+
 /* ---- ----- ----- Media Queries ----- ----- ----- */
 /* @media screen and (max-width: 800px) {
 
