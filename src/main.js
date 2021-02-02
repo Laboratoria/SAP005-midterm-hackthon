@@ -1,3 +1,4 @@
+
 //parte do script pra chamar o datepicker definido na jQuery UI
 $(function() {
     $( "#input-date" ).datepicker({
@@ -21,3 +22,4 @@ btnDate.addEventListener("click",valueInputDate)
 function valueInputDate(){
     console.log(date.value)
 }
+
