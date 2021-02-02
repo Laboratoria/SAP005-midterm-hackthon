@@ -18,28 +18,29 @@ export const WatchList = () => {
     const getHeaderSection = rootElement.querySelector('#header');
     getHeaderSection.appendChild(header());
 
+    const getListSection = rootElement.querySelector('#my-watch-list');      
+    getFilms(getListSection);
+
     return rootElement;
   };
 
-
-  const getFilms = () => {
+  const getFilms = async (section) => {
     for (const i of films) {
-        fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
+       await fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
             .then((response) => response.json())
             .then((json) => {
-                const getContainer = document.querySelector('#my-watch-list');
-                getContainer.appendChild(createCards(json));
-                createCards(json)
+                section.appendChild(createCards(json));
             });
-    }        
+    }
   };
-  getFilms();
 
   function createCards(json) {
     const cardsContainer = document.createElement('section');
     cardsContainer.innerHTML += `
-    <p class="title">${json.Title}</p>
-    <img class="image" src="${json.Poster}">
+    <section class="card-list">
+        <p class="title-list">${json.Title}</p>
+        <img class="card-list" src="${json.Poster}">
+    </section>    
     `
-    return cardsContainer
+    return cardsContainer;
   }
