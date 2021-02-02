@@ -5,7 +5,6 @@ import { MainList } from './pages/mainList/index.js';
 import { MenuList } from './pages/menuList/index.js';
 import { ToWatchList } from './pages/toWatchList/index.js';
 import { WatchList } from './pages/watchList/index.js';
-import { onNavigate } from './utils/history.js';
 
 const routeRender = () => {
   const rootDiv = document.getElementById('root');
@@ -25,6 +24,5 @@ const routeRender = () => {
 
 window.addEventListener('popstate', routeRender);
 window.addEventListener('load', () => {
-  
   routeRender();
 });
