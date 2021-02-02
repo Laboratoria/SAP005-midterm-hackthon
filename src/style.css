@@ -17,14 +17,16 @@
     margin: 10px;
 }
 .movie-box img {
-  width: 300px;
-  height: 385px;
+  width: 270px;
+  height: 355px;
 }
 .details {
-    display: none;
+    width: 40%;
+    padding: 40px 10px 0 0;
 }
 .title {
     text-align: center;
+    padding: 3px;
 }
 
 #info {

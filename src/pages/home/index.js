@@ -95,9 +95,9 @@ function showFilmsDetails(json) {
     </div>
     
       <div class="details"> 
-        <p>Plot: ${json.Plot}</p>
-        <p>Genre: ${json.Genre}</p>
-        <p>Runtime: ${json.Runtime}</p>
+        <p> <b>Plot:</b>  ${json.Plot}</p> <br>
+        <p>Genre: ${json.Genre}</p> <br>
+        <p>Runtime: ${json.Runtime}</p> <br>
         <p>Awards: ${json.Awards}</p>
       </div>
     </section>
