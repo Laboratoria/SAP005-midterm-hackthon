@@ -16,8 +16,8 @@ $(function() {
 const date = document.getElementById("input-date")
 const btnDate = document.getElementById("btn-date");
 
-btnDate.addEventListener("click",testeBtn)
+btnDate.addEventListener("click",valueInputDate)
 
-function testeBtn(){
+function valueInputDate(){
     console.log(date.value)
 }
