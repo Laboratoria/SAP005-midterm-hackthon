@@ -10,7 +10,7 @@ export const movieDeletWatched = (idMove, watched) => {
       indice = watched.indexOf(idMove);
     }
     docs.update({
-      listToWatch: watched,
+      listwatched: watched,
     });
   }
 };
