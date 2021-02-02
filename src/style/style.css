@@ -144,5 +144,46 @@ header{
     border: none;
 }  
 
- 
+#date{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+    align-content: stretch;
+    margin-top: 2em;
+}
+
+#input-date{
+    height: 2.5em;
+    width: 15em;
+    margin-top: 11px;
+    border-radius: 0.5em;
+    padding-left: 1.1em;
+    border-color: #C0CCDA;
+    outline: none; 
+}
+
+#btn-date{
+    font-size: 9pt;
+    padding: 1em;
+    border:none;
+    cursor: pointer;
+    border-radius: 0.5em;
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.16);
+    margin-left:5px;
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;   
+    outline: none;        
+}
+
+#btn-date:hover{
+    background-color: #C0CCDA;       
+}
+
+
+#btn-date >img{
+    height: 23px;
+    vertical-align: middle;
+}
     
