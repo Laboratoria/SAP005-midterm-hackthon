@@ -7,6 +7,7 @@ export const WatchList = () => {
     rootElement.innerHTML = `
     <section class="lists">
       <section id="header"></section>
+      <section><h4>My watchlist:</h4></section>
       <section id="my-watch-list" class="lists"></section>
       <section id="menu"></section>
     </section>
@@ -38,8 +39,8 @@ export const WatchList = () => {
     const cardsContainer = document.createElement('section');
     cardsContainer.innerHTML += `
     <section class="card-list">
-        <p class="title-list">${json.Title}</p>
-        <img class="card-list" src="${json.Poster}">
+        <p class="title-list">${json.Title.toUpperCase()}</p>
+        <img class="poster-list" src="${json.Poster}">
     </section>    
     `
     return cardsContainer;
