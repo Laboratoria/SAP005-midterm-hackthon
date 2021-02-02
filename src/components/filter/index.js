@@ -14,7 +14,6 @@ export const createMenuFilter = () => {
           <option class="select-genre" value="animation">Animation</option>
           <option class="select-genre" value="documentary">Documentary</option>
         </select>
-        </select>
       </div>
       <div class="country-list">
       <select class="select-country" id="country">
@@ -49,8 +48,9 @@ export const createMenuFilter = () => {
 
       <div class="score">
         <input type="range" min= "0" max= "10" step="0.1" id="imdbRating">
-        <label for = "imdb"> Imdb Score </label>
+        <label for= "imdb"> Imdb Score </label>
         <p id="value-area"></p>
+        </div>
 
 
       

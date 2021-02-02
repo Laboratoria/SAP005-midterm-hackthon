@@ -227,15 +227,6 @@ const sortByHighestScoreImdb = async () => {
 }
 sortByHighestScoreImdb();
 
-export const filterGenre = () => {
-  const filter = document.querySelector('#genre')
-   filter.addEventListener('change', () => {
-     document.querySelector('#catalogue').innerHTML = " "
-      for (const i of films){
-        const chooseFilter = filter.value
-        if(chooseFilter == i.genre){
-          getFilms(i)
-         }
-       }
-    })
- }
+// export const searchForName =
+        
+  
