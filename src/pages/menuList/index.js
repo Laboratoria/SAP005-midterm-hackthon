@@ -1,8 +1,22 @@
-import { onNavigate } from '../../utils/history.js';
+import {
+  onNavigate
+} from '../../utils/history.js';
+import {
+  Navigation
+} from '/pages/navigation/index.js';
+
+
 
 export const MenuList = () => {
+
+  const nav = Navigation();
   const rootElement = document.createElement('div');
-  rootElement.innerHTML = `
+
+  rootElement.appendChild(nav);
+
+  const contentElement = () => {
+    const boxElement = document.createElement('div');
+    boxElement.innerHTML = `
     <div class='menuListas'> 
       <div class='lista slider'>
         <figure>
@@ -24,6 +38,10 @@ export const MenuList = () => {
       </div>
     </div> 
   `;
+    return boxElement
+  }
+  rootElement.appendChild(contentElement())
+
   const btnWatchList = rootElement.querySelector('#btnWatchList');
   const btnToWatchList = rootElement.querySelector('#btnToWatchList');
 
@@ -34,6 +52,5 @@ export const MenuList = () => {
   btnToWatchList.addEventListener('click', () => {
     onNavigate('/toWatchList');
   });
-
   return rootElement;
 };
