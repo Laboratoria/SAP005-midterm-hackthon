@@ -37,9 +37,8 @@ function showMovieInfo(array) {
 
 const filterAction = document.getElementById("acao");
 filterAction.addEventListener("click", () => {
-  ;
-  showMovieInfo(movieGenres.actionAmz);
-  console.log(showMovieInfo(movieGenres.actionNfx))
+  showMovieInfo(movieGenres.actionNfx.concat(movieGenres.actionAmz));
+  console.log(showMovieInfo)
 })
 
 const filterAnimation = document.getElementById("animation");

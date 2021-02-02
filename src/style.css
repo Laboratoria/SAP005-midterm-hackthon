@@ -75,8 +75,9 @@ p {
   margin-right: 2px;
 }
 
-.contenedor-titulo-controles .indicadores button:hover, .contenedor-titulo-controles .indicadores button.activo {
-  background: #fbd11c;
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo {
+	background: #89c0df;
 }
 
 /* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
@@ -107,8 +108,9 @@ p {
   border: none;
 }
 
-.peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover, .peliculas-recomendadas .contenedor-principal .flecha-derecha:hover {
-  background: #fbd11c;
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha:hover {
+	background: #89c0df;
 }
 
 .peliculas-recomendadas .contenedor-principal .flecha-izquierda {
@@ -192,4 +194,16 @@ p {
   background: blueviolet;
   height: 300px;
   overflow-y: auto;
+}
+
+.buttonSorteio{
+
+    background-image: linear-gradient(to right, #3399ff, #2d5aa8);
+    width: 100%;
+    border-radius: 30px;
+    padding: 8px;
+    border: 0px;
+    outline: 0;
+    margin-top: 2px;
+    color: white;
 }
