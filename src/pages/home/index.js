@@ -57,6 +57,9 @@ const printFilms = (json) => {
     </section>
 
     <section id="info-details${json.imdbID}" class="showing">
+
+    <button id="close-container-${json.imdbID}">FECHAR</button>
+
     <div class="poster-info"><img src="${json.Poster}"> 
     <p><b>${json.Title}</b> <br><br><br>
     IMDb Rating: ${json.imdbRating} <br><br>
@@ -71,7 +74,6 @@ const printFilms = (json) => {
         <p>Awards: ${json.Awards}</p>
       </div>
 
-      <button id="close-container-${json.imdbID}">FECHAR</button>
     </section>
     `;
 
@@ -86,19 +88,16 @@ const printFilms = (json) => {
 
 function showDetailsContainer(e) {
   const idFilmCard = e.target.parentNode;
-  //const filmCard = document.getElementById(idFilmCard);
   toggleDetailsContainer(idFilmCard, true);
-  const closeDetailsButton = `#close-container-${idFilmCard}`;
+  const closeDetailsButton = document.getElementById(`close-container-${idFilmCard.dataset.id}`); 
   closeDetailsButton.addEventListener('click', () => {
     toggleDetailsContainer(idFilmCard, false);
   })
 }
 
-function toggleDetailsContainer(post, show) {
-  const filmCard = post;
-  console.log(filmCard)
-  
-  const holderDetailsContainer = filmCard.querySelector('.showing'); 
+function toggleDetailsContainer(card, show) {
+  const cardFilm = card;
+  const holderDetailsContainer = document.querySelector(`#info-details${cardFilm.dataset.id}`)
   if (show) {
     holderDetailsContainer.classList.add('display');
   } else {
