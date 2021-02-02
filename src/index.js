@@ -18,7 +18,17 @@ function showMovieInfo(array) {
       imgSrc = imgBaseUrl + movie.poster_path;
       console.log(imgSrc);
       posters += `
-        <img src="${imgSrc}">
+        <div class="poster">
+          <div class="poster-container">
+            <div class="poster-front">
+              <img src="${imgSrc}">
+            </div>
+            <div class="poster-back">
+              <p>${movie.title}</p>
+              <p>${movie.overview}</p>
+            </div>
+          </div>
+        </div>
       `;
     }
     document.getElementById("root").innerHTML = posters;
