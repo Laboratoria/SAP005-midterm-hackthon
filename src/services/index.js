@@ -1,8 +1,12 @@
+export const saveUser = (user) => firebase.firestore().collection('users').doc(user.email).add({
+  userId: user.uid,
+  email: user.email,
+  listToWatch: [],
+  listwatched: [],
+});
+
 export const signUp = (email, password) => firebase.auth()
   .createUserWithEmailAndPassword(email, password);
-
-export const verifyUser = () => firebase.firestore().collection('users')
-  .where('email', '==', firebase.auth().currentUser.email).get();
 
 export const signIn = (email, password) => firebase.auth()
   .signInWithEmailAndPassword(email, password);
@@ -13,13 +17,3 @@ export const signInGoogle = () => {
 };
 
 export const signOut = () => firebase.auth().signOut();
-
-export const checkLogin = () => firebase.auth().onAuthStateChanged((user) => user);
-
-export const UserInfoUid = () => firebase.auth().currentUser.uid;
-
-export const InfoProfileEmail = () => {
-  firebase.firestore().collection('users').doc(UserInfoUid()).set({
-    email: firebase.auth().currentUser.email,
-  });
-};

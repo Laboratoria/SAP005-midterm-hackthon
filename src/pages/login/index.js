@@ -1,4 +1,4 @@
-import { signIn, signInGoogle, InfoProfileEmail } from '../../services/index.js';
+import { signIn, signInGoogle, saveUser } from '../../services/index.js';
 import { onNavigate } from '../../utils/history.js';
 
 export const Login = () => {
@@ -31,7 +31,6 @@ export const Login = () => {
       })
       .catch(() => {
         alert('Email e/ou senha incorretos');
-        onNavigate('/');
       });
   });
 
@@ -39,21 +38,18 @@ export const Login = () => {
     e.preventDefault();
     signInGoogle()
       .then(() => {
-        InfoProfileEmail();
+        saveUser();
         onNavigate('/allMovies');
       })
       .catch(() => {
         alert('Você não conectou com o Google, tente novamente');
-        onNavigate('/');
       });
   });
 
-  rootElement
-    .querySelector('#button-create-account')
-    .addEventListener('click', (e) => {
-      e.preventDefault();
-      onNavigate('/register');
-    });
+  rootElement.querySelector('#button-create-account').addEventListener('click', (e) => {
+    e.preventDefault();
+    onNavigate('/register');
+  });
 
   return rootElement;
 };
