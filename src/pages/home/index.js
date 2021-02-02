@@ -18,6 +18,11 @@ const getFilms = (i) => {
 export const Home = () => {
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
+  <section>
+    <section id="filters-area">
+    <section id="info"></section>
+    <section id="menu"></section>
+  </section>
   <section class="main-page">
     <section id="header"></section>
     <section id="catalogue" id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -28,14 +33,6 @@ export const Home = () => {
       <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
-      </a>
-    </section>
-      <section id="filters-area">
-        
-      </section>
-    <section id="info"></section>
-    <section id="menu"></section>
-  </section>
 `;
 
   const getAllFilms = () => {
