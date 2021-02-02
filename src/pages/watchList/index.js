@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 import { Navigation } from '../../components/navigation.js';
+=======
+import {
+  Navigation
+} from '../../components/navigation/navigation.js';
+>>>>>>> 701bf5c92684cfb99cb0ccb56210c2defc12146e
 
 export const WatchList = () => {
   const auth = firebase.auth().currentUser;
@@ -11,31 +17,71 @@ export const WatchList = () => {
 
   const contentElement = () => {
     const boxElement = document.createElement('div');
-    boxElement.innerHTML = `
-    <div class = "backgroundPoster" id = "/vRTScutueW9gLF3dSo2Za7o0v7n.jpg">
-    <img class = "poster"  src = "https://image.tmdb.org/t/p/original//vRTScutueW9gLF3dSo2Za7o0v7n.jpg">
-    <div class = "btnAdd">
-      <button id ="">Aapagar</button>
-    </div>
-  </div>
-</div>`;
 
     const docRef = firebase.firestore().collection('users').doc(user);
 
     docRef.get().then((doc) => {
       if (doc.exists) {
-        console.log(doc.data().listwatched);
-        console.log(doc.data().listToWatch);
-      } else {
-        console.log('No such document!');
+
+        const listwatched = doc.data().listwatched;
+
+        let movie = ''
+
+        listwatched.forEach((listwatched) => {
+          boxElement.classList.add('bgList')
+          boxElement.innerHTML =
+            movie += `
+          <div class = "backgroundPoster" id = "${listwatched}">
+            <img class = "poster"  src = "https://image.tmdb.org/t/p/original/${listwatched}">
+            <div class = "btnAdd">
+              <button id ="delet">Apagar</button>
+            </div>
+          </div>
+        </div>`;
+          const buttonDelet = boxElement.querySelectorAll("#delet")
+          buttonDelet.forEach((button) => {
+            button.addEventListener('click', (e) => {
+              e.target.parentNode;
+              const idMove = listwatched
+              const watched = doc.data().listwatched;
+              console.log(idMove, watched)
+
+              movieWatched(idMove, watched);
+
+            })
+          })
+
+        });
       }
     }).catch((error) => {
       console.log('Error getting document:', error);
     });
 
-    return boxElement;
-  };
-  rootElement.appendChild(contentElement());
+
+
+    return boxElement
+  }
+  rootElement.appendChild(contentElement())
 
   return rootElement;
 };
+
+export const movieWatched = (idMove, watched) => {
+  const auth = firebase.auth().currentUser;
+  const user = auth.uid;
+
+  const docs = firebase.firestore().collection("users").doc(user)
+
+  if (watched.includes(idMove)) {
+    let indice = watched.indexOf(idMove);
+    while (indice >= 0) {
+      watched.splice(indice, 1);
+      indice = watched.indexOf(idMove);
+    }
+    docs.update({
+      listwatched : watched
+    })
+  }
+
+  console.log(watched);
+}
