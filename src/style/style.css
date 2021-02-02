@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 *{
     padding: 0;
     margin:0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
+}
+
+body{
+    background-color: #fafafa;
 }
 
 #description{
@@ -47,14 +52,18 @@ header{
 #logo{
     height: 10rem;
     margin-top: 1em;
+    cursor: pointer;
 }
 
-#search{
+#logo:active{
+    opacity: .5;
+}
+
+#search-container{
     display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	align-items:  flex-end;
     align-content: stretch;
     margin-top: 2em;
 }
@@ -65,27 +74,147 @@ header{
     margin-top: 11px;
     border-radius: 0.5em;
     padding-left: 1.1em;
+    border-color: #C0CCDA;
+    outline: none; 
 }
 
 #btn-search{
     font-size: 9pt;
-    padding: 10px 40px 11px;
+    padding: 1em;
     border:none;
-    color:white;
     cursor: pointer;
-    border-radius: 37px;
+    border-radius: 0.5em;
     box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.16);
     -webkit-box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.16);
     margin-left:5px;
-    font-weight: bold;
     transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;           
+    -webkit-transition: all .4s ease-in-out;   
+    outline: none;        
 }
+
+#btn-search:hover{
+    background-color: #C0CCDA;       
+}
+
 
 #btn-search >img{
     height: 23px;
     vertical-align: middle;
 }
-   
-    
-    
+
+#week-container{
+    margin-top:2em;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+}
+
+.day{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+    padding: .7em;
+}
+
+.day >p{
+    margin-top:.5em;
+}
+
+.btn-day{
+    padding: 10px;
+    background-color: #C0CCDA;
+    border-radius: 2em;
+    border: none;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;   
+    outline: none;  
+}  
+
+.btn-day:hover{
+    padding: 11px;
+    background-color: #000000;
+    border-radius: 2em;
+    border: none;
+}  
+
+#date{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+    align-content: stretch;
+    margin-top: 2em;
+}
+
+#input-date{
+    height: 2.5em;
+    width: 15em;
+    margin-top: 11px;
+    border-radius: 0.5em;
+    padding-left: 1.1em;
+    border-color: #C0CCDA;
+    outline: none; 
+}
+
+#btn-date{
+    font-size: 9pt;
+    padding: 1em;
+    border:none;
+    cursor: pointer;
+    border-radius: 0.5em;
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.16);
+    margin-left:5px;
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;   
+    outline: none;        
+}
+
+#btn-date:hover{
+    background-color: #C0CCDA;       
+}
+
+
+#btn-date >img{
+    height: 23px;
+    vertical-align: middle;
+}
+
+/* -----------FOOTER------------- */
+
+footer{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+    align-content: center;
+    background-color: #0f0e0e;
+    padding: 1em;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+footer >img{
+    height: 5em;
+    cursor: pointer;
+}
+
+
+footer>p{
+    font-weight: 100;
+    font-size: 8pt;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+
