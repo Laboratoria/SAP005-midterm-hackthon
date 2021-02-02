@@ -25,47 +25,6 @@ const routeRender = () => {
 
 window.addEventListener('popstate', routeRender);
 window.addEventListener('load', () => {
-  document
-    .getElementById('mainPage')
-    .addEventListener('click', (e) => {
-      e.preventDefault();
-      onNavigate('/');
-    });
-  document
-    .getElementById('login')
-    .addEventListener('click', (e) => {
-      e.preventDefault();
-      onNavigate('/login');
-    });
-  document
-    .getElementById('register')
-    .addEventListener('click', (e) => {
-      e.preventDefault();
-      onNavigate('/register');
-    });
-  document
-    .getElementById('mainList')
-    .addEventListener('click', (e) => {
-      e.preventDefault();
-      onNavigate('/mainList');
-    });
-  document
-    .getElementById('menuList')
-    .addEventListener('click', (e) => {
-      e.preventDefault();
-      onNavigate('/menuList');
-    });
-  document
-    .getElementById('watchList')
-    .addEventListener('click', (e) => {
-      e.preventDefault();
-      onNavigate('/watchList');
-    });
-  document
-    .getElementById('toWatchList')
-    .addEventListener('click', (e) => {
-      e.preventDefault();
-      onNavigate('/toWatchList');
-    });
+  
   routeRender();
 });
