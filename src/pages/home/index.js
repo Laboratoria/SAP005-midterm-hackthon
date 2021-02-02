@@ -30,11 +30,9 @@ export const Home = () => {
         <span class="visually-hidden">Next</span>
       </a>
     </section>
-    <section id="filters-area">
-      <button id="imdb-btn">Melhores Notas no IMDb</button>
-      <button id="runtime-btn">Menor tempo de duração</button>
-      <button id="news-btn">Mais recentes</button>
-    </section>
+      <section id="filters-area">
+        
+      </section>
     <section id="info"></section>
     <section id="menu"></section>
   </section>
@@ -119,24 +117,25 @@ const printFilms = (json) => {
 
 function showDetailsContainer(e) {
   const idFilmCard = e.target.parentNode;
+  const idNumber = idFilmCard.dataset.id
   toggleDetailsContainer(idFilmCard, true);
 
-  const likeButton = document.getElementById(`like-${idFilmCard.dataset.id}`);
+  const likeButton = document.getElementById(`like-${idNumber}`);
   likeButton.addEventListener('click', () => {
     console.log("Pegou o click do like")
   })
 
-  const dislikeButton = document.getElementById(`dislike-${idFilmCard.dataset.id}`);
+  const dislikeButton = document.getElementById(`dislike-${idNumber}`);
   dislikeButton.addEventListener('click', () => {
     console.log("Pegou o click do dislike")
   })
 
-  const saveMovieButton = document.getElementById(`save-${idFilmCard.dataset.id}`);
+  const saveMovieButton = document.getElementById(`save-${idNumber}`);
   saveMovieButton.addEventListener('click', () => {
     console.log("Pegou o click de salvar")
   })
 
-  const closeDetailsButton = document.getElementById(`close-container-${idFilmCard.dataset.id}`);
+  const closeDetailsButton = document.getElementById(`close-container-${idNumber}`);
   closeDetailsButton.addEventListener('click', () => {
     toggleDetailsContainer(idFilmCard, false);
   })
@@ -188,3 +187,15 @@ const sortByHighestScoreImdb = async () => {
 }
 sortByHighestScoreImdb();
 
+export const filterGenre = () => {
+  const filter = document.querySelector('#genre')
+   filter.addEventListener('change', () => {
+     document.querySelector('#catalogue').innerHTML = " "
+      for (const i of films){
+        const chooseFilter = filter.value
+        if(chooseFilter == i.genre){
+          getFilms(i)
+         }
+       }
+    })
+ }
