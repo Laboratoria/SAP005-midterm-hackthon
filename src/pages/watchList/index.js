@@ -34,9 +34,10 @@ export const WatchList = () => {
         </div>`;
           const buttonDelet = boxElement.querySelectorAll("#delet")
           buttonDelet.forEach((button) => {
+            
             button.addEventListener('click', (e) => {
-              e.target.parentNode;
-              const idMove = listwatched
+              const box = e.target.parentNode.parentNode;
+              const idMove = box.id
               const watched = doc.data().listwatched;
               console.log(idMove, watched)
 
@@ -65,7 +66,6 @@ export const movieWatched = (idMove, watched) => {
   const user = auth.uid;
 
   const docs = firebase.firestore().collection("users").doc(user)
-
   if (watched.includes(idMove)) {
     let indice = watched.indexOf(idMove);
     while (indice >= 0) {
@@ -76,6 +76,5 @@ export const movieWatched = (idMove, watched) => {
       listwatched : watched
     })
   }
-
-  console.log(watched);
+   console.log(watched);
 }
