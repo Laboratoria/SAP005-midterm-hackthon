@@ -4,6 +4,11 @@
     padding: 0;
     font-family: 'Roboto', sans-serif, normal, normal;
 } 
+.lista-que-vamos-apagar {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
 #catalogue {
     display: flex;
 }
@@ -71,6 +76,18 @@
 button {
     background-color: transparent;
     border: none;
+}
+
+#filters-area {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 0 20px 0;
+}
+
+#imdb-btn, #runtime-btn, #news-btn {
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 @media (max-width: 375px) {

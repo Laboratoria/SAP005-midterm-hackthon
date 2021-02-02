@@ -20,6 +20,11 @@ export const Home = () => {
   rootElement.innerHTML = `
   <section class="main-page">
     <section id="header"></section>
+    <section id="filters-area">
+      <button id="imdb-btn">Melhores Notas no IMDb</button>
+      <button id="runtime-btn">Menor tempo de duração</button>
+      <button id="news-btn">Mais recentes</button>
+    </section>
     <section id="catalogue"></section>
     <section id="info"></section>
     <section id="menu"></section>
@@ -34,8 +39,7 @@ const getAllFilms = () => {
 getAllFilms();
 
 const getMenuSection = rootElement.querySelector('#menu');
-
-  getMenuSection.appendChild(createMenu());
+getMenuSection.appendChild(createMenu());
 
   return rootElement;
 };
@@ -76,6 +80,7 @@ function getMoviesInfos(e) {
  
  })
 }
+
 const createDetailsBox = document.createElement('div')
 
 function showFilmsDetails(json) {
@@ -110,19 +115,14 @@ function showFilmsDetails(json) {
 
                         if(json.imdbRating > 7.5 ){
 
-                         listArea.innerHTML += ` 
-                         <div class="movie-box">
-                           <img src="${json.Poster}">
-                           <p>${json.Title}</p>
-                           <p>Awards: ${json.Awards}</p>
-                           <p>Plot: ${json.Plot}</p>
-                           <p>Genre: ${json.Genre}</p>
-                           <p>Director: ${json.Director}</p>
-                           <p>Year: ${json.Year}</p>
-                           <p>IMDb Rating: ${json.imdbRating}</p>
-                           <p>Runtime: ${json.Runtime}</p>
-                         </div>
-                           `  
+                      document.querySelector('.films-container').innerHTML += ` 
+                         <section data-id="${json.imdbID}" class="movie-box">
+                            <p class="title">${json.Title}</p>
+                             <img class="image" src="${json.Poster}">
+                             <button id="info-${json.imdbID}" class="info">info</button>
+                         </section>
+                         <section id="info-details${json.imdbID}"></section>    
+                       `  
                         }
                      })
    }
