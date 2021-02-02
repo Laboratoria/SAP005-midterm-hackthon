@@ -68,3 +68,4 @@ export const creatingAccountWithEmail = (username, email, password) => {
       alert(errorMessage);
     });
 };
+

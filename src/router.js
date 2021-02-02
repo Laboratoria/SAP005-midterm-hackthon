@@ -6,6 +6,7 @@ import { Favorites } from './pages/likes/index.js'
 import { WatchList } from './pages/watchlist/index.js'
 import { onNavigate } from './utils/history.js';
 import { DiscardedList } from './pages/discarded/index.js';
+import { filterGenre, filterImdb, filterYear, filterRuntime, filterCountry } from './pages/home/index.js';
 //import { verifyUserLogged } from './services/index.js';
 
 const routeRender = () => {
@@ -49,6 +50,11 @@ window.addEventListener('load', () => {
     .addEventListener('click', (e) => {
       e.preventDefault();
       onNavigate('/home')
+      filterGenre();
+      filterImdb();
+      filterYear();
+      filterRuntime();
+      filterCountry();
     });    
   document
     .getElementById('favorites')
