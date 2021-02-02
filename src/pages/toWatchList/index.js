@@ -33,42 +33,63 @@ export const ToWatchList = () => {
           </div>
         </div>`;
 
-      const watched = document.querySelectorAll('#watched');
-      watched.forEach((button) => {
-        button.addEventListener('click', async (e) => {
-          e.preventDefault();
-          const db = firebase.firestore();
-          const userId = firebase.auth().currentUser.uid;
-          const containerFeed = e.target.parentNode.parentNode;
-          db.collection('users').doc(userId).update({
-            listToWatch: firebase.firestore.FieldValue.arrayRemove(containerFeed.id),
-            listwatched: firebase.firestore.FieldValue.arrayUnion(containerFeed.id),
+          const watched = document.querySelectorAll('#watched');
+          watched.forEach((button) => {
+            button.addEventListener('click', async (e) => {
+              e.preventDefault();
+              const db = firebase.firestore();
+              const userId = firebase.auth().currentUser.uid;
+              const containerFeed = e.target.parentNode.parentNode;
+              db.collection('users').doc(userId).update({
+                listToWatch: firebase.firestore.FieldValue.arrayRemove(containerFeed.id),
+                listwatched: firebase.firestore.FieldValue.arrayUnion(containerFeed.id),
+              });
+            });
           });
-        });
-      });
 
-        const buttonDelet = boxElement.querySelectorAll("#delet")
-        buttonDelet.forEach((button) => {
-          button.addEventListener('click', (e) => {
-            e.target.parentNode;
-            const idMove = listToWatch
-            const watch = doc.data().ToWatch;
-            console.log(idMove, watch)
+          const buttonDelet = boxElement.querySelectorAll("#delet")
+          buttonDelet.forEach((button) => {
 
-            movieWatch(idMove, watch);
+            button.addEventListener('click', (e) => {
+              const box = e.target.parentNode.parentNode;
+              const idMove = box.id
+              const towatch = doc.data().listToWatch;
+              console.log(idMove, towatch)
 
+              movieDelet(idMove, towatch);
+
+            })
           })
-        })
 
-      });
-    }
-  }).catch((error) => {
-    console.log('Error getting document:', error);
+
+
+        });
+      }
+    }).catch((error) => {
+      console.log('Error getting document:', error);
     });
 
-   return boxElement
+    return boxElement
   }
   rootElement.appendChild(contentElement())
 
   return rootElement;
 };
+
+const movieDelet = (idMove, towatch) => {
+  const auth = firebase.auth().currentUser;
+  const user = auth.uid;
+
+  const docs = firebase.firestore().collection("users").doc(user)
+  if (towatch.includes(idMove)) {
+    let indice = towatch.indexOf(idMove);
+    while (indice >= 0) {
+      towatch.splice(indice, 1);
+      indice = towatch.indexOf(idMove);
+    }
+    docs.update({
+      listToWatch : towatch
+    })
+  }
+   console.log(towatch);
+}
