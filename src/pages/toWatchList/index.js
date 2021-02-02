@@ -16,12 +16,10 @@ export const ToWatchList = () => {
 
     docRef.get().then((doc) => {
       if (doc.exists) {
-
-        const listwatched = doc.data().listwatched;
         const listToWatch = doc.data().listToWatch;
 
         let movie = ''
-  
+
         listToWatch.forEach((listToWatch) => {
           boxElement.classList.add('bgList')
           boxElement.innerHTML =
@@ -34,15 +32,41 @@ export const ToWatchList = () => {
             </div>
           </div>
         </div>`;
+
+      const watched = document.querySelectorAll('#watched');
+      watched.forEach((button) => {
+        button.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const db = firebase.firestore();
+          const userId = firebase.auth().currentUser.uid;
+          const containerFeed = e.target.parentNode.parentNode;
+          db.collection('users').doc(userId).update({
+            listToWatch: firebase.firestore.FieldValue.arrayRemove(containerFeed.id),
+            listwatched: firebase.firestore.FieldValue.arrayUnion(containerFeed.id),
+          });
         });
-      } else {
-        console.log('No such document!');
-      }
-    }).catch((error) => {
-      console.log('Error getting document:', error);
+      });
+
+        const buttonDelet = boxElement.querySelectorAll("#delet")
+        buttonDelet.forEach((button) => {
+          button.addEventListener('click', (e) => {
+            e.target.parentNode;
+            const idMove = listToWatch
+            const watch = doc.data().ToWatch;
+            console.log(idMove, watch)
+
+            movieWatch(idMove, watch);
+
+          })
+        })
+
+      });
+    }
+  }).catch((error) => {
+    console.log('Error getting document:', error);
     });
 
-    return boxElement
+   return boxElement
   }
   rootElement.appendChild(contentElement())
 
