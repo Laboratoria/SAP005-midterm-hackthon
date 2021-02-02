@@ -186,4 +186,35 @@ header{
     height: 23px;
     vertical-align: middle;
 }
-    
+
+/* -----------FOOTER------------- */
+
+footer{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+    align-content: center;
+    background-color: #0f0e0e;
+    padding: 1em;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+footer >img{
+    height: 5em;
+    cursor: pointer;
+}
+
+
+footer>p{
+    font-weight: 100;
+    font-size: 8pt;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+
