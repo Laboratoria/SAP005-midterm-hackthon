@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif, normal, normal;
+} 
 #catalogue {
     display: flex;
 }
@@ -10,12 +16,13 @@
     padding: 10px;
     margin: 10px;
 }
-
 .movie-box img {
-    width: 300px;
-    height: 385px;
+  width: 300px;
+  height: 385px;
 }
-
+.details {
+    display: none;
+}
 .title {
     text-align: center;
 }
@@ -41,3 +48,32 @@
     width: 40%;
     padding: 30px;
 }
+
+
+/** FOOTER MENU **/
+.menu{
+    background-color: #64312F;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    padding: 0% 25%;
+    position: fixed;
+    bottom: 0;
+    left: 0
+}
+.button-menu span {
+    color: #D9D2B0;
+    font-size: 35px;
+}
+button {
+    background-color: transparent;
+    border: none;
+}
+
+@media (max-width: 375px) {
+    .menu{
+        padding: 0% 5%;
+    }
+}
+
