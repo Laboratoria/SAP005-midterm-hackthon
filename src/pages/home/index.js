@@ -7,7 +7,6 @@ const getFilms = (i) => {
   fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
     .then((response) => response.json())
     .then((json) => {
-      // console.log(json);
       const getCatalogueSection = document.querySelector('#catalogue');
       getCatalogueSection.appendChild(printFilms(json));
 
@@ -31,7 +30,6 @@ export const Home = () => {
   </section>
 `;
 
-
   const getAllFilms = () => {
     // eslint-disable-next-line no-restricted-syntax
     for (const i of films) {
@@ -42,7 +40,6 @@ export const Home = () => {
 
   const getMenuSection = rootElement.querySelector('#menu');
   getMenuSection.appendChild(createMenu());
-
 
   const getHeaderSection = rootElement.querySelector('#header');
   getHeaderSection.appendChild(header());
@@ -58,9 +55,10 @@ const printFilms = (json) => {
         <img class="image" src="${json.Poster}">
         <button id="info-${json.imdbID}" class="info">info</button>
     </section>
-    <section id="info-details${json.imdbID}"></section>`;
+    <section id="info-details${json.imdbID}"></section>
+    `;
 
-  const allInfo = document.querySelectorAll('.info');
+  const allInfo = filmsContainer.querySelectorAll('.info');
   allInfo.forEach((button) => {
     button.addEventListener('click', (e) => {
       getMoviesInfos(e);
@@ -70,8 +68,7 @@ const printFilms = (json) => {
 };
 
 function getMoviesInfos(e) {
-  const idFilm = e.target.parentNode.parentNode.parentNode
-
+  const idFilm = e.target.parentNode
   fetch(`http://www.omdbapi.com/?i=${idFilm.dataset.id}&apikey=ce12da02`)
     .then((response) => response.json())
     .then((json) => {
@@ -80,10 +77,8 @@ function getMoviesInfos(e) {
     });
 }
 
-const createDetailsBox = document.createElement('div');
-
-
 function showFilmsDetails(json) {
+  const createDetailsBox = document.createElement('div');
   createDetailsBox.innerHTML = `
   <section class="info-container">
     <div class="poster-info"><img src="${json.Poster}"> 
@@ -109,7 +104,7 @@ function showFilmsDetails(json) {
 
 
 //  FUNÇÃO MAIS RECENTES:
-
+/*
 
    function imdbFilms(i) {
 
@@ -187,3 +182,4 @@ function showFilmsDetails(json) {
                   })
    }
 
+*/
