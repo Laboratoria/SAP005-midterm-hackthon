@@ -155,7 +155,6 @@ function toggleDetailsContainer(card, show) {
 
 const sortByMostRecent = async () => {
   let dataMovie = []
-
   for (let item of films) {
     await fetch(`http://www.omdbapi.com/?t=${item.title}&apikey=ce12da02`)
       .then((response) => response.json())
@@ -170,5 +169,22 @@ const sortByMostRecent = async () => {
     return 0;
   })
 }
-sortByMostRecent();
+sortByMostRecent(); 
+
+const sortByHighestScoreImdb = async () => {
+  let dataMovie = []
+  for (let item of films) {
+    await fetch(`http://www.omdbapi.com/?t=${item.title}&apikey=ce12da02`)
+      .then((response) => response.json())
+      .then((json) => {
+        dataMovie.push(json);
+      })
+  }
+  dataMovie.sort(function (a, b) {
+    if (+a.imdbRating < +b.imdbRating) return 1;
+    if (+a.imdbRating > +b.imdbRating) return -1;
+    return 0;
+  })
+}
+sortByHighestScoreImdb(); 
 
