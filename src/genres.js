@@ -81,5 +81,5 @@ const movieGenres = {
 
   westernAmz: "https://api.themoviedb.org/3/discover/movie?api_key=ffcaacca8cc231c4c2d075dba16d3d62&language=pt-BR&region=BR&sort_by=popularity.desc&with_genres=37&with_watch_providers=119&watch_region=BR",
 }
-  
+
 export default movieGenres;

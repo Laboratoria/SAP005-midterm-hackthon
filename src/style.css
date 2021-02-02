@@ -159,8 +159,8 @@ p {
 }
 
 .poster {
-  height: 350px;
-  width: 200px;
+ width: 80px;
+ height: 150px;
   perspective: 1000px;
 }
 

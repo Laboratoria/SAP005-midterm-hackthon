@@ -35,7 +35,75 @@ function showMovieInfo(array) {
   })
 }
 
-const testBtn = document.getElementById("test-btn");
-testBtn.addEventListener("click", () => {
+const filterAction = document.getElementById("acao");
+filterAction.addEventListener("click", () => {
+  ;
+  showMovieInfo(movieGenres.actionAmz);
+  console.log(showMovieInfo(movieGenres.actionNfx))
+})
+
+const filterAnimation = document.getElementById("animation");
+filterAnimation.addEventListener("click", () => {
   showMovieInfo(movieGenres.animationNfx);
+  showMovieInfo(movieGenres.animationAmz);
+})
+
+const filterAdventure = document.getElementById("adventure");
+filterAdventure.addEventListener("click", () => {
+  showMovieInfo(movieGenres.adventureNfx);
+  showMovieInfo(movieGenres.adventureAmz);
+})
+
+const filterComedy = document.getElementById("comedy");
+filterComedy.addEventListener("click", () => {
+  showMovieInfo(movieGenres.comedyNfx);
+  showMovieInfo(movieGenres.comedyAmz);
+})
+
+const filterDocumentary = document.getElementById("documentary");
+filterDocumentary.addEventListener("click", () => {
+  showMovieInfo(movieGenres.documentaryNfx);
+  showMovieInfo(movieGenres.documentaryAmz);
+})
+
+const filterDrama = document.getElementById("drama");
+filterDrama.addEventListener("click", () => {
+  showMovieInfo(movieGenres.dramaNfx);
+  showMovieInfo(movieGenres.dramaAmz);
+})
+
+const filterFamily = document.getElementById("family");
+filterFamily.addEventListener("click", () => {
+  showMovieInfo(movieGenres.familyNfx);
+  showMovieInfo(movieGenres.familyAmz);
+})
+
+const filterFantasy = document.getElementById("fantasy");
+filterFantasy.addEventListener("click", () => {
+  showMovieInfo(movieGenres.fantasyNfx);
+  showMovieInfo(movieGenres.fantasyAmz);
+})
+
+const filterWester = document.getElementById("wester");
+filterWester.addEventListener("click", () => {
+  showMovieInfo(movieGenres. westernNfx);
+  showMovieInfo(movieGenres.westerAmz);
+})
+
+const filterScifi = document.getElementById("scifi");
+filterScifi.addEventListener("click", () => {
+  showMovieInfo(movieGenres.scifiNfx);
+  showMovieInfo(movieGenres.scifiAmz);
+})
+
+const filterHistory = document.getElementById("history");
+filterHistory.addEventListener("click", () => {
+  showMovieInfo(movieGenres.historyNfx);
+  showMovieInfo(movieGenres.historyAmz);
+})
+
+const filterMystery = document.getElementById("mystery");
+filterMystery.addEventListener("click", () => {
+  showMovieInfo(movieGenres.mysteryNfx);
+  showMovieInfo(movieGenres.mysteryAmz);
 })
