@@ -46,10 +46,13 @@ export const createMenuFilter = () => {
         </select>
       </div>
     
-      <div class="score-imdb">
-        <input type="range" min= "0" max= "10" id="imdbRating">
-        <label for = "imdb"> Imdb Score: <span class="filter-subtitle"> 0 - 10 </span></label>
-      </div>
+
+      <div class="score">
+        <input type="range" min= "0" max= "10" step="0.1" id="imdbRating">
+        <label for = "imdb"> Imdb Score </label>
+        <p id="value-area"></p>
+
+
       
       <div class="year-movie">
         <input type="range" min= "1900" max="2021" id="Year">
