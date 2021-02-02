@@ -22,3 +22,7 @@ getPoster().then(moviesList => {
   }
   document.getElementById("root").innerHTML = posters;
 })
+
+const testBtn = document.getElementById("img1");
+testBtn.addEventListener("click", () => {
+  showMovieInfo(movieGenres.animationNfx);
