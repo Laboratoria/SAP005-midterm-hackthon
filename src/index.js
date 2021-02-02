@@ -1,8 +1,10 @@
+import carrossel from "./carrossel.js";
 import movieGenres from "./genres.js"
 
 let imgBaseUrl = "https://image.tmdb.org/t/p/w200";
 let imgSrc = "";
 let posters = "";
+let btn_sorteio = document.querySelector("#btnSorteio");
 
 const getPoster = (url) => {
   return fetch(url)
@@ -153,3 +155,5 @@ filterWestern.addEventListener("click", () => {
   showMovieInfo(movieGenres.westernNfx);
   showMovieInfo(movieGenres.westernAmz);
 })
+
+btn_sorteio.addEventListener('click', carrossel.sorteio)
