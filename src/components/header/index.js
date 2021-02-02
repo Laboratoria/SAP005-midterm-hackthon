@@ -1,3 +1,6 @@
+import {films} from '../../pages/home/mock.js'
+import {printFilms} from '../../pages/home/index.js'
+
 export const header = () => {
   const topHeader = document.createElement('header');
   topHeader.classList.add('header-container');
@@ -18,10 +21,33 @@ export const header = () => {
     </div>
   `;
 
-  topHeader.querySelector('.search-title-director')
+  topHeader.querySelector('#search')
     .addEventListener('keyup', () => {
-      console.log('foie');
+      const nameSearch = "";
+      const searchValue = topHeader.querySelector('#search').value;
+      searchForName(films,searchValue)
     });
+
+     function searchForName(data,condicao) {
+     const dataTest = data.filter(search => search.title.toUpperCase().includes(condicao.toUpperCase()));
+      getMoviesFilter(dataTest)
+      
+     };
+     function getMoviesFilter(data){
+       // eslint-disable-next-line no-restricted-syntax
+          for (const i of data) {
+
+        fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
+          .then((response) => response.json())
+          .then((json) => {
+          console.log(printFilms(json));
+          // printFilms(json);
+          });
+      };
+      
+     };
+
+
 
     const btnLogin = topHeader.querySelector('.btn-login');
     const btnRegister = topHeader.querySelector('.btn-register');

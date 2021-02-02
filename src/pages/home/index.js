@@ -55,7 +55,7 @@ export const Home = () => {
   return rootElement;
 };
 
-const printFilms = (json) => {
+export const printFilms = (json) => {
   const filmsContainer = document.createElement('section');
   filmsContainer.classList.add('films-container');
   filmsContainer.innerHTML += `
@@ -227,6 +227,6 @@ const sortByHighestScoreImdb = async () => {
 }
 sortByHighestScoreImdb();
 
-// export const searchForName =
+
         
   
