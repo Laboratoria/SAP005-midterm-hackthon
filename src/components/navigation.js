@@ -1,5 +1,5 @@
-import { onNavigate } from '../../utils/history.js';
-import { signOut } from '../../services/index.js';
+import { onNavigate } from '../utils/history.js';
+import { signOut } from '../services/index.js';
 
 export const Navigation = () => {
   const navigation = document.createElement('nav');

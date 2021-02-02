@@ -1,5 +1,5 @@
 import { onNavigate } from '../../utils/history.js';
-import { Navigation } from '../../components/navigation/navigation.js';
+import { Navigation } from '../../components/navigation.js';
 
 export const MenuList = () => {
   const nav = Navigation();
