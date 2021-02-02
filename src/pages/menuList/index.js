@@ -1,14 +1,7 @@
-import {
-  onNavigate
-} from '../../utils/history.js';
-import {
-  Navigation
-} from '/pages/navigation/index.js';
-
-
+import { onNavigate } from '../../utils/history.js';
+import { Navigation } from '../../components/navigation/navigation.js';
 
 export const MenuList = () => {
-
   const nav = Navigation();
   const rootElement = document.createElement('div');
 
@@ -38,9 +31,9 @@ export const MenuList = () => {
       </div>
     </div> 
   `;
-    return boxElement
-  }
-  rootElement.appendChild(contentElement())
+    return boxElement;
+  };
+  rootElement.appendChild(contentElement());
 
   const btnWatchList = rootElement.querySelector('#btnWatchList');
   const btnToWatchList = rootElement.querySelector('#btnToWatchList');

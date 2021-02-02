@@ -1,6 +1,5 @@
-import {
-  Navigation
-} from '/pages/navigation/index.js';
+import { Navigation } from '../../components/navigation/navigation.js';
+
 export const MainList = () => {
   const nav = Navigation();
   const rootElement = document.createElement('div');
@@ -9,7 +8,7 @@ export const MainList = () => {
 
   const contentElement = () => {
     const boxElement = document.createElement('div');
-    boxElement.classList.add('bgList')
+    boxElement.classList.add('bgList');
 
     const db = firebase.firestore();
     let movie = '';
@@ -63,6 +62,6 @@ export const MainList = () => {
     return boxElement;
   };
 
-  rootElement.appendChild(contentElement())
+  rootElement.appendChild(contentElement());
   return rootElement;
 };
