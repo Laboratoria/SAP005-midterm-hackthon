@@ -46,8 +46,9 @@ export const createMenuFilter = () => {
       </form>
     
       <div class="score">
-        <input type="range" min= "0" max= "10" id="imdbRating">
+        <input type="range" min= "0" max= "10" step="0.1" id="imdbRating">
         <label for = "imdb"> Imdb Score </label>
+        <p id="value-area"></p>
       </div>
       
       <div class="ano">
