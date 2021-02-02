@@ -1,4 +1,6 @@
-import { signIn, signInGoogle, checkLogin } from '../../services/index.js';
+import {
+  signIn, signInGoogle, saveUser, verifyUser,
+} from '../../services/index.js';
 import { onNavigate } from '../../utils/history.js';
 
 export const Login = () => {
@@ -8,7 +10,7 @@ export const Login = () => {
     <div class='box-login'>
         <img src='images/Cinelist.png'>
       <form>          
-        <input type='email' class='input-login' id='e-mail' placeholder ='E-mail'/>
+        <input class='input-login' id='e-mail' placeholder ='E-mail'/>
         <input type='password' class='input-login' id='my-password' placeholder='Senha'/>    
         <button type='submit' class='button' id='button-login'>Entrar</button>
         <p>ou</p>
@@ -19,45 +21,44 @@ export const Login = () => {
     </div>
   </div>
   `;
+
+  const email = rootElement.querySelector('#e-mail').value;
+  const password = rootElement.querySelector('#my-password').value;
+
   rootElement.querySelector('#button-login').addEventListener('click', (e) => {
-    const email = rootElement.querySelector('#e-mail').value;
-    const password = rootElement.querySelector('#my-password').value;
     e.preventDefault();
-    return signIn(email, password)
+    signIn(email, password)
       .then(() => {
-        const user = firebase.auth().currentUser;
-        checkLogin(user);
-        
-        onNavigate('/allMovies');
-        alert('Login realizado com sucesso');
+        onNavigate('/mainList');
       })
       .catch(() => {
         alert('Email e/ou senha incorretos');
-        onNavigate('/');
       });
   });
 
   rootElement.querySelector('#button-google').addEventListener('click', (e) => {
     e.preventDefault();
-    return signInGoogle()
+    signInGoogle()
       .then(() => {
-        const user = firebase.auth().currentUser;
-        checkLogin(user);
-        onNavigate('/allMovies');
-        alert('Login realizado com sucesso');
+        verifyUser()
+          .then((result) => {
+            if (result.size < 1) {
+              saveUser();
+              onNavigate('/mainList');
+            } else {
+              onNavigate('/mainList');
+            }
+          });
       })
       .catch(() => {
         alert('Você não conectou com o Google, tente novamente');
-        onNavigate('/');
       });
   });
 
-  rootElement
-    .querySelector('#button-create-account')
-    .addEventListener('click', (e) => {
-      e.preventDefault();
-      onNavigate('/register');
-    });
+  rootElement.querySelector('#button-create-account').addEventListener('click', (e) => {
+    e.preventDefault();
+    onNavigate('/register');
+  });
 
   return rootElement;
 };

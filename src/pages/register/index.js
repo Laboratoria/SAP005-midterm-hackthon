@@ -8,40 +8,49 @@ export const Register = () => {
     <div class='box-login'>
      <img src='images/Cinelist.png' class='login-icon'>
       <form class='login'>
-        <input type='email' class='input-login' id ='email' placeholder ='E-mail'/>
+        <input class='input-login' id="email" placeholder="E-mail" required>
         <p class='infoText'>Senha de no mínimo 6 caracteres</p>
-        <input type='password' class='input-login' id='password' placeholder='Senha'/>
+        <input class='input-login' id="password" type="password" placeholder="Senha" required>
         <input type='password' class='input-login' id='password-confirm' placeholder='Confirmar senha'/>
+        <p class="flex-itens" id="password-error"></p>
         <button type='submit' class='button' id='button-register'>Registrar-se</button>
         <p class='infoText marginText'>Ao cadastre-se você concorda com nossos termos de uso.</p>
       </form>
     </div>
   </div>
   `;
-  let db = firebase.firestore();
- 
 
-  rootElement.querySelector('#button-register').addEventListener('click', (e) => {
-    const email = rootElement.querySelector('#email').value;
-    const password = rootElement.querySelector('#password').value;
+  const btnRegister = rootElement.querySelector('#button-register');
+  const email = rootElement.querySelector('#email');
+  const password = rootElement.querySelector('#password');
+  const confirmPassword = rootElement.querySelector('#password-confirm');
+  const passwordError = rootElement.querySelector('#password-error');
+
+  const verifyConfirmPassword = () => {
+    if (password.value !== confirmPassword.value) {
+      passwordError.style.color = 'red';
+      passwordError.innerHTML = 'Senhas não são iguais!';
+      return false;
+    }
+    passwordError.innerHTML = '';
+    return true;
+  };
+
+  confirmPassword.addEventListener('input', verifyConfirmPassword);
+
+  btnRegister.addEventListener('click', (e) => {
     e.preventDefault();
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        const userId = firebase.auth().currentUser.uid
-        console.log(userId)
-        db.collection("users").doc(userId).set({
-          email: email,
-          id: userId,          
-          listToWatch:[],
-          listwatched:[]
-       })
-        
-        alert('Conta criada com sucesso');
-        onNavigate('/allmovies');
-      })
-      .catch(() => {
-        alert('Falha ao realizar o cadastro');
-      });
+    if (verifyConfirmPassword()) {
+      signUp(email.value, password.value)
+        .then(() => {
+          saveUser();
+          onNavigate('/mainList');
+        })
+        .catch(() => {
+          alert('Falha ao realizar o cadastro');
+        });
+    }
   });
+
   return rootElement;
 };

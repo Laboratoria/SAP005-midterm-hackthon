@@ -1,7 +1,7 @@
 import { Login } from './pages/login/index.js';
 import { Register } from './pages/register/index.js';
 import { MainPage } from './pages/mainPage/index.js';
-import { allMovies } from './pages/mainList/index.js';
+import { MainList } from './pages/mainList/index.js';
 import { MenuList } from './pages/menuList/index.js';
 import { ToWatchList } from './pages/toWatchList/index.js';
 import { WatchList } from './pages/watchList/index.js';
@@ -13,7 +13,7 @@ const routeRender = () => {
     '/': MainPage,
     '/login': Login,
     '/register': Register,
-    '/allMovies':allMovies,
+    '/mainList': MainList,
     '/menuList': MenuList,
     '/watchList': WatchList,
     '/toWatchList': ToWatchList,
@@ -22,8 +22,6 @@ const routeRender = () => {
   rootDiv.innerHTML = '';
   rootDiv.appendChild(routes[window.location.pathname]());
 };
-
-window.addEventListener('popstate', routeRender);
 
 window.addEventListener('popstate', routeRender);
 window.addEventListener('load', () => {
@@ -46,10 +44,10 @@ window.addEventListener('load', () => {
       onNavigate('/register');
     });
   document
-    .getElementById('allMovies')
+    .getElementById('mainList')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/allMovies');
+      onNavigate('/mainList');
     });
   document
     .getElementById('menuList')

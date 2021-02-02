@@ -1,12 +1,11 @@
-import { onNavigate } from '../utils/history.js';
-
-export const saveUser = (user, userEmail) => {
-  firebase.firestore().collection('users').doc(userEmail).add({
+export const saveUser = () => {
+  const user = firebase.auth().currentUser;
+  return firebase.firestore().collection('users').doc(user.uid).set({
     userId: user.uid,
-    email: userEmail,
-  })
-    .then(() => true)
-    .catch((error) => error);
+    email: user.email,
+    listToWatch: [],
+    listwatched: [],
+  });
 };
 
 export const signUp = (email, password) => firebase.auth()
@@ -23,6 +22,4 @@ export const signInGoogle = () => {
   return firebase.auth().signInWithPopup(provider);
 };
 
-export const signOut = () => firebase.auth().signOut().then(onNavigate('/'));
-
-export const checkLogin = () => firebase.auth().onAuthStateChanged((user) => user);
+export const signOut = () => firebase.auth().signOut();
