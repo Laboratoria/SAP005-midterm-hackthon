@@ -29,7 +29,7 @@ export const Login = () => {
     e.preventDefault();
     signIn(email, password)
       .then(() => {
-        onNavigate('/allMovies');
+        onNavigate('/mainList');
       })
       .catch(() => {
         alert('Email e/ou senha incorretos');
@@ -44,9 +44,9 @@ export const Login = () => {
           .then((result) => {
             if (result.size < 1) {
               saveUser();
-              onNavigate('/allMovies');
+              onNavigate('/mainList');
             } else {
-              onNavigate('/allMovies');
+              onNavigate('/mainList');
             }
           });
       })

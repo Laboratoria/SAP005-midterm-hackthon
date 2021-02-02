@@ -44,7 +44,7 @@ export const Register = () => {
       signUp(email.value, password.value)
         .then(() => {
           saveUser();
-          onNavigate('/allMovies');
+          onNavigate('/mainList');
         })
         .catch(() => {
           alert('Falha ao realizar o cadastro');
