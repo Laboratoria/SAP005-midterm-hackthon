@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 import { Navigation } from '../../components/navigation.js';
-=======
-import {
-  Navigation
-} from '../../components/navigation/navigation.js';
->>>>>>> 701bf5c92684cfb99cb0ccb56210c2defc12146e
 
 export const WatchList = () => {
   const auth = firebase.auth().currentUser;
