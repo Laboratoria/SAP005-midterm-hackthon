@@ -58,7 +58,24 @@ const printFilms = (json) => {
 
     <section id="info-details${json.imdbID}" class="showing">
 
-    <button id="close-container-${json.imdbID}">FECHAR</button>
+    <section class"buttons-details">
+    <button class="like" id="like-${json.imdbID}">
+      <span class="material-icons">thumb_up_alt</span>
+    </button>
+
+    <button class="dislike" id="dislike-${json.imdbID}">
+      <span class="material-icons">thumb_down_alt</span>
+    </button>
+
+    <button class="save" id="save-${json.imdbID}">
+      <span class="material-icons">bookmark</span>
+    </button>
+
+    <button id="close-container-${json.imdbID}">
+      <span class="material-icons">close</span>
+    </button>
+  </section>
+
 
     <div class="poster-info"><img src="${json.Poster}"> 
     <p><b>${json.Title}</b> <br><br><br>
@@ -89,7 +106,24 @@ const printFilms = (json) => {
 function showDetailsContainer(e) {
   const idFilmCard = e.target.parentNode;
   toggleDetailsContainer(idFilmCard, true);
-  const closeDetailsButton = document.getElementById(`close-container-${idFilmCard.dataset.id}`); 
+
+  const likeButton = document.getElementById(`like-${idFilmCard.dataset.id}`);
+  likeButton.addEventListener('click', () => {
+    console.log("Pegou o click do like")
+  })
+
+  const dislikeButton = document.getElementById(`dislike-${idFilmCard.dataset.id}`);
+  dislikeButton.addEventListener('click', () => {
+    console.log("Pegou o click do dislike")
+  })
+
+  const saveMovieButton = document.getElementById(`save-${idFilmCard.dataset.id}`);
+  saveMovieButton.addEventListener('click', () => {
+    console.log("Pegou o click de salvar")
+  })
+
+  //save
+  const closeDetailsButton = document.getElementById(`close-container-${idFilmCard.dataset.id}`);
   closeDetailsButton.addEventListener('click', () => {
     toggleDetailsContainer(idFilmCard, false);
   })
@@ -98,7 +132,7 @@ function showDetailsContainer(e) {
 function toggleDetailsContainer(card, show) {
   const cardFilm = card;
   const holderDetailsContainer = document.querySelector(`#info-details${cardFilm.dataset.id}`)
-  if (show) {
+  if (show) { 
     holderDetailsContainer.classList.add('display');
   } else {
     holderDetailsContainer.classList.remove('display');
