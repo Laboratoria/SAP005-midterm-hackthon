@@ -67,4 +67,5 @@ export const creatingAccountWithEmail = (username, email, password) => {
       const errorMessage = error.message;
       alert(errorMessage);
     });
-  };
+};
+
