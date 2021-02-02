@@ -163,12 +163,36 @@ export const filterGenre = () => {
     })
 }
 
+export const filterYear = () => {
+  
+  const filter = document.querySelector('#Year')
+   filter.addEventListener('change', () => {
+     document.querySelector('#catalogue').innerHTML = " "
+      const yearArea = document.querySelector("#year-area")
+      console.log(yearArea)
+       yearArea.innerHTML = filter.value
+
+       for(const i of films){
+        fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
+        .then((response) => response.json())
+        .then((json) => {
+          
+        if(json.Year == filter.value){
+           const getCatalogueSection = document.querySelector('#catalogue');
+           getCatalogueSection.appendChild(printFilms(json));
+        
+            printFilms(json);
+             }
+          })
+       }
+   })
+}
 
 export const filterImdb = () => {
-    const filter = document.querySelector('#imdbRating')
-     filter.addEventListener('change', () => {
-        document.querySelector('#catalogue').innerHTML = " "
-         const numberArea = document.querySelector('#value-area')
+  const filter = document.querySelector('#imdbRating')
+    filter.addEventListener('change', () => {
+      document.querySelector('#catalogue').innerHTML = " "
+        const numberArea = document.querySelector('#value-area')
           numberArea.innerHTML = filter.value
           
           for(const i of films){
@@ -176,12 +200,12 @@ export const filterImdb = () => {
             fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
               .then((response) => response.json())
               .then((json) => {
-                console.log(filter.value)
+                
                   if(json.imdbRating == filter.value){
                     const getCatalogueSection = document.querySelector('#catalogue');
                     getCatalogueSection.appendChild(printFilms(json));
               
-                    printFilms(json);
+                  printFilms(json);
                    }
                 })
 
@@ -227,15 +251,4 @@ const sortByHighestScoreImdb = async () => {
 }
 sortByHighestScoreImdb();
 
-export const filterGenre = () => {
-  const filter = document.querySelector('#genre')
-   filter.addEventListener('change', () => {
-     document.querySelector('#catalogue').innerHTML = " "
-      for (const i of films){
-        const chooseFilter = filter.value
-        if(chooseFilter == i.genre){
-          getFilms(i)
-         }
-       }
-    })
- }
+
