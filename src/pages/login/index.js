@@ -1,4 +1,6 @@
-import { signIn, signInGoogle, saveUser } from '../../services/index.js';
+import {
+  signIn, signInGoogle, saveUser, verifyUser,
+} from '../../services/index.js';
 import { onNavigate } from '../../utils/history.js';
 
 export const Login = () => {
@@ -38,8 +40,15 @@ export const Login = () => {
     e.preventDefault();
     signInGoogle()
       .then(() => {
-        saveUser();
-        onNavigate('/allMovies');
+        verifyUser()
+          .then((result) => {
+            if (result.size < 1) {
+              saveUser();
+              onNavigate('/allMovies');
+            } else {
+              onNavigate('/allMovies');
+            }
+          });
       })
       .catch(() => {
         alert('Você não conectou com o Google, tente novamente');

@@ -21,15 +21,15 @@ export const Register = () => {
   `;
 
   const btnRegister = rootElement.querySelector('#button-register');
-  const email = rootElement.querySelector('#email').value;
-  const password = rootElement.querySelector('#password').value;
-  const confirmPassword = rootElement.querySelector('#password-confirm').value;
+  const email = rootElement.querySelector('#email');
+  const password = rootElement.querySelector('#password');
+  const confirmPassword = rootElement.querySelector('#password-confirm');
   const passwordError = rootElement.querySelector('#password-error');
 
   const verifyConfirmPassword = () => {
-    if (password !== confirmPassword) {
+    if (password.value !== confirmPassword.value) {
       passwordError.style.color = 'red';
-      passwordError.innerHTML = 'Passwords do not match!';
+      passwordError.innerHTML = 'Senhas não são iguais!';
       return false;
     }
     passwordError.innerHTML = '';
@@ -41,7 +41,7 @@ export const Register = () => {
   btnRegister.addEventListener('click', (e) => {
     e.preventDefault();
     if (verifyConfirmPassword()) {
-      signUp(email, password)
+      signUp(email.value, password.value)
         .then(() => {
           saveUser();
           onNavigate('/allMovies');

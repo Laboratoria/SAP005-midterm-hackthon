@@ -1,12 +1,18 @@
-export const saveUser = (user) => firebase.firestore().collection('users').doc(user.email).add({
-  userId: user.uid,
-  email: user.email,
-  listToWatch: [],
-  listwatched: [],
-});
+export const saveUser = () => {
+  const user = firebase.auth().currentUser;
+  return firebase.firestore().collection('users').doc(user.uid).set({
+    userId: user.uid,
+    email: user.email,
+    listToWatch: [],
+    listwatched: [],
+  });
+};
 
 export const signUp = (email, password) => firebase.auth()
   .createUserWithEmailAndPassword(email, password);
+
+export const verifyUser = () => firebase.firestore().collection('users')
+  .where('email', '==', firebase.auth().currentUser.email).get();
 
 export const signIn = (email, password) => firebase.auth()
   .signInWithEmailAndPassword(email, password);
