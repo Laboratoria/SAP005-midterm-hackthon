@@ -2,7 +2,7 @@
 import { films } from './mock.js';
 import { createMenu } from '../../components/menu/index.js';
 import { header } from '../../components/header/index.js';
-import { createMenuFilter} from '../../components/filter/index.js'
+import { createMenuFilter } from '../../components/filter/index.js'
 
 const getFilms = (i) => {
   fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
@@ -145,7 +145,7 @@ function showDetailsContainer(e) {
 function toggleDetailsContainer(card, show) {
   const cardFilm = card;
   const holderDetailsContainer = document.querySelector(`#info-details${cardFilm.dataset.id}`)
-  if (show) { 
+  if (show) {
     document.querySelector('.showing').classList.remove('display')
     holderDetailsContainer.classList.add('display');
   } else {
@@ -153,66 +153,22 @@ function toggleDetailsContainer(card, show) {
   }
 }
 
-/*
-//  FUNÇÃO MAIS RECENTES:
+const sortByMostRecent = async () => {
+  let dataMovie = []
 
-function imdbFilms(i) {
-  fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
-    .then((response) => response.json())
-    .then((json) => {
-      if (json.imdbRating > 7.5) {
-        document.querySelector('.films-container').innerHTML += ` 
-          <section data-id="${json.imdbID}" class="movie-box">
-            <p class="title">${json.Title}</p>
-            <img class="image" src="${json.Poster}">
-            <button id="info-${json.imdbID}" class="info">info</button>
-          </section>
-        <section id="info-details${json.imdbID}"></section>`;  
-      }
-    });
+  for (let item of films) {
+    await fetch(`http://www.omdbapi.com/?t=${item.title}&apikey=ce12da02`)
+      .then((response) => response.json())
+      .then((json) => {
+        dataMovie.push(json);
+      })
+  }
+  
+  dataMovie.sort(function (a, b) {
+    if (+a.Year < +b.Year) return 1;
+    if (+a.Year > +b.Year) return -1;
+    return 0;
+  })
 }
+sortByMostRecent();
 
-function shorterFilms(i) {
-  fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
-    .then((response) => response.json())
-    .then((json) => {
-      for (let x = 0; x < 11; x++) {
-        if (json.Runtime == `${x} min`) {
-          listArea.innerHTML += ` 
-            <div class="movie-box">
-              <img src="${json.Poster}">
-              <p>${json.Title}</p>
-              <p>Awards: ${json.Awards}</p>
-              <p>Plot: ${json.Plot}</p>
-              <p>Genre: ${json.Genre}</p>
-              <p>Director: ${json.Director}</p>
-              <p>Year: ${json.Year}</p>
-              <p>IMDb Rating: ${json.imdbRating}</p>
-              <p>Runtime: ${json.Runtime}</p>
-            </div>`;
-        }
-      }
-    });
-}
-
-function newFilms(i) {
-  fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
-    .then((response) => response.json())
-    .then((json) => {
-      if (json.Year >= '2015') {
-        listArea.innerHTML += ` 
-          <div class="movie-box">
-            <img src="${json.Poster}">
-            <p>${json.Title}</p>
-            <p>Awards: ${json.Awards}</p>
-            <p>Plot: ${json.Plot}</p>
-            <p>Genre: ${json.Genre}</p>
-            <p>Director: ${json.Director}</p>
-            <p>Year: ${json.Year}</p>
-            <p>IMDb Rating: ${json.imdbRating}</p>
-            <p>Runtime: ${json.Runtime}</p>
-          </div>`;
-      }
-    });
-}
-*/
