@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-alert */
 import { onNavigate } from '../utils/history.js';
 
 // Your web app's Firebase configuration
@@ -18,10 +20,10 @@ firebase.initializeApp(firebaseConfig);
 // const firebase.auth = firebase.firebase.auth()
 
 export const signIn = (email, senha) => {
-  firebase.auth.signInWithEmailAndPassword(email, senha)
+  firebase.auth().signInWithEmailAndPassword(email, senha)
     .then(() => {
       onNavigate('/home');
-      const user = firebase.auth.currentUser;
+      const user = firebase.auth().currentUser;
       alert(`Welcome to Curta Curtas, ${user.displayName}!`);
     })
     .catch((error) => {
@@ -32,11 +34,11 @@ export const signIn = (email, senha) => {
 
 export const loginGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  console.log(provider)
+  console.log(provider);
   firebase.auth().signInWithPopup(provider)
     .then(() => {
       onNavigate('/home');
-      alert(`Welcome to Curta Curtas, ${firebase.auth.currentUser.displayName}!`);
+      alert(`Welcome to Curta Curtas, ${firebase.auth().currentUser.displayName}!`);
       const user = firebase.auth.currentUser;
       const uid = user.uid;
       firebase.firestore().doc(`/users/${uid}`).set({
@@ -49,3 +51,4 @@ export const loginGoogle = () => {
       alert(`${errorMessage}`);
     });
 };
+export const logOut = () => firebase.auth().signOut();
