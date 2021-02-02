@@ -1,8 +1,9 @@
 export const createMenuFilter = () => {
     const filterContent = document.createElement('section');
+    filterContent.classList.add('conteudo-section');
     filterContent.innerHTML = `
-     <p> Filter </p>
-      <form class="filter-list">
+     <p> Filters: </p>
+      <div class="filter-list">
       <select class="select-genre" id="genre">
           <option class="select-genre" value="genre" selected disabled>Genre</option>
           <option class="select-genre" value="sci-fi">Sci-Fi</option>
@@ -14,10 +15,10 @@ export const createMenuFilter = () => {
           <option class="select-genre" value="documentary">Documentary</option>
         </select>
         </select>
-      </form>
-      <form class="country-list">
+      </div>
+      <div class="country-list">
       <select class="select-country" id="country">
-          <option class="select-country" value="country" selected disabled>Country</option>
+          <option class="select-country" value="country" selected disabled>Nationalities</option>
           <option class="select-country" value="Australia">Australia</option>
           <option class="select-country" value="Brazil">Brazil</option>
           <option class="select-country" value="Brazil, France">Brazil, France</option>
@@ -43,21 +44,21 @@ export const createMenuFilter = () => {
           <option class="select-country" value="USA, China">USA, China</option>
           <option class="select-country" value="USA, France">USA, France</option>
         </select>
-      </form>
+      </div>
     
-      <div class="score">
+      <div class="score-imdb">
         <input type="range" min= "0" max= "10" id="imdbRating">
-        <label for = "imdb"> Imdb Score </label>
+        <label for = "imdb"> Imdb Score: <span class="filter-subtitle"> 0 - 10 </span></label>
       </div>
       
-      <div class="ano">
+      <div class="year-movie">
         <input type="range" min= "1900" max="2021" id="Year">
-        <label for = "year"> Year </label>
+        <label for = "year"> Year: <span class="filter-subtitle"> 1900 - 2021 </span></label>
       </div>
           
-      <div class="duraçao">
+      <div class="time">
         <input type="range" min= "0" max="40 min" id="Runtime">
-        <label for= "runtime"> Runtime </label>
+        <label for= "runtime"> Runtime: <span class="filter-subtitle">0 - 40 minutes </span> </label>
       </div>
       
       <button class="clear" type="button" id ="btn-clear" value="Clear">Clear</button>
@@ -66,9 +67,4 @@ export const createMenuFilter = () => {
 
     return filterContent;
 };
-// const showScore = document.getElementById('imdbRating')
-//         showScore.addEventListener('change', () => {
 
-//     const score = showScore.value
-//         document.getElementById('score').innerHTML = score
-//         });
