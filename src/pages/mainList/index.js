@@ -14,7 +14,7 @@ export const allMovies = async () => {
       <div class = "backgroundPoster" id = "${img.poster_path}">
         <img class = "poster"  src = "https://image.tmdb.org/t/p/original/${img.poster_path}">
         <div class = "btnAdd">
-          <button>+ASSISTIDO</button>
+          <button id ="watched">+ASSISTIDO</button>
           <button id ="toWatch">+ASSISTIR</button>
         </div>
       </div>
@@ -28,13 +28,27 @@ export const allMovies = async () => {
       e.preventDefault()
       const userId = firebase.auth().currentUser.uid
       const containerFeed = e.target.parentNode.parentNode
-      console.log(containerFeed.id)
       db.collection("users").doc(userId).update({
-        likeToWatch: firebase.firestore.FieldValue.arrayUnion(containerFeed.id)
+        listToWatch: firebase.firestore.FieldValue.arrayUnion(containerFeed.id)
     })
        
     })        
 
-  })  
+  })
+  
+  let watched = document.querySelectorAll("#watched")
+  toWatch.forEach((button) => {
+    button.addEventListener("click", async (e) => {
+      e.preventDefault()
+      const userId = firebase.auth().currentUser.uid
+      const containerFeed = e.target.parentNode.parentNode
+      db.collection("users").doc(userId).update({
+        listwatched: firebase.firestore.FieldValue.arrayUnion(containerFeed.id)
+    })
+       
+    })        
+
+  }) 
  
 };
+allMovies();

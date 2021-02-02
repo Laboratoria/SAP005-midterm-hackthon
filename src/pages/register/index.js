@@ -32,7 +32,8 @@ export const Register = () => {
         db.collection("users").doc(userId).set({
           email: email,
           id: userId,          
-          listToWatch:[]
+          listToWatch:[],
+          listwatched:[]
        })
         
         alert('Conta criada com sucesso');
