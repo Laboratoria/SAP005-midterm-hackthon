@@ -163,6 +163,28 @@ export const filterGenre = () => {
     })
 }
 
+export const filterCountry = () => {
+  const filter = document.querySelector('#country')
+   filter.addEventListener('change', () => {
+     document.querySelector('#catalogue').innerHTML = " "
+        const chooseFilter = filter.value
+        
+      for(const i of films){
+        fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
+        .then((response) => response.json())
+        .then((json) => {
+          
+          if(json.Country == chooseFilter){
+             const getCatalogueSection = document.querySelector('#catalogue');
+             getCatalogueSection.appendChild(printFilms(json));
+          
+              printFilms(json);
+          }
+       })
+      }
+   })
+  }
+  
 export const filterYear = () => {
   
   const filter = document.querySelector('#Year')
@@ -201,6 +223,7 @@ export const filterRuntime = () => {
         fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
         .then((response) => response.json())
         .then((json) => {
+          console.log(json)
         if(json.Runtime == timeArea.innerText){
            const getCatalogueSection = document.querySelector('#catalogue');
            getCatalogueSection.appendChild(printFilms(json));

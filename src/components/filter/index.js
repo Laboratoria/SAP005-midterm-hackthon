@@ -4,21 +4,21 @@ export const createMenuFilter = () => {
     filterContent.innerHTML = `
      <p> Filters: </p>
       <div class="filter-list">
-      <select class="select-genre" id="genre">
-          <option class="select-genre" value="genre" selected disabled>Genre</option>
-          <option class="select-genre" value="sci-fi">Sci-Fi</option>
-          <option class="select-genre" value="drama">Drama</option>
-          <option class="select-genre" value="comedy">Comedy</option>
-          <option class="select-genre" value="horror">Horror</option>
-          <option class="select-genre" value="fantasy">Fantasy</option>
-          <option class="select-genre" value="animation">Animation</option>
-          <option class="select-genre" value="documentary">Documentary</option>
-        </select>
-        
-      </div>
+        <select class="select-genre" id="genre">
+            <option class="select-genre" value="genre" selected="disabled">Genre</option>
+            <option class="select-genre" value="sci-fi">Sci-Fi</option>
+            <option class="select-genre" value="drama">Drama</option>
+            <option class="select-genre" value="comedy">Comedy</option>
+            <option class="select-genre" value="horror">Horror</option>
+            <option class="select-genre" value="fantasy">Fantasy</option>
+            <option class="select-genre" value="animation">Animation</option>
+            <option class="select-genre" value="documentary">Documentary</option>
+          </select>
+     </div>
+
       <div class="country-list">
       <select class="select-country" id="country">
-          <option class="select-country" value="country" selected disabled>Nationalities</option>
+          <option class="select-country" value="country" selected="disabled">Nationalities</option>
           <option class="select-country" value="Australia">Australia</option>
           <option class="select-country" value="Brazil">Brazil</option>
           <option class="select-country" value="Brazil, France">Brazil, France</option>
