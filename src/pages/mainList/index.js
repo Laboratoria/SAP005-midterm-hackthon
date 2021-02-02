@@ -9,6 +9,7 @@ export const MainList = () => {
 
   const contentElement = () => {
     const boxElement = document.createElement('div');
+    boxElement.classList.add('bgList')
 
     const db = firebase.firestore();
     let movie = '';
