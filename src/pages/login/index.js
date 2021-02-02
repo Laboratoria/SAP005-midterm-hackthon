@@ -11,7 +11,7 @@ export const Login = () => {
         <img src='images/Cinelist.png'>
       <form>          
         <input class='input-login' id='e-mail' placeholder ='E-mail'/>
-        <input type='password' class='input-login' id='my-password' placeholder='Senha'/>    
+        <input type='password' class='input-login' id='my-password' placeholder='Senha'  autocomplete="off"/>    
         <button type='submit' class='button' id='button-login'>Entrar</button>
         <p>ou</p>
         <button class='button' id='button-google'>Entrar com o Google</button>
@@ -21,11 +21,15 @@ export const Login = () => {
     </div>
   </div>
   `;
-
-  const email = rootElement.querySelector('#e-mail').value;
-  const password = rootElement.querySelector('#my-password').value;
+  const emailButton = rootElement.querySelector('#e-mail');
+  const passwordButton = rootElement.querySelector('#my-password');
 
   rootElement.querySelector('#button-login').addEventListener('click', (e) => {
+    const email = emailButton.value;
+    const password = passwordButton.value;
+    console.log(email)
+    console.log(password)
+
     e.preventDefault();
     signIn(email, password)
       .then(() => {
