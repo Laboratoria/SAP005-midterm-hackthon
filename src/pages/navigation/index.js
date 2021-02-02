@@ -9,8 +9,8 @@ export const Navigation = () => {
     <nav class="nav-watchList">
     <div class="menu-bar">
       <img class="logo-header" src="images/Cinelist.png" alt="Logo CineList"/>
-      <p id="lista" class="colorText">Lista</p>
-      <p id="menulista" class="colorText">Menu Lista</p>
+      <p id="lista" class="colorText">Filmes</p>
+      <p id="menulista" class="colorText">Listas</p>
     </div>
     <button type="submit" class="button" id="sign-out">SAIR</button>
   </nav>
