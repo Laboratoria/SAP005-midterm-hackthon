@@ -34,7 +34,7 @@ export const header = () => {
       btnRegister.classList.add('hidden');
     } else if (path === '/') {
       btnLogin.classList.remove('hidden');
-      btnRegister.classList.remove('hidden');
+      btnRegister.classList.remove('hidden'); 
       greetingUser.classList.add('hidden');
       iconHeart.classList.add('hidden');
     }
