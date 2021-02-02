@@ -44,6 +44,8 @@ export const ToWatchList = () => {
                 listToWatch: firebase.firestore.FieldValue.arrayRemove(containerFeed.id),
                 listwatched: firebase.firestore.FieldValue.arrayUnion(containerFeed.id),
               });
+              button.classList.add('none');
+              containerFeed.classList.add('none')
             });
           });
 
@@ -57,6 +59,9 @@ export const ToWatchList = () => {
               console.log(idMove, towatch)
 
               movieDelet(idMove, towatch);
+
+              button.classList.add('none');
+              box.classList.add('none')
 
             })
           })

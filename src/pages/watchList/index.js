@@ -43,6 +43,9 @@ export const WatchList = () => {
 
               movieDelet(idMove, watched);
 
+              button.classList.add('none');
+              box.classList.add('none')
+
             })
           })
 
