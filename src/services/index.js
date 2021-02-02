@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-alert */
 import { onNavigate } from '../utils/history.js';
 
 // Your web app's Firebase configuration
@@ -32,7 +34,7 @@ export const signIn = (email, senha) => {
 
 export const loginGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  console.log(provider)
+  console.log(provider);
   firebase.auth().signInWithPopup(provider)
     .then(() => {
       onNavigate('/home');
