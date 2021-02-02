@@ -75,7 +75,7 @@ p{
 
 .contenedor-titulo-controles .indicadores button:hover,
 .contenedor-titulo-controles .indicadores button.activo {
-	background: #fbd11c;
+	background: #89c0df;
 }
 
 
@@ -109,7 +109,7 @@ p{
 
 .peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover,
 .peliculas-recomendadas .contenedor-principal .flecha-derecha:hover {
-	background: #fbd11c;
+	background: #89c0df;
 }
 
 .peliculas-recomendadas .contenedor-principal .flecha-izquierda {
