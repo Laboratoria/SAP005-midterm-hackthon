@@ -4,7 +4,9 @@
   "description": "* [Prefácio](#prefácio)\r * [Resumo do projeto](#resumo-do-projeto)\r * [Considerações gerais](#considerações-gerais)\r * [Objetivos de aprendizagem](#objetivos-de-aprendizagem)\r * [Exemplo de projetos](#examplo-de-projetos)\r * [APIs](#apis)\r * [Entrega](#entrega)\r * [Dicas](#dicas)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "htmlhint": "htmlhint dist/*.html ",
+    "pretest": "npm run htmlhint && npm",
+    "start": "serve src/"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,8 @@
   },
   "homepage": "https://github.com/Lu-Pereira/SAP005-midterm-hackthon#readme",
   "dependencies": {
-    "bootstrap": "^4.6.0"
-  }
+    "bootstrap": "^4.6.0",
+    "serve": "^11.3.2"
+  },
+  "devDependencies": {}
 }

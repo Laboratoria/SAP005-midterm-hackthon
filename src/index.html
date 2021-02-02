@@ -18,9 +18,17 @@
     </section>
     <img src="./img/Live2 (1).png" alt="logo" id="logo">
     <h2 id="description">Sua agenda de Lives!</h2>
-    <div id="search">
+    <form id="search-form">
+      <div class="form-group"></div>
       <input type="text" id="input-text" placeholder="Buscar uma live">
       <button id="btn-search"><img src="./img/lupa (1).png"> </button>
+    </form>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="videos">
+
+        </div>
+      </div>
     </div>
   </header>
 
@@ -28,5 +36,12 @@
   <script type="module" src="router.js"></script>
 
 </body>
+
+<script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
+
+<script src="./main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
 
 </html>
