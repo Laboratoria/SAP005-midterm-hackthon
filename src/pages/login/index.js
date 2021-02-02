@@ -27,8 +27,6 @@ export const Login = () => {
   rootElement.querySelector('#button-login').addEventListener('click', (e) => {
     const email = emailButton.value;
     const password = passwordButton.value;
-    console.log(email)
-    console.log(password)
 
     e.preventDefault();
     signIn(email, password)

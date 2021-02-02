@@ -188,6 +188,7 @@ nav.nav-watchList {
   align-items: center;
   padding: 0 15px;
   justify-content: space-between;
+  padding: 5px;
 }
 
 .menu-bar {
