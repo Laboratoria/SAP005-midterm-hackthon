@@ -1,11 +1,8 @@
-import {
-  Navigation
-} from '/pages/navigation/index.js';
+import { Navigation } from '../../components/navigation/navigation.js';
 
 export const WatchList = () => {
   const auth = firebase.auth().currentUser;
-  const user = auth.uid
-
+  const user = auth.uid;
 
   const nav = Navigation();
   const rootElement = document.createElement('div');
@@ -15,10 +12,11 @@ export const WatchList = () => {
   const contentElement = () => {
     const boxElement = document.createElement('div');
 
-    const docRef = firebase.firestore().collection("users").doc(user);
+    const docRef = firebase.firestore().collection('users').doc(user);
 
-    docRef.get().then(function (doc) {
+    docRef.get().then((doc) => {
       if (doc.exists) {
+
         const listwatched = doc.data().listwatched;
         const listToWatch = doc.data().listToWatch;
 
@@ -36,12 +34,11 @@ export const WatchList = () => {
           </div>
         </div>`;
         });
-
       } else {
-        console.log("No such document!");
+        console.log('No such document!');
       }
-    }).catch(function (error) {
-      console.log("Error getting document:", error);
+    }).catch((error) => {
+      console.log('Error getting document:', error);
     });
 
     const buttonDelet = boxElement.querySelectorAll("#delet")

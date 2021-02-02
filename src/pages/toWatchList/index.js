@@ -1,6 +1,4 @@
-import {
-  Navigation
-} from '/pages/navigation/index.js';
+import { Navigation } from '../../components/navigation/navigation.js';
 
 export const ToWatchList = () => {
   const nav = Navigation();
@@ -13,9 +11,9 @@ export const ToWatchList = () => {
     boxElement.innerHTML = `
     <h1>Olá Mundo</h1>
   `;
-    return boxElement
-  }
-  rootElement.appendChild(contentElement())
+    return boxElement;
+  };
+  rootElement.appendChild(contentElement());
 
   return rootElement;
 };
