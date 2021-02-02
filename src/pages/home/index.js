@@ -169,15 +169,39 @@ export const filterYear = () => {
    filter.addEventListener('change', () => {
      document.querySelector('#catalogue').innerHTML = " "
       const yearArea = document.querySelector("#year-area")
-      console.log(yearArea)
+      
        yearArea.innerHTML = filter.value
 
        for(const i of films){
         fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
         .then((response) => response.json())
         .then((json) => {
-          
+        
         if(json.Year == filter.value){
+           const getCatalogueSection = document.querySelector('#catalogue');
+           getCatalogueSection.appendChild(printFilms(json));
+        
+            printFilms(json);
+             }
+          })
+       }
+   })
+}
+
+export const filterRuntime = () => {
+  
+  const filter = document.querySelector('#Runtime')
+   filter.addEventListener('change', () => {
+     document.querySelector('#catalogue').innerHTML = " "
+      const timeArea = document.querySelector("#time-area")
+      
+       timeArea.innerHTML = filter.value  + " min"
+
+       for(const i of films){
+        fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
+        .then((response) => response.json())
+        .then((json) => {
+        if(json.Runtime == timeArea.innerText){
            const getCatalogueSection = document.querySelector('#catalogue');
            getCatalogueSection.appendChild(printFilms(json));
         
