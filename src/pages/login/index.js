@@ -6,21 +6,43 @@ export const Login = () => {
   const rootElement = document.createElement('div');
   rootElement.classList.add('container-login');
   rootElement.innerHTML = `
-      <div class="login-box">
-      <div class="login-header"><img src="/img/logo.cc.transparente.png" alt="Logo"></div>
-      <p class="about"><font color="#30261D">We Love</font> <font color="#BF2604">Short Films <3</font> </p>
-      <form id="formLogin" class="login">
-      <p>E-mail:</p>
-      <input id="userEmail" class="btn" type="text" placeholder="Email" >
-      <p>Password:</p>
-      <input id="userPassword" class="btn" type="password" placeholder="Senha" autocomplete="off" >    
-      <p><button id="btn-sign-in"> Login </button> </p>
-      <p>Or</p>
-      <button id="btn-google">SIGN IN WITH GOOGLE</button>
-      <p>Do not have an account? <button id="register">Register</button></p>
-    </form>
+  <div class='login-box'>
+    <div id='button-return'><a class='btn-return'> &#10094; Voltar </a></div>
+      <header class="login-header">
+        <br />
+          <img src="/img/logo.cc.transparente.png" alt="Logo">
+          <br />
+      </header>
+        <p class='we-love'>We Love &nbsp; <span class='short-films'>Short Films <3</span></p>
+    <div class='form-box'>
+        <form class='form-login'>
+          <label for="userEmail">E-mail:</label>
+          <br/>
+          <input id="userEmail" class="btn" type="text" placeholder="Email" />
+          <br/>
+          <label for="userPassword">Password:</label>
+          <br/>
+          <input id="userPassword" class="btn" type="password" placeholder="Password" autocomplete="off" >
+          <br />
+          <button id="btn-sign-in">SIGN IN</button>
+        </form>
+
+
       </div>
+      <div class='slice'><span>OR</span></div>
+      <div class='google-signin'>
+      <button id="btn-google">SIGN IN WITH GOOGLE</button>
+      <p>Do not have an account? &nbsp; <a id="register" class='register'>Register</a></p>
+    </div>
+ 
+  </div>
 `;
+
+  // Função Botão Voltar a Home
+  const backButton = rootElement.querySelector('#button-return');
+  backButton.addEventListener('click', () => {
+    onNavigate('/home');
+  });
 
   // Função de Registro
   const btnRegister = rootElement.querySelector('#register');
