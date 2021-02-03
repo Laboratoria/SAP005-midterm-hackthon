@@ -53,9 +53,6 @@ export const header = () => {
 
   };
 
-
-    });
-
   const btnLogin = topHeader.querySelector('.btn-login');
   const btnRegister = topHeader.querySelector('.btn-register');
   const greetingUser = topHeader.querySelector('.header-user');

@@ -110,7 +110,7 @@ export const printFilms = (json) => {
 };
 
 function showDetailsContainer(e) {
-  const idFilmCard = e.target.parentNode;
+  const idFilmCard = e.target.parentNode.parentNode;
   const idNumber = idFilmCard.dataset.id;
   toggleDetailsContainer(idFilmCard, true);
 
