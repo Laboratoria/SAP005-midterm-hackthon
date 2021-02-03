@@ -61,11 +61,16 @@ fila.addEventListener('mouseleave', () => {
 const carrossel = {
 	
 	/*Sorteio*/
-	sorteio: function () {
-	return document.getElementById("resultado").innerHTML
-		= Math.floor(Math.random() * (25 - 1 + 1)) + 1;
+	funcaoSorteio: function (h3, filmes) {
+		//return document.getElementById("resultado").innerHTML
+		//=
+		const num = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
+		const filme = filmes[num];
+		console.log(filme)
+		h3.innerHTML = 
+		` <img src="https://image.tmdb.org/t/p/w200/${filme.backdrop_path} "> `
    }
 };
 
-  
+
   export default carrossel;
