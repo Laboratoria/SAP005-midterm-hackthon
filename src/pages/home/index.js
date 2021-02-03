@@ -161,22 +161,6 @@ function showDetailsContainer(e, json) {
       </section>  
   </section>
   `
-
-  /*const likeButton = document.getElementById(`like-${idNumber}`);
-  likeButton.addEventListener('click', () => {
-    console.log("Pegou o click do like");
-  });
-
-  const dislikeButton = document.getElementById(`dislike-${idNumber}`);
-  dislikeButton.addEventListener('click', () => {
-    console.log("Pegou o click do dislike");
-  });
-
-  const saveMovieButton = document.getElementById(`save-${idNumber}`);
-  saveMovieButton.addEventListener('click', () => {
-    console.log("Pegou o click de salvar");
-  });*/
-
   const closeDetailsButton = document.getElementById(`close-container-${idNumber}`);
   closeDetailsButton.addEventListener('click', () => {
     getDetailsBox.innerHTML = ""
