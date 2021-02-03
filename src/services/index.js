@@ -82,12 +82,14 @@ export const addFilm = (idFilm, titleFilm, posterFilm, type) => {
       user_id: currentUserId,
       likes: data
     }, { merge: true });
+    removeFilm(idFilm, currentUserId, 'dislikes');
   }
   if (type == 'dislikes') {
     filmToAdd.set({
       user_id: currentUserId,
       dislikes: data
     }, { merge: true });
+    removeFilm(idFilm, currentUserId, 'likes');
   }
   if (type == 'watchlist') {
     filmToAdd.set({
@@ -96,3 +98,14 @@ export const addFilm = (idFilm, titleFilm, posterFilm, type) => {
     }, { merge: true });
   }
 };
+
+const removeFilm = (idFilm, docId, type) => {
+  firebase.firestore().collection('users').doc(docId)
+    .update({
+      [type + '.' + idFilm]: firebase.firestore.FieldValue.delete()
+    })
+    .then(() => {})
+    .catch(() => {
+      alert('Algo deu errado. Por favor, tente novamente.');
+    });
+}
