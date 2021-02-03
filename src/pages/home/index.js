@@ -4,7 +4,9 @@
 import { films } from './mock.js';
 import { createMenu } from '../../components/menu/index.js';
 import { header } from '../../components/header/index.js';
-import { createMenuFilter } from '../../components/filter/index.js'
+import { createMenuFilter } from '../../components/filter/index.js';
+
+
 import { addFilm } from '../../services/index.js';
 
 const getFilms = (i) => {
@@ -60,14 +62,14 @@ export const Home = () => {
   const getMenuFilterSection = rootElement.querySelector('#filters-area');
   getMenuFilterSection.appendChild(createMenuFilter());
 
- const catchCatalogue = rootElement.querySelector('#catalogue');
-  showSerchResult(catchCatalogue)
-   
+  const catchCatalogue = rootElement.querySelector('#catalogue');
+  showSerchResult(catchCatalogue);
   return rootElement;
 };
-export const showSerchResult =(section) =>{
-  const getCatalogueSection = section
-  return getCatalogueSection
+export const showSerchResult = (section) => {
+  const getCatalogueSection = section;
+  return getCatalogueSection;
+
 };
 export const printFilms = (json) => {
   const filmsContainer = document.createElement('section');
@@ -93,30 +95,30 @@ export const printFilms = (json) => {
   likeButton.addEventListener('click', () => {
     addFilm(json.imdbID, json.Title, json.Poster, 'likes');
     alert('Seu like foi recebido');
-  })
+  });
 
-const dislikeButton = filmsContainer.querySelector(`#dislike-${json.imdbID}`);
+  const dislikeButton = filmsContainer.querySelector(`#dislike-${json.imdbID}`);
   dislikeButton.addEventListener('click', () => {
     addFilm(json.imdbID, json.Title, json.Poster, 'dislikes');
     alert('Seu dislike foi recebido');
-  })
+  });
 
   const saveMovieButton = filmsContainer.querySelector(`#save-${json.imdbID}`);
   saveMovieButton.addEventListener('click', () => {
     addFilm(json.imdbID, json.Title, json.Poster, 'watchlist');
     alert('Seu favorito foi recebido');
-  })
 
+  });
   return filmsContainer;
 };
 
 function showDetailsContainer(e, json) {
+
   const idFilmCard = e.target.parentNode.parentNode;
   const idNumber = idFilmCard.dataset.id;
   const getDetailsBox = document.getElementById('movies-details-info');
   getDetailsBox.innerHTML = `
   <section id="info-details" class="">
-
       <figure class="poster-details">
         <img class="image" class="d-block w-100" src="${json.Poster}">
       </figure>  
@@ -174,7 +176,7 @@ export const filterGenre = () => {
     // eslint-disable-next-line no-restricted-syntax
     for (const i of films) {
       const chooseFilter = filter.value;
-      if (chooseFilter == i.genre) {
+      if (chooseFilter === i.genre) {
         getFilms(i);
       }
     }
@@ -190,7 +192,7 @@ export const filterCountry = () => {
       fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
         .then((response) => response.json())
         .then((json) => {
-          if (json.Country == chooseFilter) {
+          if (json.Country === chooseFilter) {
             const getCatalogueSection = document.querySelector('#catalogue');
             getCatalogueSection.appendChild(printFilms(json));
             printFilms(json);
@@ -210,7 +212,7 @@ export const filterYear = () => {
       fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
         .then((response) => response.json())
         .then((json) => {
-          if (json.Year == filter.value) {
+          if (json.Year === filter.value) {
             const getCatalogueSection = document.querySelector('#catalogue');
             getCatalogueSection.appendChild(printFilms(json));
             printFilms(json);
@@ -225,12 +227,12 @@ export const filterRuntime = () => {
   filter.addEventListener('change', () => {
     document.querySelector('#catalogue').innerHTML = ' ';
     const timeArea = document.querySelector('#time-area');
-    timeArea.innerHTML = filter.value  + ' min';
+    timeArea.innerHTML = `${filter.value} min`;
     for (const i of films) {
       fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
         .then((response) => response.json())
         .then((json) => {
-          if (json.Runtime == timeArea.innerText) {
+          if (json.Runtime === timeArea.innerText) {
             const getCatalogueSection = document.querySelector('#catalogue');
             getCatalogueSection.appendChild(printFilms(json));
             printFilms(json);
@@ -250,7 +252,7 @@ export const filterImdb = () => {
       fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
         .then((response) => response.json())
         .then((json) => {
-          if (json.imdbRating == filter.value) {
+          if (json.imdbRating === filter.value) {
             const getCatalogueSection = document.querySelector('#catalogue');
             getCatalogueSection.appendChild(printFilms(json));
             printFilms(json);

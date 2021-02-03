@@ -19,16 +19,13 @@ export const DiscardedList = () => {
     const getMenuSection = rootElement.querySelector('#menu');
     getMenuSection.appendChild(createMenu());
 
-    //const getHeaderSection = rootElement.querySelector('#header');
-    //getHeaderSection.appendChild(header());
-
     const getListSection = rootElement.querySelector('#not-interest');      
     getFilms(getListSection);
 
     return rootElement;
   };
 
-  const getFilms = (section) => {
+const getFilms = (section) => {
     const currentUserId = firebase.auth().currentUser.uid;
     firebase.firestore().collection('users').doc(currentUserId).get().then((films) => {
       for (const film of Object.entries(films.data().dislikes)) {

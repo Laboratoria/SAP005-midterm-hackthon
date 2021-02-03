@@ -1,8 +1,8 @@
 export const createMenuFilter = () => {
-    const filterContent = document.createElement('section');
-    filterContent.classList.add('conteudo-section');
-    filterContent.innerHTML = `
-     <p> Filters: </p>
+  const filterContent = document.createElement('section');
+  filterContent.classList.add('conteudo-section');
+  filterContent.innerHTML = `
+    <p> Filters: </p>
       <div class="filter-list">
         <select class="select-genre" id="genre">
             <option class="select-genre" value="genre" selected="disabled">Genre</option>
@@ -14,7 +14,8 @@ export const createMenuFilter = () => {
             <option class="select-genre" value="animation">Animation</option>
             <option class="select-genre" value="documentary">Documentary</option>
           </select>
-     </div>
+    </div>
+
       <div class="country-list">
       <select class="select-country" id="country">
           <option class="select-country" value="country" selected="disabled">Nationalities</option>
@@ -68,8 +69,7 @@ export const createMenuFilter = () => {
       
       <button class="clear" type="button" id="btn-clear" value="Clear">Clear</button>
       <button class="filter-btn" type="button" id="btn-filter" value="Filter">Filter</button>
-     `;
+    `;
 
-    return filterContent;
+  return filterContent;
 };
-

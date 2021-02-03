@@ -1,10 +1,10 @@
 //import { header } from '../../components/header/index.js';
 import { createMenu } from '../../components/menu/index.js';
-import { films } from '../home/mock.js'
+import { films } from '../home/mock.js';
 
 export const Favorites = () => {
-    const rootElement = document.createElement('div');
-    rootElement.innerHTML = `
+  const rootElement = document.createElement('div');
+  rootElement.innerHTML = `
     <section class="lists">
       <section id="header"></section>
       <section class="body-container">
@@ -15,11 +15,9 @@ export const Favorites = () => {
     </section>
     `;
 
-    const getMenuSection = rootElement.querySelector('#menu');
-    getMenuSection.appendChild(createMenu());
 
-    //const getHeaderSection = rootElement.querySelector('#header');
-    //getHeaderSection.appendChild(header());
+  const getMenuSection = rootElement.querySelector('#menu');
+  getMenuSection.appendChild(createMenu());
 
     const getListSection = rootElement.querySelector('#my-favorites');      
     getFilms(getListSection);
