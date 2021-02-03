@@ -22,7 +22,7 @@ export const Home = () => {
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
   <section>
-    <section id="filters-area">
+  <section id="filters-area">
     <section id="info"></section>
     <section id="menu"></section>
   </section>
@@ -38,7 +38,9 @@ export const Home = () => {
         <span class="visually-hidden">Next</span>
       </a>
     </section>
+    <section id="movies-details-info" class="details-box"></section>
   </section>
+</section>
 `;
 
   const getAllFilms = () => {
@@ -75,35 +77,15 @@ export const printFilms = (json) => {
       <p class="title">${json.Title}</p>
       <img class="image" class="d-block w-100" src="${json.Poster}">
       <button id="info-${json.imdbID}" class="info">
-        <span #info-icon class="material-icons">info</span>
+        <span class="material-icons">info</span>
       </button>
     </section>
-
-    <section id="info-details${json.imdbID}" class="showing">
-
-    <section class"buttons-details">
-    <button class="like" id="like-${json.imdbID}">
-      <span class="material-icons">thumb_up_alt</span>
-    </button>
-
-    <button class="dislike" id="dislike-${json.imdbID}">
-      <span class="material-icons">thumb_down_alt</span>
-    </button>
-
-    <button class="save" id="save-${json.imdbID}">
-      <span class="material-icons">bookmark</span>
-    </button>
-
-    <button id="close-container-${json.imdbID}">
-      <span class="material-icons">close</span>
-    </button>
-  </section>
   `;
 
   const allInfo = filmsContainer.querySelectorAll('.info');
   allInfo.forEach((button) => {
     button.addEventListener('click', (e) => {
-      showDetailsContainer(e);
+      showDetailsContainer(e, json);
     });
   });
 
@@ -128,41 +110,61 @@ const dislikeButton = filmsContainer.querySelector(`#dislike-${json.imdbID}`);
   return filmsContainer;
 };
 
-function showDetailsContainer(e) {
+function showDetailsContainer(e, json) {
   const idFilmCard = e.target.parentNode.parentNode;
   const idNumber = idFilmCard.dataset.id;
-  toggleDetailsContainer(idFilmCard, true);
+  const getDetailsBox = document.getElementById('movies-details-info');
+  getDetailsBox.innerHTML = `
+  <section id="info-details" class="">
 
-  /*const likeButton = document.getElementById(`like-${idNumber}`);
-  likeButton.addEventListener('click', () => {
-    console.log("Pegou o click do like");
-  });
+      <figure class="poster-details">
+        <img class="image" class="d-block w-100" src="${json.Poster}">
+      </figure>  
+      <section class="sub-details-section">
+        <p class="title-movie-details">${json.Title}</p>
+        <p class="title-details">
+           Director: 
+           <p class="subtitle-1">${json.Director}</p>
+        </p>
+        <p class="title-details">
+          Year:  
+          <p class="subtitle-1">${json.Year}</p>
+        </p> 
+        <p class="title-details">
+          Imdb score:
+          <p class="subtitle-1">${json.imdbRating}</p>
+        </p>  
 
-  const dislikeButton = document.getElementById(`dislike-${idNumber}`);
-  dislikeButton.addEventListener('click', () => {
-    console.log("Pegou o click do dislike");
-  });
+      <section class="buttons-details">
+        <button class="like" id="like-${json.imdbID}">
+          <span class="material-icons">thumb_up_alt</span>
+        </button>
 
-  const saveMovieButton = document.getElementById(`save-${idNumber}`);
-  saveMovieButton.addEventListener('click', () => {
-    console.log("Pegou o click de salvar");
-  });*/
+        <button class="dislike" id="dislike-${json.imdbID}">
+          <span class="material-icons">thumb_down_alt</span>
+        </button>
 
+        <button class="save" id="save-${json.imdbID}">
+          <span class="material-icons">bookmark</span>
+        </button>
+
+        <button class="close-detail" id="close-container-${json.imdbID}">
+          <span class="material-icons ">close</span>
+        </button>
+      </section>
+      </section>  
+      <section class="plot-box">
+        <p class="title-movie-details">Plot:</p>
+        <p class="subtitle-1">
+          ${json.Plot}
+        </p>
+      </section>  
+  </section>
+  `
   const closeDetailsButton = document.getElementById(`close-container-${idNumber}`);
   closeDetailsButton.addEventListener('click', () => {
-    toggleDetailsContainer(idFilmCard, false);
+    getDetailsBox.innerHTML = ""
   });
-}
-
-function toggleDetailsContainer(card, show) {
-  const cardFilm = card;
-  const holderDetailsContainer = document.querySelector(`#info-details${cardFilm.dataset.id}`);
-  if (show) {
-    document.querySelector('.showing').classList.remove('display');
-    holderDetailsContainer.classList.add('display');
-  } else {
-    holderDetailsContainer.classList.remove('display');
-  }
 }
 
 export const filterGenre = () => {

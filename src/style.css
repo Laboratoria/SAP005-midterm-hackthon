@@ -469,6 +469,56 @@ footer {
     color: #64312F;
     text-align: center;
 }
+#info-details{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0px;
+    max-width: 1200px;
+    margin: auto;
+}
+.plot-box{
+    flex: 2;
+}
+.poster-details, .sub-details-section {
+    flex: 1;
+}
+.plot-box, .poster-details, .sub-details-section {
+    padding: 0px 15px;
+}
+.sub-details-section{
+    min-width: 300px;
+}
+#root{
+    padding-bottom: 50px;
+}
+.title-movie-details{
+    text-align: left;
+    font-size: 20px;
+    color: #64312F;
+  }
+.subtitle-1{
+    font-size: 16px;
+    font-weight: lighter;
+    line-height: 28px;
+    color: #30261D;
+}
+.like span{
+    color: #2c8041;
+    font-size: 35px;
+}
+.dislike span{
+    color: #BF2604;
+    font-size: 35px;
+}
+.save span, .close-detail span{
+        color:  #64312F;
+        font-size: 35px;
+}
+.buttons-details{
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+}
 
 .container-register {
     padding-top: 15px;
@@ -537,4 +587,29 @@ footer {
         width: 100%;
         margin-top: 30px;
     }
+    #info-details{
+        max-width: 300px;
+    }
+    .title-movie-details, .subtitle-1, .title-details{
+        text-align: center;
+    }
+    .sub-details-section{
+        align-items: center;
+    }    
+}
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: #c2b888;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1); 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #D9D2B0;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(105, 109, 109);
+    border-radius: 2px;
 }
