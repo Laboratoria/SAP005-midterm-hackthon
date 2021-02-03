@@ -13,7 +13,7 @@ export const Navigation = () => {
          <li id="menulista" class="colorText">  Listas</li>
       </ul>  
     </div>
-    <button type="submit" class="button" id="sign-out">SAIR</button>
+    <button type="submit" class="button-signOut" id="sign-out">SAIR</button>
   </nav>
     `;
   const lista = navigation.querySelector('#lista');

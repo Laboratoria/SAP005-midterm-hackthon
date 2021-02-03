@@ -24,7 +24,7 @@ body {
   object-fit: cover;
 }
 
-.button-start, .button-login, .button-google {
+.button-start, .button-login, .button-google, .button-signOut {
   background-color: #000000;
   color: white;
   box-shadow: 4px 4px 4px #000000;
@@ -39,7 +39,7 @@ body {
   margin: 20px 0
 }
 
-.button-start {
+.button-start, .button-signOut {
   border-style: solid;
   border-color: white;
 }
@@ -240,15 +240,6 @@ img.logo-header {
   width: 20vw;
   justify-content: center;
   font-size: 12px;
-}
-
-.comment-input {
-  display: flex;
-  margin: 0 20px 20px 20px;
-}
-
-.comment-input button {
-  height: 37px;
 }
 
 .none {
