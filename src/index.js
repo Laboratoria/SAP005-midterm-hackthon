@@ -14,11 +14,9 @@ const getPoster = (url) => {
 
 function showMovieInfo(url) {
   getPoster(url).then(moviesList => {
-    console.log(moviesList);
+
     for (let movie of moviesList) {
-      console.log(movie.poster_path);
       imgSrc = imgBaseUrl + movie.poster_path;
-      console.log(imgSrc);
       posters += `
         <div class="poster">
           <div class="poster-container">
@@ -26,8 +24,8 @@ function showMovieInfo(url) {
               <img src="${imgSrc}">
             </div>
             <div class="poster-back">
-              <p>${movie.title}</p>
-              <p>${movie.overview}</p>
+              <h3>${movie.title}</h3>
+              <p>Sinopse: ${movie.overview}</p>
             </div>
           </div>
         </div>
