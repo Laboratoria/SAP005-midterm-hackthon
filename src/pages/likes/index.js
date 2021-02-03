@@ -15,6 +15,7 @@ export const Favorites = () => {
     </section>
     `;
 
+
   const getMenuSection = rootElement.querySelector('#menu');
   getMenuSection.appendChild(createMenu());
 
@@ -43,6 +44,7 @@ export const Favorites = () => {
     <section class="card-list">
         <p class="title-list">${json.Title.toUpperCase()}</p>
         <img class="poster-list" src="${json.Poster}">
+
     </section>    
     `
     return cardsContainer;

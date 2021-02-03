@@ -1,6 +1,8 @@
+
 /* eslint-disable no-restricted-syntax */
 import { films } from '../../pages/home/mock.js';
 import { printFilms } from '../../pages/home/index.js';
+
 
 export const header = () => {
   const topHeader = document.createElement('header');
