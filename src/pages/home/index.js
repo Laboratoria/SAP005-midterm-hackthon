@@ -5,6 +5,7 @@ import { films } from './mock.js';
 import { createMenu } from '../../components/menu/index.js';
 import { header } from '../../components/header/index.js';
 import { createMenuFilter } from '../../components/filter/index.js'
+import { addFilm } from '../../services/index.js';
 
 const getFilms = (i) => {
   fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
@@ -88,6 +89,24 @@ export const printFilms = (json) => {
     });
   });
 
+  const likeButton = filmsContainer.querySelector(`#like-${json.imdbID}`);
+  likeButton.addEventListener('click', () => {
+    addFilm(json.imdbID, json.Title, json.Poster, 'likes');
+    alert('Seu like foi recebido');
+  })
+
+const dislikeButton = filmsContainer.querySelector(`#dislike-${json.imdbID}`);
+  dislikeButton.addEventListener('click', () => {
+    addFilm(json.imdbID, json.Title, json.Poster, 'dislikes');
+    alert('Seu dislike foi recebido');
+  })
+
+  const saveMovieButton = filmsContainer.querySelector(`#save-${json.imdbID}`);
+  saveMovieButton.addEventListener('click', () => {
+    addFilm(json.imdbID, json.Title, json.Poster, 'watchlist');
+    alert('Seu favorito foi recebido');
+  })
+
   return filmsContainer;
 };
 
@@ -143,7 +162,7 @@ function showDetailsContainer(e, json) {
   </section>
   `
 
-  const likeButton = document.getElementById(`like-${idNumber}`);
+  /*const likeButton = document.getElementById(`like-${idNumber}`);
   likeButton.addEventListener('click', () => {
     console.log("Pegou o click do like");
   });
@@ -156,7 +175,7 @@ function showDetailsContainer(e, json) {
   const saveMovieButton = document.getElementById(`save-${idNumber}`);
   saveMovieButton.addEventListener('click', () => {
     console.log("Pegou o click de salvar");
-  });
+  });*/
 
   const closeDetailsButton = document.getElementById(`close-container-${idNumber}`);
   closeDetailsButton.addEventListener('click', () => {

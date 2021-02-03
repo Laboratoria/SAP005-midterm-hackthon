@@ -2,24 +2,32 @@ import { creatingAccountWithEmail } from '../../services/index.js'
 import { onNavigate } from '../../utils/history.js'
 
 export const Register = () => {
-  // Coloque sua página
   const rootElement = document.createElement('div');
+  rootElement.classList.add('container-register');
   rootElement.innerHTML = `
-      <div id='logo-register'><img src='/img/logo.cc.transparente.png'></div>
-        <h1>We love short films <3</h1>
-        <form>
-          <p>Name:</p>
-          <input id='username' type='text' placeholder='Name' requiered><br>
-          <p>Last Name:</p>
-          <input id='lastname-user' type='text' placeholder='Last Name' required><br>
-          <p>E-mail:</p>
-          <input id='email-user' type='email' placeholder='Input e-mail' required><br>
-          <p>Password:</p>
-          <input id='password-user' type='password' placeholder='Password' required><br>
-          <p>Confirm Password :</p>
-          <input id='confirm-password' type='password' placeholder='Confirm Password' required><br>
-          <button id='submit-data' type='submit'>SIGN UP</button>
-      </form>`;
+    <div id='logo-register'><img src='/img/logo.cc.transparente.png'></div>
+      <div id='title-register'> 
+         <p> We love <span style="color: #BF2604;">short films</span>
+          <span class="material-icons" style="color: #BF2604;">
+            favorite_border
+          </span>
+        </p>
+      </div>
+    <div id='inputs-register'> 
+      <form >
+        <label for='username'>Name:</label><br>
+        <input id='username' class='new-user' type='text' placeholder='Name' requiered><br>
+        <label for='lastname-user'>Last Name:</label><br>
+        <input id='lastname-user' class='new-user' type='text' placeholder='Last Name' required><br>
+        <label for='email-user'>E-mail:</label><br>
+        <input id='email-user' class='new-user' type='email' placeholder='Input e-mail' required><br>
+        <label for='password'>Password:</label><br>
+        <input id='password-user' class='new-user' type='password' placeholder='Password' required><br>
+        <label for='confirm-password'>Confirm Password:</label><br>
+        <input id='confirm-password' class='new-user' type='password' placeholder='Confirm Password' required><br>
+        <button id='submit-data'>SIGN UP</button>
+      </form>
+    </div>`;
 
   const registerAccount = rootElement.querySelector('#submit-data');
   registerAccount.addEventListener('click', (evt) =>{
