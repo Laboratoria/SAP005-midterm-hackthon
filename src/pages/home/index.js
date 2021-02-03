@@ -57,10 +57,16 @@ export const Home = () => {
   const getMenuFilterSection = rootElement.querySelector('#filters-area');
   getMenuFilterSection.appendChild(createMenuFilter());
 
+ const catchCatalogue = rootElement.querySelector('#catalogue');
+  showSerchResult(catchCatalogue)
+   
   return rootElement;
 };
-
-const printFilms = (json) => {
+export const showSerchResult =(section) =>{
+  const getCatalogueSection = section
+  return getCatalogueSection
+};
+export const printFilms = (json) => {
   const filmsContainer = document.createElement('section');
   filmsContainer.classList.add('films-container');
   filmsContainer.innerHTML += `
@@ -283,3 +289,4 @@ function imdbFilms(i) {
         <section id="info-details${json.imdbID}"></section>`;
       }
 */
+
