@@ -1,3 +1,5 @@
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable no-console */
 import { films } from './mock.js';
 import { createMenu } from '../../components/menu/index.js';
@@ -91,47 +93,47 @@ const printFilms = (json) => {
   </section>
   `;
 
-    const allInfo = filmsContainer.querySelectorAll('.info');
-    allInfo.forEach((button) => {
-      button.addEventListener('click', (e) => {
-        showDetailsContainer(e);
-      });
+  const allInfo = filmsContainer.querySelectorAll('.info');
+  allInfo.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      showDetailsContainer(e);
     });
+  });
 
-  return filmsContainer
-}
+  return filmsContainer;
+};
 
 function showDetailsContainer(e) {
   const idFilmCard = e.target.parentNode;
-  const idNumber = idFilmCard.dataset.id
+  const idNumber = idFilmCard.dataset.id;
   toggleDetailsContainer(idFilmCard, true);
 
   const likeButton = document.getElementById(`like-${idNumber}`);
   likeButton.addEventListener('click', () => {
-    console.log("Pegou o click do like")
-  })
+    console.log("Pegou o click do like");
+  });
 
   const dislikeButton = document.getElementById(`dislike-${idNumber}`);
   dislikeButton.addEventListener('click', () => {
-    console.log("Pegou o click do dislike")
-  })
+    console.log("Pegou o click do dislike");
+  });
 
   const saveMovieButton = document.getElementById(`save-${idNumber}`);
   saveMovieButton.addEventListener('click', () => {
-    console.log("Pegou o click de salvar")
-  })
+    console.log("Pegou o click de salvar");
+  });
 
   const closeDetailsButton = document.getElementById(`close-container-${idNumber}`);
   closeDetailsButton.addEventListener('click', () => {
     toggleDetailsContainer(idFilmCard, false);
-  })
+  });
 }
 
 function toggleDetailsContainer(card, show) {
   const cardFilm = card;
-  const holderDetailsContainer = document.querySelector(`#info-details${cardFilm.dataset.id}`)
+  const holderDetailsContainer = document.querySelector(`#info-details${cardFilm.dataset.id}`);
   if (show) {
-    document.querySelector('.showing').classList.remove('display')
+    document.querySelector('.showing').classList.remove('display');
     holderDetailsContainer.classList.add('display');
   } else {
     holderDetailsContainer.classList.remove('display');
@@ -139,174 +141,140 @@ function toggleDetailsContainer(card, show) {
 }
 
 export const filterGenre = () => {
- const filter = document.querySelector('#genre')
+  const filter = document.querySelector('#genre');
   filter.addEventListener('change', () => {
-    document.querySelector('#catalogue').innerHTML = " "
-     for (const i of films){
-       const chooseFilter = filter.value
-       if(chooseFilter == i.genre){
-         getFilms(i)
-        }
+    document.querySelector('#catalogue').innerHTML = ' ';
+    // eslint-disable-next-line no-restricted-syntax
+    for (const i of films) {
+      const chooseFilter = filter.value;
+      if (chooseFilter == i.genre) {
+        getFilms(i);
       }
-    })
-}
+    }
+  });
+};
 
 export const filterCountry = () => {
-  const filter = document.querySelector('#country')
-   filter.addEventListener('change', () => {
-     document.querySelector('#catalogue').innerHTML = " "
-        const chooseFilter = filter.value
-        
-      for(const i of films){
-        fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
+  const filter = document.querySelector('#country');
+  filter.addEventListener('change', () => {
+    document.querySelector('#catalogue').innerHTML = ' ';
+    const chooseFilter = filter.value;
+    for (const i of films) {
+      fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
         .then((response) => response.json())
         .then((json) => {
-          
-          if(json.Country == chooseFilter){
-             const getCatalogueSection = document.querySelector('#catalogue');
-             getCatalogueSection.appendChild(printFilms(json));
-          
-              printFilms(json);
-          }
-       })
-      }
-   })
-  }
-  
-export const filterYear = () => {
-  
-  const filter = document.querySelector('#Year')
-   filter.addEventListener('change', () => {
-     document.querySelector('#catalogue').innerHTML = " "
-      const yearArea = document.querySelector("#year-area")
-      
-       yearArea.innerHTML = filter.value
-
-       for(const i of films){
-        fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
-        .then((response) => response.json())
-        .then((json) => {
-        
-        if(json.Year == filter.value){
-           const getCatalogueSection = document.querySelector('#catalogue');
-           getCatalogueSection.appendChild(printFilms(json));
-        
+          if (json.Country == chooseFilter) {
+            const getCatalogueSection = document.querySelector('#catalogue');
+            getCatalogueSection.appendChild(printFilms(json));
             printFilms(json);
-             }
-          })
-       }
-   })
-}
+          }
+        });
+    }
+  });
+};
+
+export const filterYear = () => {
+  const filter = document.querySelector('#Year');
+  filter.addEventListener('change', () => {
+    document.querySelector('#catalogue').innerHTML = ' ';
+    const yearArea = document.querySelector('#year-area');
+    yearArea.innerHTML = filter.value;
+    for (const i of films) {
+      fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
+        .then((response) => response.json())
+        .then((json) => {
+          if (json.Year == filter.value) {
+            const getCatalogueSection = document.querySelector('#catalogue');
+            getCatalogueSection.appendChild(printFilms(json));
+            printFilms(json);
+          }
+        });
+    }
+  });
+};
 
 export const filterRuntime = () => {
-  
-  const filter = document.querySelector('#Runtime')
-   filter.addEventListener('change', () => {
-     document.querySelector('#catalogue').innerHTML = " "
-      const timeArea = document.querySelector("#time-area")
-      
-       timeArea.innerHTML = filter.value  + " min"
-
-       for(const i of films){
-        fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
+  const filter = document.querySelector('#Runtime');
+  filter.addEventListener('change', () => {
+    document.querySelector('#catalogue').innerHTML = ' ';
+    const timeArea = document.querySelector('#time-area');
+    timeArea.innerHTML = filter.value  + ' min';
+    for (const i of films) {
+      fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
         .then((response) => response.json())
         .then((json) => {
-          console.log(json)
-        if(json.Runtime == timeArea.innerText){
-           const getCatalogueSection = document.querySelector('#catalogue');
-           getCatalogueSection.appendChild(printFilms(json));
-        
+          if (json.Runtime == timeArea.innerText) {
+            const getCatalogueSection = document.querySelector('#catalogue');
+            getCatalogueSection.appendChild(printFilms(json));
             printFilms(json);
-             }
-          })
-       }
-   })
-}
+          }
+        });
+    }
+  });
+};
 
 export const filterImdb = () => {
-  const filter = document.querySelector('#imdbRating')
-    filter.addEventListener('change', () => {
-      document.querySelector('#catalogue').innerHTML = " "
-        const numberArea = document.querySelector('#value-area')
-          numberArea.innerHTML = filter.value
-          
-          for(const i of films){
-
-            fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
-              .then((response) => response.json())
-              .then((json) => {
-                
-                  if(json.imdbRating == filter.value){
-                    const getCatalogueSection = document.querySelector('#catalogue');
-                    getCatalogueSection.appendChild(printFilms(json));
-              
-                  printFilms(json);
-                   }
-                })
-
+  const filter = document.querySelector('#imdbRating');
+  filter.addEventListener('change', () => {
+    document.querySelector('#catalogue').innerHTML = ' ';
+    const numberArea = document.querySelector('#value-area');
+    numberArea.innerHTML = filter.value;
+    for (const i of films) {
+      fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
+        .then((response) => response.json())
+        .then((json) => {
+          if (json.imdbRating == filter.value) {
+            const getCatalogueSection = document.querySelector('#catalogue');
+            getCatalogueSection.appendChild(printFilms(json));
+            printFilms(json);
           }
-
-     })
- }
+        });
+    }
+  });
+};
 
 const sortByMostRecent = async () => {
-  let dataMovie = []
-  for (let item of films) {
+  const dataMovie = [];
+  for (const item of films) {
     await fetch(`http://www.omdbapi.com/?t=${item.title}&apikey=ce12da02`)
       .then((response) => response.json())
       .then((json) => {
         dataMovie.push(json);
-      })
+      });
   }
-  
-  dataMovie.sort(function (a, b) {
+  dataMovie.sort((a, b) => {
     if (+a.Year < +b.Year) return 1;
     if (+a.Year > +b.Year) return -1;
     return 0;
-  })
-
-}
-sortByMostRecent(); 
+  });
+};
+sortByMostRecent();
 
 const sortByHighestScoreImdb = async () => {
-  let dataMovie = []
-  for (let item of films) {
+  const dataMovie = [];
+  for (const item of films) {
     await fetch(`http://www.omdbapi.com/?t=${item.title}&apikey=ce12da02`)
       .then((response) => response.json())
       .then((json) => {
         dataMovie.push(json);
-      })
+      });
   }
-  dataMovie.sort(function (a, b) {
+  dataMovie.sort((a, b) => {
     if (+a.imdbRating < +b.imdbRating) return 1;
     if (+a.imdbRating > +b.imdbRating) return -1;
     return 0;
-  })
-}
+  });
+};
+
 sortByHighestScoreImdb();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
-
 function imdbFilms(i) {
   fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
     .then((response) => response.json())
     .then((json) => {
       if (json.imdbRating > 7.5) {
-        document.querySelector('.films-container').innerHTML += ` 
+        document.querySelector('.films-container').innerHTML += `
           <section data-id="${json.imdbID}" class="movie-box">
             <p class="title">${json.Title}</p>
             <img class="image" src="${json.Poster}">
@@ -314,5 +282,4 @@ function imdbFilms(i) {
           </section>
         <section id="info-details${json.imdbID}"></section>`;
       }
-
 */
