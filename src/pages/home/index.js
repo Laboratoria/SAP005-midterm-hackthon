@@ -57,8 +57,8 @@ export const Home = () => {
   const getMenuFilterSection = rootElement.querySelector('#filters-area');
   getMenuFilterSection.appendChild(createMenuFilter());
 
- const banana = rootElement.querySelector('#catalogue');
-  showSerchResult(banana)
+ const catchCatalogue = rootElement.querySelector('#catalogue');
+  showSerchResult(catchCatalogue)
    
   return rootElement;
 };
