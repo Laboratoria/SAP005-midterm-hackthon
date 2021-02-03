@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="******Escrever algo sobre nossa aplicaçao">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="img/favicon.ico" />
+  <title>SortCine</title>
+</head>
+
+<body>
+  <header>
+    <img id="logo" src="img/logo.png">
+  </header>
+
+  <main>
+    <div class="peliculas-recomendadas contenedor">
+      <div class="contenedor-titulo-controles">
+        <h3>Gêneros de Filmes</h3>
+        <div class="indicadores"></div>
+      </div>
+
+      <div class="contenedor-principal">
+        <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
+
+        <div class="contenedor-carousel">
+          <div class="carousel">
+            <div class="pelicula">
+              <a href="#"><img src="img/ação.png" id="acao" alt=""></a>
+            </div>
+            <div class="pelicula">
+              <a href="#"><img src="img/animação.png" id="animation" alt=""></a>
+            </div>
+            <div class="pelicula">
+              <a href="#"><img src="img/aventura.png" id="adventure" alt=""></a>
+            </div>
+            <div class="pelicula">
+              <a href="#"><img src="img/comédia.png" id="comedy" alt=""></a>
+            </div>
+            <div class="pelicula">
+              <a href="#"><img src="img/crime.png" id="crime" alt=""></a>
+            </div>
+            <div class="pelicula">
+              <a href="#"><img src="img/documentário.png" id="documentary" alt=""></a>
+            </div>
+            <div class="pelicula">
+              <a href="#"><img src="img/drama.png" id="drama" alt=""></a>
+            </div>
+            <div class="pelicula">
+              <a href="#"><img src="img/família.png" id="family" alt=""></a>
+            </div>
+            <div class="pelicula">
+              <a href="#"><img src="img/fantasia.png" id="fantasy" alt=""></a>
+            </div>
+            <div class="pelicula">
+              <a href="#"><img src="img/faroeste.png" id="wester" alt=""></a>
+            </div>
+            <div class="pelicula">
+              <a href="#"><img src="img/ficção-cientifica.png" id="scifi" alt=""></a>
+            </div>
+            <div class="pelicula">
+              <a href="#"><img src="img/história.png" id="history" alt=""></a>
+            </div>
+            <div class="pelicula">
+              <a href="#"><img src="img/mistério.png" id="mystery" alt=""></a>
+            </div>
+
+          </div>
+        </div>
+
+        <button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
+      </div>
+    </div>
+
+  </main>
+
+    
+  <div id="root">
+    
+  </div>
+
+  <footer id="footer">
+    <p>Projeto feito na <a target="_blank" href="https://www.laboratoria.la/br">Laboratoria</a>
+  </footer>
+  <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+  <script src="index.js" type="module"></script>
+  <script src="carrossel.js" type="module"></script>
+</body>
+
+</html>
