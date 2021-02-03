@@ -24,16 +24,16 @@ body {
   object-fit: cover;
 }
 
-.button {
+.button-login, .button-google, .button-start {
   background-color: #000000;
   color: white;
   border-radius: 5px;
   border-style: solid;
   border-color: white;
-  font-size: 1rem;
+  font-size: 14px;
   font-family: Krona One;
   text-transform: uppercase;
-  width: 80vw;
+  width: 320px;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: #000000;
 }
@@ -49,15 +49,26 @@ body {
   margin: 5vh 10vh;
 }
 
-.textbanner {
+h1.text-banner-title, .text-banner-main, .text-banner {
   margin-left: 2px;
-  font-size: 1rem;
   text-transform: uppercase;
-}
-
-.colorText {
   text-align: center;
   color: white;
+  margin: 30px;
+}
+
+.text-banner-title {
+  font-size: 15px;
+  margin: 20px 0;
+}
+
+.text-banner-main {
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+
+.text-banner {
+  font-size: 12px;
 }
 
 .sizeText {
@@ -65,13 +76,13 @@ body {
   font-size: 0.7rem;
 }
 
-.input-login {
+.input-login, .input-password {
   width: 80vw;
   height: 30px;
   border-radius: 5px;
   border-style: solid;
   border-color: rgb(0, 0, 0);
-  font-size: 1rem;
+  font-size: 14px;
   font-family: Krona One;
   text-transform: uppercase;
   margin: 10px;
@@ -114,7 +125,7 @@ body {
   margin-top: 10vh;
 }
 
-.colorSpan {
+.create-account {
   color: #000000;
 }
 
