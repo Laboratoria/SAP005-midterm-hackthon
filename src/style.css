@@ -22,8 +22,8 @@ header {
 }
 
 #logo {
-  height: 45%;
-  width: 45%;
+  height: 40%;
+  width: 40%;
   margin-top: 20px;
 }
 
@@ -35,7 +35,7 @@ header {
   margin-bottom: 3.12em;
 }
 
-p {
+p, h3 {
   color: aliceblue;
 }
 
@@ -75,9 +75,8 @@ p {
   margin-right: 2px;
 }
 
-.contenedor-titulo-controles .indicadores button:hover,
-.contenedor-titulo-controles .indicadores button.activo {
-	background: #89c0df;
+.contenedor-titulo-controles .indicadores button:hover, .contenedor-titulo-controles .indicadores button.activo {
+  background: #89c0df;
 }
 
 /* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
@@ -108,9 +107,8 @@ p {
   border: none;
 }
 
-.peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover,
-.peliculas-recomendadas .contenedor-principal .flecha-derecha:hover {
-	background: #89c0df;
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover, .peliculas-recomendadas .contenedor-principal .flecha-derecha:hover {
+  background: #89c0df;
 }
 
 .peliculas-recomendadas .contenedor-principal .flecha-izquierda {
@@ -148,7 +146,7 @@ p {
 }
 
 .peliculas-recomendadas .contenedor-carousel .carousel .pelicula img {
-  width: 100%;
+  width: 90%;
   vertical-align: top;
 }
 
@@ -158,11 +156,12 @@ p {
   flex-wrap: wrap;
   margin-left: 1%;
   width: 100%;
+  margin-top: 10%;
 }
 
 .poster {
- width: 80px;
- height: 150px;
+  height: 350px;
+  width: 200px;
   perspective: 1000px;
 }
 
@@ -179,31 +178,44 @@ p {
 
 .poster-front, .poster-back {
   position: absolute;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
   backface-visibility: hidden;
   z-index: 1;
 }
 
 .poster-front {
   background: white;
+  height: 300px;
 }
 
 .poster-back {
   transform: rotateY(180deg);
-  background: blueviolet;
+  background: #101757;
   height: 300px;
   overflow-y: auto;
 }
 
-.buttonSorteio{
+.buttonSorteio {
+  background-image: linear-gradient(to right, #3399ff, #2d5aa8);
+  width: 100%;
+  border-radius: 30px;
+  padding: 8px;
+  border: 0px;
+  outline: 0;
+  margin-top: 1px;
+  color: white;
+}
 
-    background-image: linear-gradient(to right, #3399ff, #2d5aa8);
-    width: 100%;
-    border-radius: 30px;
-    padding: 8px;
-    border: 0px;
-    outline: 0;
-    margin-top: 2px;
-    color: white;
+@media (min-width:920px) and (max-width:2000px) {
+  #logo {
+    height: 35%;
+    width: 35%;
+  }
+  .poster {
+    margin-right: 5%;
+  }
+  .peliculas-recomendadas .contenedor-carousel .carousel .pelicula img {
+    width: 80%;
+  }
+
 }
