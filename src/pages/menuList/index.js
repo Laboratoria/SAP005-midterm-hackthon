@@ -15,18 +15,18 @@ export const MenuList = () => {
         <figure>
           <img src='images/Cinelist.bg.png'>
         </figure>
-        <div class='position'>
-          <p class='textbanner colorText'>FAÇA UMA LISTA COMENTADA DE FILMES QUE JÁ ASSISTIU E SAIBA SEMPRE QUAIS FILMES MAIS TE AGRADAM.</p>
-          <button id='btnWatchList' class='button'>VER FILMES ASSISTIDOS</button>
+        <div class='menu-position'>
+          <p class='text-watched'>FAÇA UMA LISTA COMENTADA DE FILMES QUE JÁ ASSISTIU E SAIBA SEMPRE QUAIS FILMES MAIS TE AGRADAM.</p>
+          <button id='btnWatchList' class='btnWatchList'>VER FILMES ASSISTIDOS</button>
         </div>
       </div>
       <div class='lista slider'>
         <figure>
-          <img src='images/Cinelist.bg.png'>
+          <img class = "background-menuList" src='images/Cinelist.bg.png'>
         </figure>
-        <div class='position'> 
-          <p class='textbanner colorText'>FAÇA UMA LISTA DE FILMES QUE DESEJA ASSISTIR E SAIBA SEMPRE QUAIS FILMES ESCOLHER.</p>
-          <button id='btnToWatchList' class='button'>VER FILMES PARA ASSISTIR</button>
+        <div class='menu-position'> 
+          <p class='text-toWatch'>FAÇA UMA LISTA DE FILMES QUE DESEJA ASSISTIR E SAIBA SEMPRE QUAIS FILMES ESCOLHER.</p>
+          <button id='btnToWatchList' class='btnToWatchList'>VER FILMES PARA ASSISTIR</button>
         </div>
       </div>
     </div> 

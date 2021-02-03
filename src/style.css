@@ -11,6 +11,15 @@ body {
   position: relative;
 }
 
+.lista {
+  text-align: center;
+  margin: 1vh;
+  border: 2px rgba(0, 0, 0, 0.8) solid;
+  border-radius: 5px;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #000000;
+}
+
 .slider figure {
   position: relative;
   margin: 1px;
@@ -18,13 +27,13 @@ body {
 
 .slider figure img {
   width: 100vw;
-  height: 100vh;
+  height: 40vh;
   float: left;
   opacity: 0.3;
   object-fit: cover;
 }
 
-.button-start, .button-login, .button-google, .button-signOut {
+.button-start, .button-login, .button-google, .button-signOut, .btnWatchList, .btnToWatchList {
   background-color: #000000;
   color: white;
   box-shadow: 4px 4px 4px #000000;
@@ -59,7 +68,7 @@ body {
   margin: 5vh 10vh;
 }
 
-h1.text-banner-title, .text-banner-main, .text-banner {
+h1.text-banner-title, .text-banner-main, .text-banner, .text-watched, .text-toWatch {
   margin-left: 2px;
   text-transform: uppercase;
   text-align: center;
@@ -72,18 +81,17 @@ h1.text-banner-title, .text-banner-main, .text-banner {
   margin: 20px 0;
 }
 
-.text-banner-main {
+.text-banner-main, .text-watched, .text-toWatch {
   font-size: 14px;
   margin-bottom: 50px;
 }
 
-.text-banner {
-  font-size: 12px;
+.text-watched, .text-toWatch {
+  margin: 0;
 }
 
-.sizeText {
-  margin: 10vh 0 5vh;
-  font-size: 0.7rem;
+.text-banner {
+  font-size: 12px;
 }
 
 .input-login, .input-password {
@@ -142,20 +150,7 @@ h1.text-banner-title, .text-banner-main, .text-banner {
   color: #000000;
 }
 
-.lista {
-  text-align: center;
-  margin: 1vh;
-  border: 2px rgba(0, 0, 0, 0.8) solid;
-  border-radius: 5px;
-  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: #000000;
-}
-
-.lista figure img {
-  height: 43vh;
-}
-
-.position {
+.menu-position {
   position: absolute;
   padding: 10vh 1vh;
 }
