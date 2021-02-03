@@ -72,7 +72,7 @@ Com a definição do Mínimo Produto Viável (MPV), desenvolvemos as histórias 
 
 A paleta de cores foi inspirada no cartaz da primeira exibição de um filme, um curta chamado [L’arrivée d’un Train à La Ciotat](https://pt.wikipedia.org/wiki/Ficheiro:Cinematograph_Lumiere_advertisement_1895.jpg) (A chegada do trem em La Ciotat) lançado em 1895 no Salão Grand Café, em Paris. 
 
-![color-palette(./src/img/color-palette.png)
+![color-palette](./src/img/color-palette.png)
 
 :bulb: **Logo**
 &nbsp;
