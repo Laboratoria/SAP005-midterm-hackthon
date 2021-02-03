@@ -27,22 +27,21 @@ export const Favorites = () => {
     return rootElement;
   };
 
-  const getFilms = async (section) => {
-    for (const i of films) {
-       await fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
-            .then((response) => response.json())
-            .then((json) => {
-                section.appendChild(createCards(json));
-            });
-    }
+  const getFilms = (section) => {
+    const currentUserId = firebase.auth().currentUser.uid;
+    firebase.firestore().collection('users').doc(currentUserId).get().then((films) => {
+      for (const film of Object.entries(films.data().likes)) {
+        section.appendChild(createCards(film[1]));
+      }
+    })
   };
 
-  function createCards(json) {
+  function createCards(film) {
     const cardsContainer = document.createElement('section');
     cardsContainer.innerHTML += `
     <section class="card-list">
-        <p class="title-list">${json.Title.toUpperCase()}</p>
-        <img class="poster-list" src="${json.Poster}">
+        <p class="title-list">${film.title_film.toUpperCase()}</p>
+        <img class="poster-list" src="${film.poster_film}">
     </section>    
     `
     return cardsContainer;
