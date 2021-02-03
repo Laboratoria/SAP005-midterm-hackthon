@@ -16,7 +16,7 @@ export const header = () => {
       <span class="material-icons icon-search">
         search
       </span>
-      <p class="header-user">`Hi, ${userName}!`</p>
+      <p class="header-user">Hi, ${userName}!</p>
       <span class="material-icons icon-heart">
         favorite_border
       </span>
