@@ -9,6 +9,7 @@ import {
 export const header = () => {
   const topHeader = document.createElement('header');
   topHeader.classList.add('header-container');
+  let userName = firebase.auth().currentUser.displayName;
 
   topHeader.innerHTML = `
     <div class="header-body">
@@ -17,7 +18,7 @@ export const header = () => {
       <span class="material-icons icon-search">
         search
       </span>
-      <p class="header-user">Hi, Galera!</p>
+      <p class="header-user">${userName}</p>
       <span class="material-icons icon-heart">
         favorite_border
       </span>
