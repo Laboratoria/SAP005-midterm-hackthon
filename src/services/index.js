@@ -69,3 +69,30 @@ export const creatingAccountWithEmail = (username, email, password) => {
     });
 };
 
+export const addFilm = (idFilm, titleFilm, posterFilm, type) => {
+  const currentUserId = firebase.auth().currentUser.uid;
+  const filmToAdd = firebase.firestore().collection('users').doc(currentUserId);
+  let data = { [idFilm]: {
+    id_film: idFilm,
+    title_film: titleFilm,
+    poster_film: posterFilm
+  }};
+  if (type == 'likes') {
+    filmToAdd.set({
+      user_id: currentUserId,
+      likes: data
+    }, { merge: true });
+  }
+  if (type == 'dislikes') {
+    filmToAdd.set({
+      user_id: currentUserId,
+      dislikes: data
+    }, { merge: true });
+  }
+  if (type == 'watchlist') {
+    filmToAdd.set({
+      user_id: currentUserId,
+      watchlist: data
+    }, { merge: true });
+  }
+};
