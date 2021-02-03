@@ -1,4 +1,4 @@
-//import { logOut } from '../services/index.js';
+import { logOut } from '../../services/index.js';
 import { onNavigate } from '../../utils/history.js';
 
 export const createMenu = () => {
@@ -58,14 +58,12 @@ const sendWatchList = () => {
 };
 
 const sendDiscarded = () => {
-  onNavigate('/watchlist');
+  onNavigate('/discardedlist');
 };
 
 const sendLogOut = () => {
-  console.log("logout")
-/*  logOut()
+  logOut()
     .then(() => {
       onNavigate('/');
     });
-*/    
 };
