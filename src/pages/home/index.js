@@ -52,9 +52,15 @@ export const Home = () => {
   const getMenuFilterSection = rootElement.querySelector('#filters-area');
   getMenuFilterSection.appendChild(createMenuFilter());
 
+ const banana = rootElement.querySelector('#catalogue');
+  showSerchResult(banana)
+   
   return rootElement;
 };
-
+export const showSerchResult =(section) =>{
+  const getCatalogueSection = section
+  return getCatalogueSection
+};
 export const printFilms = (json) => {
   const filmsContainer = document.createElement('section');
   filmsContainer.classList.add('films-container');
