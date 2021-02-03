@@ -17,7 +17,7 @@ export const header = () => {
       <span class="material-icons icon-search">
         search
       </span>
-      <p class="header-user">Hi,Galera</p>
+      <p class="header-user">Hi, Galera!</p>
       <span class="material-icons icon-heart">
         favorite_border
       </span>
@@ -53,12 +53,15 @@ export const header = () => {
 
   };
 
+
+    });
+
   const btnLogin = topHeader.querySelector('.btn-login');
   const btnRegister = topHeader.querySelector('.btn-register');
   const greetingUser = topHeader.querySelector('.header-user');
   const iconHeart = topHeader.querySelector('.icon-heart');
 
-  let path = window.location.pathname;
+  const path = window.location.pathname;
   if (path === '/home') {
     btnLogin.classList.add('hidden');
     btnRegister.classList.add('hidden');
@@ -68,6 +71,5 @@ export const header = () => {
     greetingUser.classList.add('hidden');
     iconHeart.classList.add('hidden');
   }
-
   return topHeader;
 };
