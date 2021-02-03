@@ -14,7 +14,7 @@ export const Register = () => {
         <input type='password' class='input-login' id='password-confirm' placeholder='Confirmar senha'/>
         <p class="flex-itens" id="password-error"></p>
         <button type='submit' class='button' id='button-register'>Registrar-se</button>
-        <p class='infoText marginText'>Ao cadastre-se você concorda com nossos termos de uso.</p>
+        <p class='infoText marginText'>Ao cadastrar-se você concorda com nossos termos de uso.</p>
       </form>
     </div>
   </div>

@@ -8,12 +8,12 @@ export const Login = () => {
   rootElement.innerHTML = `
   <div class='container-login'>
     <div class='box-login'>
-        <img src='images/Cinelist.png'>
+      <img class = "image-login" src='images/Cinelist.png'>
       <form>          
         <input class='input-login' id='e-mail' placeholder ='E-mail'/>
         <input type='password' class='input-password' id='my-password' placeholder='Senha'  autocomplete="off"/>    
         <button type='submit' class='button-login' id='button-login'>Entrar</button>
-        <p>ou</p>
+        <p class = "or">ou</p>
         <button class='button-google' id='button-google'>Entrar com o Google</button>
         <p class='infoText marginText'>Não tem uma conta? <b><span id='button-create-account' class='create-account'>Cadastre-se</span></p>
         <script type='module' src='./register/index.js'></script>

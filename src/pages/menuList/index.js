@@ -16,7 +16,7 @@ export const MenuList = () => {
           <img src='images/Cinelist.bg.png'>
         </figure>
         <div class='position'>
-          <p class='textbanner colorText'>FAÇA LISTAS COMENTADAS DE FILMES QUE JÁ ASSISTIU E SAIBA SEMPRE QUAIS FILMES MAIS TE AGRADAM.</p>
+          <p class='textbanner colorText'>FAÇA UMA LISTA COMENTADA DE FILMES QUE JÁ ASSISTIU E SAIBA SEMPRE QUAIS FILMES MAIS TE AGRADAM.</p>
           <button id='btnWatchList' class='button'>VER FILMES ASSISTIDOS</button>
         </div>
       </div>
@@ -25,7 +25,7 @@ export const MenuList = () => {
           <img src='images/Cinelist.bg.png'>
         </figure>
         <div class='position'> 
-          <p class='textbanner colorText'>FAÇA LISTAS COMENTADAS DE FILMES QUE JÁ ASSISTIU E SAIBA SEMPRE QUAIS FILMES MAIS TE AGRADAM.</p>
+          <p class='textbanner colorText'>FAÇA UMA LISTA DE FILMES QUE DESEJA ASSISTIR E SAIBA SEMPRE QUAIS FILMES ESCOLHER.</p>
           <button id='btnToWatchList' class='button'>VER FILMES PARA ASSISTIR</button>
         </div>
       </div>
