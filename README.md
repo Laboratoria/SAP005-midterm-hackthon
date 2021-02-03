@@ -38,9 +38,9 @@ Com o resultado do formulário em mãos conseguimos validar as protopersonas e i
 
 ![brainstorm](./src/img/brainstorm.jpg)
 
-Em síntese, essas usuárias têm experiências de usuário ruins nessas plataformas o que dificulta muito a busca por conteúdos que sejam do seu real interesse. Diante disso, usamos a técnica de Design Thinking How Might We (HMW), ou Como Poderíamos, para nos ajudar a entender melhor os problemas e levantar possíveis soluções para o mesmo:
+Em síntese, essas usuárias têm experiências ruins nestas plataformas, o que dificulta muito a busca por conteúdos que sejam do seu real interesse. Diante disso, usamos a técnica de Design Thinking How Might We (HMW), ou Como Poderíamos, para nos ajudar a entender melhor os problemas e levantar possíveis soluções para o mesmo:
 
-Como poderíamos redesenhar a jornada de pesquisa por títulos em catálogos de streaming para torná-la mais personalizada para cada usuário?
+*Como poderíamos redesenhar a jornada de pesquisa por títulos em catálogos de streaming para torná-la mais personalizada para cada usuário?*
 
 :pushpin: Criar mais filtros para busca de títulos e permitir que eles se cruzem.
 
@@ -68,11 +68,11 @@ Como grupo, decidimos voltar alguns passos e redirecionar, portanto, a nossa sol
 Com a definição do Mínimo Produto Viável (MPV), desenvolvemos as histórias de usuários, estabelecendo os critérios de aceitação e a definição de pronto. A partir delas, fizemos o [planejamento](https://trello.com/b/7wlIHXY5/midterm-hackton) para a implementação do produto utilizando o modelo de Kanban. Para o desenvolvimento do código trabalhamos com o code review.
 
 ## 4. Produto
-bulb: **Identidade visual**
+:bulb: **Identidade visual**
 
 A paleta de cores foi inspirada no cartaz da primeira exibição de um filme, um curta chamado [L’arrivée d’un Train à La Ciotat](https://pt.wikipedia.org/wiki/Ficheiro:Cinematograph_Lumiere_advertisement_1895.jpg) (A chegada do trem em La Ciotat) lançado em 1895 no Salão Grand Café, em Paris. 
 
-![color-palette(./src/img/color-palette.png)
+![color-palette](./src/img/color-palette.png)
 
 :bulb: **Logo**
 &nbsp;
@@ -87,10 +87,20 @@ A proposta é remeter ao usuário a grandiosidade que é o universo cinematográ
 Com o redirecionamento do problema e da solução do produto, as funcionalidades implementadas no MPV foram:
 
 :pushpin: Catalogar títulos de curta-metragens consumindo uma API.
+&nbsp;
+
 :pushpin: Permitir que o usuário busque o título pelo nome em uma barra de pesquisa.
+&nbsp;
+
 :pushpin: Criar filtros (gênero, ano, diretor, nota do IMDB e duração) para busca de títulos e permitir que eles se cruzem.
+&nbsp;
+
 :pushpin: Ordenar o resultado da lista por ordem alfabética.
+&nbsp;
+
 :pushpin: Criar uma conta de usuário na aplicação com e-mail e senha ou com o Google.
+&nbsp;
+
 :pushpin: Permitir que o usuário crie coleções de títulos que ele curtiu ou descurtiu. 
 
 :iphone: Para acessar nosso protótipo mobile clique [aqui](https://www.figma.com/file/6e75XnGe5FGT27XcxTkMPP/Curta-Curtas-WebApp?node-id=42%3A0).

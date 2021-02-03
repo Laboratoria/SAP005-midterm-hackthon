@@ -69,3 +69,43 @@ export const creatingAccountWithEmail = (username, email, password) => {
     });
 };
 
+export const addFilm = (idFilm, titleFilm, posterFilm, type) => {
+  const currentUserId = firebase.auth().currentUser.uid;
+  const filmToAdd = firebase.firestore().collection('users').doc(currentUserId);
+  let data = { [idFilm]: {
+    id_film: idFilm,
+    title_film: titleFilm,
+    poster_film: posterFilm
+  }};
+  if (type == 'likes') {
+    filmToAdd.set({
+      user_id: currentUserId,
+      likes: data
+    }, { merge: true });
+    removeFilm(idFilm, currentUserId, 'dislikes');
+  }
+  if (type == 'dislikes') {
+    filmToAdd.set({
+      user_id: currentUserId,
+      dislikes: data
+    }, { merge: true });
+    removeFilm(idFilm, currentUserId, 'likes');
+  }
+  if (type == 'watchlist') {
+    filmToAdd.set({
+      user_id: currentUserId,
+      watchlist: data
+    }, { merge: true });
+  }
+};
+
+const removeFilm = (idFilm, docId, type) => {
+  firebase.firestore().collection('users').doc(docId)
+    .update({
+      [type + '.' + idFilm]: firebase.firestore.FieldValue.delete()
+    })
+    .then(() => {})
+    .catch(() => {
+      alert('Algo deu errado. Por favor, tente novamente.');
+    });
+}

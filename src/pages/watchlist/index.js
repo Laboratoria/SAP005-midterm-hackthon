@@ -1,4 +1,4 @@
-import { header } from '../../components/header/index.js';
+//import { header } from '../../components/header/index.js';
 import { createMenu } from '../../components/menu/index.js';
 import { films } from '../home/mock.js'
 
@@ -8,7 +8,7 @@ export const WatchList = () => {
     <section class="lists">
       <section id="header"></section>
       <section class="body-container">
-        <h4 class="list-name">My watchlist:</h4>
+        <h4 class="list-name">My watchlist <span class="material-icons">movie</span></h4>
         <section id="my-watch-list" class="lists"></section>
       </section>
       <section id="menu"></section>
@@ -18,8 +18,8 @@ export const WatchList = () => {
     const getMenuSection = rootElement.querySelector('#menu');
     getMenuSection.appendChild(createMenu());
 
-    const getHeaderSection = rootElement.querySelector('#header');
-    getHeaderSection.appendChild(header());
+    //const getHeaderSection = rootElement.querySelector('#header');
+    //getHeaderSection.appendChild(header());
 
     const getListSection = rootElement.querySelector('#my-watch-list');      
     getFilms(getListSection);
