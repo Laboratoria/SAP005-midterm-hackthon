@@ -510,6 +510,60 @@ footer {
     text-align: center;
 }
 
+.container-register {
+    padding-top: 15px;
+    background-color: #eedfb2;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+    
+#logo-register img {
+    max-width: 250px;
+    position: inherit;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+    
+#title-register {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 28px;
+}
+    
+#inputs-register {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    color: #231911;
+    font-weight: bolder;
+}
+
+    #submit-data {
+    margin-top: 10%;
+    height: 50px;
+    width: 255px;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size:18px ;
+    background-color: #BF2604 ;
+}
+
+.new-user {
+    background-color: #eedfb2;
+    width: 255px; 
+    border: none;
+    border-bottom: 1.5px solid #231911;
+    padding: 8px;
+    outline-color: #30261D;
+    margin-bottom: 25px; 
+}
+    
+
 @media (max-width: 375px) {
     .menu {
         padding: 0% 5%;
