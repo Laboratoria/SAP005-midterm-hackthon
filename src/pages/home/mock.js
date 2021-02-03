@@ -27,10 +27,6 @@ export const films =  [
       "genre": "sci-fi"
      },
      {
-      "title": "Blue Season", 
-      "genre": "sci-fi"
-     },
-     {
       "title": "Alive in Joburg", 
       "genre": "sci-fi"
      },
@@ -82,10 +78,6 @@ export const films =  [
       "genre" : "drama"
      },
      {
-      "title" :"The Most Beautiful Thing",
-      "genre" : "drama"
-     },
-     {
       "title" : "The Phone Call",
       "genre" : "drama"
      },
@@ -99,10 +91,6 @@ export const films =  [
      },
      {
       "title" : "Gregory Go Boom",
-      "genre" : "drama"
-     },
-     {
-      "title" : "The New West",
       "genre" : "drama"
      },
      {
@@ -162,22 +150,6 @@ export const films =  [
         "genre" : "drama"
      },
      {
-        "title" : "Um sol Alaranjado",
-        "genre" : "drama"
-     },
-     {
-        "title" : "Menino da calça branca",
-        "genre" : "drama"
-     },
-     {
-        "title" : "Fantasmas",
-        "genre" : "drama"
-     },
-     {
-        "title" : "Olho por olho",
-        "genre" : "drama"
-     },
-     {
       "title" : "Ritual In Transfigured Time",
       "genre" : "drama"
       },
@@ -187,10 +159,6 @@ export const films =  [
       },
       {
          "title" : "What Did Jack Do?",
-         "genre" : "drama"
-      },
-      {
-         "title" : "I Feel Stupid",
          "genre" : "drama"
       },
       {
@@ -214,10 +182,6 @@ export const films =  [
         "genre" : "comedy"
      },
      {
-      "title" : "No Time",
-      "genre" : "comedy"
-     },
-     {
         "title" : "Six Shooter",
         "genre" : "comedy"
      },
@@ -238,10 +202,6 @@ export const films =  [
       "genre" : "comedy"
    },
      {
-        "title" : "A Velha a Fiar",
-        "genre" : "comedy"
-     },
-     {
       "title" : "The New Tenants",
       "genre" : "comedy"
    },
@@ -256,10 +216,6 @@ export const films =  [
      {
         "title" : "Os Óculos do Vovô",
         "genre" : "comedy"
-     },
-     {
-      "title" : "Alex's Dream",
-      "genre" : "comedy"
      },
      {
       "title" : "Kleptomami",
@@ -310,10 +266,6 @@ export const films =  [
      },
      {
         "title" : "Alexia",
-        "genre" : "horror"
-     },
-     {
-        "title" : "Pumpkin Movie",
         "genre" : "horror"
      },
      
@@ -385,10 +337,6 @@ export const films =  [
         "genre" : "animation"
      },
      {
-        "title" : "Kaiju Bunraku",
-        "genre" : "animation"
-     },
-     {
         "title" : "Chez Moi",
         "genre" : "animation"
      },
@@ -401,27 +349,7 @@ export const films =  [
         "genre" : "animation"
      },
      {
-        "title" : "Jonas and The Sea",
-        "genre" : "animation"
-     },
-     {
-        "title" : "23 Degrees 5 Minutes",
-        "genre" : "animation"
-     },
-     {
         "title" : "A Night in Camp Heebie Jeebie",
-        "genre" : "animation"
-     },
-     {
-        "title" : "Guaxuma",
-        "genre" : "animation"
-     },
-     {
-        "title" : "Torre",
-        "genre" : "animation"
-     },
-     {
-        "title" : "Animando",
         "genre" : "animation"
      },
      {
@@ -494,35 +422,11 @@ export const films =  [
      // DOCUMENTARY
 
      {
-        "title" : "Hearing Madge",
-        "genre" : "documentary"
-     },
-     {
         "title" : "Just a guy",
         "genre" : "documentary"
      },
      {
-        "title" : "Stay Close",
-        "genre" : "documentary"
-     },
-     {
-        "title" : "Socorro Nobre",
-        "genre" : "documentary"
-     },
-     {
-        "title" : "A pedra da Riqueza",
-        "genre" : "documentary"
-     },
-     {
         "title" : "Aruanda",
-        "genre" : "documentary"
-     },
-     {
-        "title" : "Maioria Absoluta",
-        "genre" : "documentary"
-     },
-     {
-        "title" : "Arraial do Cabo",
         "genre" : "documentary"
      },
      {
@@ -538,19 +442,11 @@ export const films =  [
         "genre" : "documentary"
      },
      {
-        "title" : "Caramujo-flor",
-        "genre" : "documentary"
-     },
-     {
       "title" : "How Far is Home",
       "genre" : "documentary"
      },
      {
       "title" : "Guns Found Here",
-      "genre" : "documentary"
-     },
-     {
-      "title" : "Single Room Occupancy",
       "genre" : "documentary"
      },
      {

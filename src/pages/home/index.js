@@ -89,49 +89,17 @@ const printFilms = (json) => {
       <span class="material-icons">close</span>
     </button>
   </section>
+  `;
 
-function showFilmsDetails(json) {
-  createDetailsBox.innerHTML = `
-  <section class="info-container">
-    <div class="poster-info"><img src="${json.Poster}"> 
-    <p><b>${json.Title}</b> <br><br><br>
-    IMDb Rating: ${json.imdbRating} <br><br>
-    Director: ${json.Director} <br><br>
-    Year: ${json.Year}</p>
-    </div>
-    
-      <div class="details"> 
-        <p> <b>Plot:</b>  ${json.Plot}</p> <br>
-        <p>Genre: ${json.Genre}</p> <br>
-        <p>Runtime: ${json.Runtime}</p> <br>
-        <p>Awards: ${json.Awards}</p>
-      </div>
-
-    </section>
-    `;
-
-function imdbFilms(i) {
-  fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
-    .then((response) => response.json())
-    .then((json) => {
-      if (json.imdbRating > 7.5) {
-        document.querySelector('.films-container').innerHTML += ` 
-          <section data-id="${json.imdbID}" class="movie-box">
-            <p class="title">${json.Title}</p>
-            <img class="image" src="${json.Poster}">
-            <button id="info-${json.imdbID}" class="info">info</button>
-          </section>
-        <section id="info-details${json.imdbID}"></section>`;
-      }
-  const allInfo = filmsContainer.querySelectorAll('.info');
-  allInfo.forEach((button) => {
-    button.addEventListener('click', (e) => {
-      showDetailsContainer(e);
-
+    const allInfo = filmsContainer.querySelectorAll('.info');
+    allInfo.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        showDetailsContainer(e);
+      });
     });
-  });
-  return filmsContainer;
-};
+
+  return filmsContainer
+}
 
 function showDetailsContainer(e) {
   const idFilmCard = e.target.parentNode;
@@ -169,7 +137,6 @@ function toggleDetailsContainer(card, show) {
     holderDetailsContainer.classList.remove('display');
   }
 }
-
 
 export const filterGenre = () => {
  const filter = document.querySelector('#genre')
@@ -282,7 +249,6 @@ export const filterImdb = () => {
      })
  }
 
-
 const sortByMostRecent = async () => {
   let dataMovie = []
   for (let item of films) {
@@ -320,3 +286,33 @@ const sortByHighestScoreImdb = async () => {
 sortByHighestScoreImdb();
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+function imdbFilms(i) {
+  fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
+    .then((response) => response.json())
+    .then((json) => {
+      if (json.imdbRating > 7.5) {
+        document.querySelector('.films-container').innerHTML += ` 
+          <section data-id="${json.imdbID}" class="movie-box">
+            <p class="title">${json.Title}</p>
+            <img class="image" src="${json.Poster}">
+            <button id="info-${json.imdbID}" class="info">info</button>
+          </section>
+        <section id="info-details${json.imdbID}"></section>`;
+      }
+
+*/

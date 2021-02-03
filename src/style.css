@@ -3,8 +3,10 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif, normal, normal;
+} 
+body{
+    background-color: #D9D2B0;
 }
-
 .lista-que-vamos-apagar {
     display: flex;
     list-style: none;
@@ -366,8 +368,8 @@ footer {
     padding: 0.5rem 2rem;
     background-color: #D9D2B0;
     box-shadow: 0 2px 15px 4px rgba(0, 0, 0, 0.15);
-}
-
+    left: 0;
+  }
 .header-body {
     display: flex;
     justify-content: flex-start;
@@ -474,8 +476,39 @@ footer {
 }
 .showing.display {
     display: block;
-}  
-
+}
+.body-container{
+    padding-top: 150px;
+}
+.lists{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px 15px;
+}
+.card-list{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    align-items: center;
+}
+.title-list{
+    font-weight: bolder;
+    font-size: 16px;
+    color: #30261D;
+    text-align: center;
+}
+.poster-list{
+    max-width: 315px; 
+    height: auto;
+}
+.list-name{
+    font-size: 24px;
+    font-weight: bolder;
+    color: #64312F;
+    text-align: center;
+}
 
 @media (max-width: 375px) {
     .menu {
