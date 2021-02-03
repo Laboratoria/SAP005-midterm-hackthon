@@ -28,15 +28,15 @@ export const DiscardedList = () => {
     return rootElement;
   };
 
-  const getFilms = async (section) => {
-    for (const i of films) {
-       await fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
-            .then((response) => response.json())
-            .then((json) => {
-                section.appendChild(createCards(json));
-            });
+const getFilms = async (section) => {
+  for (const i of films) {
+    await fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
+      .then((response) => response.json())
+      .then((json) => {
+        section.appendChild(createCards(json));
+      });
     }
-  };
+};
 
   function createCards(json) {
     const cardsContainer = document.createElement('section');

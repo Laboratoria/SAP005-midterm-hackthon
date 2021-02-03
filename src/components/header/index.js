@@ -1,10 +1,6 @@
-import {
-  films
-} from '../../pages/home/mock.js'
-import {
-  printFilms,
-  showSerchResult
-} from '../../pages/home/index.js'
+/* eslint-disable no-restricted-syntax */
+import { films } from '../../pages/home/mock.js';
+import { printFilms } from '../../pages/home/index.js';
 
 export const header = () => {
   const topHeader = document.createElement('header');
@@ -28,29 +24,27 @@ export const header = () => {
 
   topHeader.querySelector('#search')
     .addEventListener('keyup', () => {
-      const nameSearch = "";
+      const nameSearch = '';
       const searchValue = topHeader.querySelector('#search').value;
-      searchForName(films, searchValue)
+      searchForName(films, searchValue);
     });
 
   function searchForName(data, condicao) {
-    const dataTest = data.filter(search => search.title.toUpperCase().includes(condicao.toUpperCase()));
-    getMoviesFilter(dataTest)
+    const dataTest = data.filter((search) => search.title.toUpperCase()
+      .includes(condicao.toUpperCase()));
+    getMoviesFilter(dataTest);
+  }
 
-  };
   const getMoviesFilter = (data) => {
-    // eslint-disable-next-line no-restricted-syntax
     const getCatalogueSection = document.querySelector('#catalogue');
     for (const i of data) {
-
       fetch(`http://www.omdbapi.com/?t=${i.title}&apikey=ce12da02`)
         .then((response) => response.json())
         .then((json) => {
-          getCatalogueSection.innerHTML= ''
+          getCatalogueSection.innerHTML = '';
           getCatalogueSection.appendChild((printFilms(json)));
         });
-    };
-
+    }
   };
 
   const btnLogin = topHeader.querySelector('.btn-login');
