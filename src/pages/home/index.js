@@ -21,7 +21,7 @@ export const Home = () => {
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
   <section>
-    <section id="filters-area">
+  <section id="filters-area">
     <section id="info"></section>
     <section id="menu"></section>
   </section>
@@ -37,7 +37,9 @@ export const Home = () => {
         <span class="visually-hidden">Next</span>
       </a>
     </section>
+    <section id="movies-details-info" class="details-box"></section>
   </section>
+</section>
 `;
 
   const getAllFilms = () => {
@@ -74,20 +76,47 @@ export const printFilms = (json) => {
       <p class="title">${json.Title}</p>
       <img class="image" class="d-block w-100" src="${json.Poster}">
       <button id="info-${json.imdbID}" class="info">
-        <span #info-icon class="material-icons">info</span>
+        <span class="material-icons">info</span>
       </button>
     </section>
+  `;
 
-    <section id="info-details${json.imdbID}" class="showing">
+  const allInfo = filmsContainer.querySelectorAll('.info');
+  allInfo.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      showDetailsContainer(e, json);
+    });
+  });
 
-      <img class="image" class="d-block w-100" src="${json.Poster}">
+  return filmsContainer;
+};
+
+function showDetailsContainer(e, json) {
+  const idFilmCard = e.target.parentNode.parentNode;
+  const idNumber = idFilmCard.dataset.id;
+  const getDetailsBox = document.getElementById('movies-details-info');
+  getDetailsBox.innerHTML = `
+  <section id="info-details" class="">
+
+      <figure class="poster-details">
+        <img class="image" class="d-block w-100" src="${json.Poster}">
+      </figure>  
       <section class="sub-details-section">
-        <p class="title">${json.Title}</p>
-        <p class="subtitle-1">${json.Director}</p>
-        <p class="subtitle-1">${json.Year}</p>
-        <p class="subtitle-1">${json.imdbRating}</p>
+        <p class="title-movie-details">${json.Title}</p>
+        <p class="title-details">
+           Director: 
+           <p class="subtitle-1">${json.Director}</p>
+        </p>
+        <p class="title-details">
+          Year:  
+          <p class="subtitle-1">${json.Year}</p>
+        </p> 
+        <p class="title-details">
+          Imdb score:
+          <p class="subtitle-1">${json.imdbRating}</p>
+        </p>  
 
-      <section class"buttons-details">
+      <section class="buttons-details">
         <button class="like" id="like-${json.imdbID}">
           <span class="material-icons">thumb_up_alt</span>
         </button>
@@ -100,34 +129,19 @@ export const printFilms = (json) => {
           <span class="material-icons">bookmark</span>
         </button>
 
-        <button id="close-container-${json.imdbID}">
-          <span class="material-icons">close</span>
+        <button class="close-detail" id="close-container-${json.imdbID}">
+          <span class="material-icons ">close</span>
         </button>
       </section>
       </section>  
-      <section>
-        <h4>Plot:</h4>
-        <p>
+      <section class="plot-box">
+        <p class="title-movie-details">Plot:</p>
+        <p class="subtitle-1">
           ${json.Plot}
         </p>
       </section>  
   </section>
-  `;
-
-  const allInfo = filmsContainer.querySelectorAll('.info');
-  allInfo.forEach((button) => {
-    button.addEventListener('click', (e) => {
-      showDetailsContainer(e);
-    });
-  });
-
-  return filmsContainer;
-};
-
-function showDetailsContainer(e) {
-  const idFilmCard = e.target.parentNode.parentNode;
-  const idNumber = idFilmCard.dataset.id;
-  toggleDetailsContainer(idFilmCard, true);
+  `
 
   const likeButton = document.getElementById(`like-${idNumber}`);
   likeButton.addEventListener('click', () => {
@@ -146,22 +160,8 @@ function showDetailsContainer(e) {
 
   const closeDetailsButton = document.getElementById(`close-container-${idNumber}`);
   closeDetailsButton.addEventListener('click', () => {
-    toggleDetailsContainer(idFilmCard, false);
+    getDetailsBox.innerHTML = ""
   });
-}
-
-function toggleDetailsContainer(card, show) {
-  const cardFilm = card;
-  const holderDetailsContainer = document.querySelector(`#info-details${cardFilm.dataset.id}`);
-  const isAnyOpen = document.querySelector('.showing.display')
-  if (show) {
-    if (isAnyOpen) {
-      isAnyOpen.classList.remove('display');
-    }
-    holderDetailsContainer.classList.add('display');
-  } else {
-    holderDetailsContainer.classList.remove('display');
-  }
 }
 
 export const filterGenre = () => {
