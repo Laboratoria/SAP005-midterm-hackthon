@@ -523,7 +523,6 @@ footer {
 }
 .poster-details, .sub-details-section {
     flex: 1;
-    /*justify-content: flex-start; */
 }
 .plot-box, .poster-details, .sub-details-section {
     padding: 0px 15px;
@@ -584,4 +583,20 @@ footer {
     .sub-details-section{
         align-items: center;
     }    
+}
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: #c2b888;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1); 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #D9D2B0;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(105, 109, 109);
+    border-radius: 2px;
 }
