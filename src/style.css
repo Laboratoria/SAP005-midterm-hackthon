@@ -27,7 +27,7 @@ body {
 
 .slider figure img {
   width: 100vw;
-  height: 40vh;
+  height: 100vh;
   float: left;
   opacity: 0.3;
   object-fit: cover;
@@ -148,6 +148,10 @@ h1.text-banner-title, .text-banner-main, .text-banner, .text-watched, .text-toWa
 
 .create-account {
   color: #000000;
+}
+
+.lista figure img {
+  height: 40vh;
 }
 
 .menu-position {
