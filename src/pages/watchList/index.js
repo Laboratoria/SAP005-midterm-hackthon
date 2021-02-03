@@ -7,8 +7,13 @@ export const WatchList = () => {
 
   const nav = Navigation();
   const rootElement = document.createElement('div');
-
   rootElement.appendChild(nav);
+
+  let watched = document.createElement('header');
+  watched.innerHTML = `<header class = "toWatchHeader">
+  <img class = "watched" src = "../../images/assistidos.png" alt = "Assistidos">
+  </header>`
+  rootElement.appendChild(watched);
 
   const contentElement = () => {
     const boxElement = document.createElement('div');

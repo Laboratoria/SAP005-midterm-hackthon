@@ -7,8 +7,13 @@ export const ToWatchList = () => {
 
   const nav = Navigation();
   const rootElement = document.createElement('div');
-
   rootElement.appendChild(nav);
+
+  let toWatch = document.createElement('header');
+  toWatch.innerHTML = `<header class = "toWatchHeader">
+  <img class = "toWatch" src = "../../images/a_assistir.png" alt = "A assistir">
+  </header>`
+  rootElement.appendChild(toWatch);
 
   const contentElement = () => {
     const boxElement = document.createElement('div');
@@ -30,8 +35,7 @@ export const ToWatchList = () => {
               <button id ="delet">Apagar</button>
               <button id ="watched">+ASSISTIDO</button>
             </div>
-          </div>
-        </div>`;
+          </div>`;
 
           const watched = document.querySelectorAll('#watched');
           watched.forEach((button) => {
