@@ -80,22 +80,37 @@ export const printFilms = (json) => {
 
     <section id="info-details${json.imdbID}" class="showing">
 
-    <section class"buttons-details">
-    <button class="like" id="like-${json.imdbID}">
-      <span class="material-icons">thumb_up_alt</span>
-    </button>
+      <img class="image" class="d-block w-100" src="${json.Poster}">
+      <section class="sub-details-section">
+        <p class="title">${json.Title}</p>
+        <p class="subtitle-1">${json.Director}</p>
+        <p class="subtitle-1">${json.Year}</p>
+        <p class="subtitle-1">${json.imdbRating}</p>
 
-    <button class="dislike" id="dislike-${json.imdbID}">
-      <span class="material-icons">thumb_down_alt</span>
-    </button>
+      <section class"buttons-details">
+        <button class="like" id="like-${json.imdbID}">
+          <span class="material-icons">thumb_up_alt</span>
+        </button>
 
-    <button class="save" id="save-${json.imdbID}">
-      <span class="material-icons">bookmark</span>
-    </button>
+        <button class="dislike" id="dislike-${json.imdbID}">
+          <span class="material-icons">thumb_down_alt</span>
+        </button>
 
-    <button id="close-container-${json.imdbID}">
-      <span class="material-icons">close</span>
-    </button>
+        <button class="save" id="save-${json.imdbID}">
+          <span class="material-icons">bookmark</span>
+        </button>
+
+        <button id="close-container-${json.imdbID}">
+          <span class="material-icons">close</span>
+        </button>
+      </section>
+      </section>  
+      <section>
+        <h4>Plot:</h4>
+        <p>
+          ${json.Plot}
+        </p>
+      </section>  
   </section>
   `;
 
