@@ -1,3 +1,8 @@
+//import { header } from '../../components/header/index.js';
+import { createMenu } from '../../components/menu/index.js';
+import { films } from '../home/mock.js'
+
+
 export const DiscardedList = () => {
     const rootElement = document.createElement('div');
     rootElement.innerHTML = `
